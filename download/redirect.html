@@ -3,91 +3,28 @@
     <link rel="stylesheet" href="https://javazilla.com/assets/css/w3.css">
     <link rel="stylesheet" href="https://javazilla.com/assets/css/main.css">
     <title>BukkitFabric</title>
-
-    <div class="w3-bar content" id="header" style="color:white; padding:24px 16px;padding-right:24px;background-image:linear-gradient(to right,rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0.8),rgba(20,20,20, 0.6),rgba(20,20,20, 0.6)); border-bottom:1px solid black;">
-        <a href="https://javazilla.com" class="title w3-bar-item w3-button w3-mobile"><img src="https://javazilla.com/assets/images/Javazilla.png" height="38px" style="padding-top:16px;"></a>
-        <a style="float:right;" id="ur" href="./"><button id="btn" style="background-color:rgb(153, 0, 0);color:white;padding:16px 94px;cursor:not-allowed;">Skip Ad in 5...</button></a>
+    <div class="w3-bar w3-center content" id="header" style="color:white;padding:22px 16px;padding-right:24px;background-image:linear-gradient(to right,rgba(0,0,0,1),rgba(0,0,0,1),rgba(0,0,0,0.9),rgba(20,20,20,0.8));">
+        <a style="float:right;" id="ur" href="./"><button id="btn" style="background-color:rgb(153, 0, 0);color:white;padding:16px 128px;cursor:not-allowed;">Skip Ad in 5...</button></a>
     </div>
-
     <style>
-      html {font-family:sans-serif; -ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; background-color:rgb(254,254,254);}
-      .border{padding:0;}
-      h1 {font-size:48px;padding:0;margin:0;margin-top:12px} h2{font-size: 28px;padding:0;margin:0;margin-top:12px;color:#737373}
-      .p {color:#333333;padding:4px 4px 4px 4px;display:inline-block}
-
-        #myVideo {
-          position: fixed;
-          right: 0;
-          bottom: 0;
-          min-width: 100%;
-          min-height: 100%;
-        }
-        .content, #header {
-          position: fixed;
-          top: 0;
-          background: rgba(0, 0, 0, 0.5);
-          color: #f1f1f1;
-          width: 100%;
-          z-index:1;
-        }
+    html {font-family:sans-serif;background-color:rgb(254,254,254)}#myVideo{position:fixed;right:0;bottom:0;min-width:100%;min-height:100%}
+    .content,#header{position:fixed;top:0;background:rgb(0,0,0);color:#f1f1f1;width:100%;z-index:1}
     </style>
-
-    <div class="border" id="body">
-        <a class="w3-center" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548">
-            <video muted loop id="myVideo">
-                <source id="vidsrc" src="" type="video/mp4">
-            </video>
-        </a>
-    </div>
+    <a class="w3-center" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><video muted loop id="myVideo"><source id="vidsrc" src="" type="video/mp4"></video></a>
     <script>
-        var i = 5;
-        setTimeout(function() {window.location.href = "https://ci.codemc.io/job/IsaiahPatton/job/Bukkit4Fabric/";}, i * 1500);
+      var i=5;var ur = "https://ci.codemc.io/job/IsaiahPatton/job/Bukkit4Fabric/";
+      setTimeout(function(){window.location.href = ur;},i*1200);
 
-        var myvid = document.getElementById("myVideo");
-        var vidSize = "1080p";
+      var myvid = document.getElementById("myVideo");
+      document.getElementById("vidsrc").src = "./apex/apex-" + ((window.innerWidth <= 1700) ? "720p" : "1080p") + ".mp4";
+      myvid.load();
+      myvid.play();
 
-        // Lets be kind on bandwidth
-        if (window.innerWidth <= 1648) vidSize = "900p";
-        if (window.innerWidth <= 1370) vidSize = "720p";
-
-        document.getElementById("vidsrc").src = "./apex/apex-" + vidSize + ".mp4";
-        myvid.load();
-        myvid.play();
-
-        setTimeout(function() {
-            document.getElementById("ur").href = "https://ci.codemc.io/job/IsaiahPatton/job/Bukkit4Fabric/";
-            document.getElementById("btn").style.cursor = "pointer";
-            document.getElementById("btn").style.backgroundColor = "green";
-        }, i * 900);
-        setInterval(function() {
-            if (i <= 1) {
-                document.getElementById("btn").innerHTML = "Skip Ad";
-            } else document.getElementById("btn").innerHTML = "Skip Ad in " + --i + "...";
-        }, 900);
+      setTimeout(function(){
+        document.getElementById("ur").href = ur;
+        document.getElementById("btn").style.cursor = "pointer";
+        document.getElementById("btn").style.backgroundColor = "green";
+      }, i * 875);
+      setInterval(function(){if (i <= 1) {document.getElementById("btn").innerHTML = "&nbsp;Skip Ad&nbsp;";} else document.getElementById("btn").innerHTML = "Skip Ad in " + --i + "...";},900);
     </script>
-
-    <div class="black" id="footer">
-        <table style="padding-top:4px;padding-bottom:8px;color:white;">
-            <tr class="w3-row">
-                <td class="w3-quarter">&nbsp;</td>
-                <td class="w3-half" style="padding-top:15px;padding-bottom:8px;color:white;padding-left:18px;">
-                   <a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="https://apexminecrafthosting.com/images/apex-hosting-mobile.png" width="594" height="100" border="0"></a>
-                </td>
-                <td class="w3-quarter">&nbsp;</td>
-            </tr>
-        </table>
-        <table style="padding-top:32px;padding-bottom:8px;color:white;">
-            <tr class="w3-row">
-                <td class="w3-quarter">&nbsp;</td>
-                <td class="w3-half" style="padding-top:24px;padding-bottom:8px;color:white;">
-                    <hr style="border:1px solid rgb(30,30,30);" class="w3-center">
-                    <br><br>
-                    <span class="copy">Copyright &copy; Javazilla Software.</span><br><br>
-                    <span class="copy2">Javazilla&trade;, Wava&trade;, ZunoZap&trade;, The Incredible Game&trade; and related assets are trademarks of Javazilla Software</span>
-                </td>
-                <td class="w3-quarter">&nbsp;</td>
-            </tr>
-        </table>
-    </div>
-<script src="https://javazilla.com/assets/js/main.js"></script>
 </html>
