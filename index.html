@@ -25,7 +25,8 @@ h1 {font-size:100%;font-weight:400}
 }
 .cbtn {background-color:rgba(40,40,40);color:rgb(250,250,250);text-decoration:none;border-radius:8px;margin-right:16px;margin-left:16px;padding-left:2em;padding-right:2em;}
 .cbtn:hover {bottom:1;}
-#watch {padding-top:138px;padding-bottom:188px}
+#watch, #dwn {padding-top:138px;padding-bottom:188px}
+video {width:272px;}
     </style>
 </head>
 <body>
@@ -37,12 +38,12 @@ h1 {font-size:100%;font-weight:400}
                     <h1 class="title" style="font-size:5rem;padding-top:0;margin-top:0;margin-bottom:0;">Cardboard</h1> 
                     <p style="font-size:1em;padding-top:0;margin-top:-1px;">The implementation of the Bukkit/Spigot/Paper API for Fabric</p><br><br>
                     <a class="cbtn iconeff" style="padding:8px;padding-left:24px;padding-right:24px;" href="#watch">View in Action</a>
-                    <a class="cbtn" style="padding:8px;padding-left:24px;padding-right:24px;" href="download">Downloads</a>
+                    <a class="cbtn" style="padding:8px;padding-left:24px;padding-right:24px;" href="./download">Downloads</a>
                 </div>
             </div>
             <div class="hero-body2 w3-center" style="display:inline-block;">
                 <div style="background:rgba(0,0,0,0);text-align:center;display:inline-block;padding:1px;padding-left:64px;padding-right:64px;">
-                    <h1 class="title" style="color:rgba(170,170,170);font-size:0.6rem;padding:0;margin:4px;margin-top:24em;">Get a Minecraft server with our partner link:</h1> 
+                    <h1 class="title" style="color:rgba(170,170,170);font-size:0.7rem;padding:0;margin:4px;margin-top:24em;">Get a Minecraft server with our partner link:</h1> 
                     <a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548" style="padding:0;margin:0;"><img src="./assets/apex-hosting-mobile.webp" width="280" height="50" border="0"></a>
                 </div>
             </div>
@@ -53,6 +54,12 @@ h1 {font-size:100%;font-weight:400}
         <iframe width="432" height="243" src="https://www.youtube-nocookie.com/embed/7B0jTDzSFGE" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope" allowfullscreen></iframe>
         <iframe width="432" height="243" src="https://www.youtube-nocookie.com/embed/o47glUL6WyQ" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope" allowfullscreen></iframe>
         <br><small><a href="./showcase/index.html">See more..</a></small>
+    </div>
+    <div class="w3-container black w3-center" id="dwn" style="background:rgb(10,10,10)"><br>
+		<a id="dl" href="./redirect.html"><button class="btn w3-button" style="background:green;" type="button"><span id="txt">&nbsp;&nbsp;Download Cardboard&nbsp;&nbsp;</span></button></a>
+	    <br><br><div id="info" style="font-size:0.75em">loading info...</div><br><br>
+	    <span class="title" style="color:rgba(170,170,170);font-size:0.6rem;padding:0;margin:4px;margin-top:24em;">Get a Minecraft server with our partner link:</span><br>
+        <a class="w3-center" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><video muted autoplay loop id="myVideo"><source id="vidsrc" src="./download/apex/Apex Hosting Animated Logo Only.mp4" type="video/mp4"></video></a><br>
     </div>
     <div class="black" id="footer" style="background-color:black;">
         <table>
@@ -66,12 +73,39 @@ h1 {font-size:100%;font-weight:400}
             <tr class="w3-row">
                 <td class="w3-quarter">&nbsp;</td>
                 <td class="w3-half" style="padding-top:132px;padding-bottom:8px;">
-                  <p style="font-size:12px">Cardboard - Bukkit for Fabric<br>Copyright &copy; CardboardPowered&trade; & Javazilla.com</p>
-                  <a href="https://javazilla.com/"><img style="margin-top:32px;margin-bottom:32px;" src="./assets/Javazilla.png" width="74px"></a>
+                  <p style="font-size:12px">Cardboard - Bukkit/Spigot for Fabric<br>Copyright &copy; 2020-2021 CardboardPowered&trade;</p>
+                  <a href="https://javazilla.com/"><img style="margin-top:32px;margin-bottom:32px;" src="./assets/Javazilla.png" width="64px"></a>
                 </td>
                 <td class="w3-quarter">&nbsp;</td>
             </tr>
         </table>
     </div>
 </body>
+<script>
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myObj = JSON.parse(this.responseText);
+    var date = new Date(myObj.timestamp);
+    var hours = date.getHours();
+    var minutes = "0" + date.getMinutes();
+    var apm = "AM"; if (hours > 13) { hours -= 12; apm = "PM";}
+	var formattedTime = date.toDateString().replace(date.getFullYear(), '') + ' at ' +  hours + ':' + minutes.substr(-2) + ' ' + apm;
+    document.getElementById("txt").innerHTML = 'Download Cardboard #' + myObj.number + ' <i>(for 1.16.5)</i>';
+    document.getElementById("dl").href = "https://ci.codemc.io/job/IsaiahPatton/job/Cardboard/lastSuccessfulBuild/artifact/" +  myObj.artifacts[0].relativePath;
+	var items = myObj.changeSet.items;
+	var log = "<a href='javascript:myFunction()' style='text-decoration:underline;'>View Changelog</a><ul id='change' style='font-size:0.67rem; display:none;'>";
+	for (i = 0; i < items.length; i++) log += "<li>" + items[i].comment + "</li>";
+	log += "</ul>"
+	document.getElementById("info").innerHTML = "Last update on " + formattedTime + "<br>" + log;
+  }
+};
+xmlhttp.open("GET", "https://jsonp.afeld.me/?url=https%3A%2F%2Fci.codemc.io%2Fjob%2FIsaiahPatton%2Fjob%2FCardboard%2FlastSuccessfulBuild%2Fapi%2Fjson", true);
+xmlhttp.send();
+
+function myFunction() {
+  var x = document.getElementById("change");
+  if (x.style.display === "none") {x.style.display = "block";} else x.style.display = "none";
+}
+</script>
 </html>
