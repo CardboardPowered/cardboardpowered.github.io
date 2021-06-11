@@ -1,7 +1,94 @@
 <html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://javazilla.com/assets/css/w3.css">
+    <link rel="stylesheet" href="https://javazilla.com/assets/css/main.css">
+    <title>Cardboard - Download</title>
 
-  <script>
-  window.location.href = "https://ci.codemc.io/job/IsaiahPatton/job/Cardboard-1.17/";
-  </script>
+    <div class="w3-bar" id="header" style="color:white; padding:4px 2px; background:transparent;">
+        <a style="float:right;" href="https://discord.gg/Qp4a2Nj"><img src="../assets/Discord-Join-7289DA.png"></a>
+    </div>
 
+    <style>
+      html {font-family:sans-serif; -ms-text-size-adjust:100%; -webkit-text-size-adjust:100%;background-color:rgb(254,254,254);background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/bg-blue.png') no-repeat center center fixed;}
+      .border{margin-left:20%;margin-right:20%;background-color:rgba(0,0,0,0.94);color:white;margin-top:4rem;}
+      h1 {font-size:4em;padding:0;margin:0;margin-top:32px} h3{font-size: 16px;padding:0;margin:0;color:#737373}
+      .p {color:#333333;padding:4px 4px 4px 4px;display:inline-block}
+      5button {width:400px;background: linear-gradient(to right, green, rgb(0,96,0));padding:14px 48px 14px 48px;border:1px solid black;cursor:pointer;font-size:14px;color:white;margin:12px;border: 3px outset rgb(0,108,0);}
+      5button:hover {background:darkgreen;} hr {background:#e6e6e6;}.ad {margin-top:100px}  a{text-decoration:none;cursor:pointer;}
+      .btn {position: relative;display:block;margin:30px auto;padding:0;overflow:hidden;border-width:0;outline:none;border-radius:2px;box-shadow:0 3px 6px rgba(0,200,5,.6);background-color:green;color:#ecf0f1;transition:background-color .4s;text-decoration:none;cursor:pointer;}
+	 .btn:hover,.btn:focus{background-color:#27ae60} .btn > * {position:relative;text-decoration:none} .btn span {display:block;padding: 12px 24px;text-decoration:none}
+	 .btn:before {
+	   content:"";position: absolute;top:50%;left:50%;display:block;width:0;padding-top:0;border-radius:100%;
+       background-color: rgba(236, 240, 241, .3); -webkit-transform: translate(-50%, -50%);-moz-transform: translate(-50%, -50%); transform: translate(-50%, -50%);
+	 }
+	 .btn:active:before {width:120%;padding-top:120%;transition: width .2s ease-out, padding-top .2s ease-out;}
+     video {width:280px;}
+	 
+	 @media (min-width:1025px) { .border{margin-left:30%;margin-right:30%;} }
+	 @media (min-width:2560px) { .border{margin-left:37%;margin-right:37%;} }
+	 @media (max-width:400px) { .border{margin-left:1%;margin-right:1%;} }
+    </style>
+
+    <div style="">
+    <div id="body">
+        <br>
+        <div class="w3-center border" style="box-shadow: 0px 14px 16px rgb(0,0,0,0.6); background-color:rgb(0,0,0,.98); padding-bottom:2em; border-radius:16px;">
+            <br>
+            <h1 style="margin:0;padding:0;">
+              <img src="../assets/cardboard-box.png" width="72" style="padding:0;margin:0;display:inline-block;line-height:41px;">
+              <span style="margin:0;margin-bottom:0;padding:0;padding-bottom:0;display:inline-block;line-height:85px;color:rgb(240,240,240)">Cardboard</span>
+            </h1>
+            <h3 style="margin-top:-20px;margin-left:6em;font-size:0.8em;">The Spigot/Paper implementation for Fabric.</h3>
+            <br><br><br>
+            <a id="dl" href="./redirect.html"><button style="padding-left:42px;padding-right:42px;" class="btn" type="button"><span id="txt">&nbsp;&nbsp;Download Cardboard&nbsp;&nbsp;</span></button></a>
+			<div id="info" style="font-size:0.75em;padding-bottom:1rem;">loading info...</div><br><br><br><p>&nbsp;</p><br>
+
+            <span class="title" style="color:rgba(170,170,170);font-size:0.6rem;padding:0;margin:4px;margin-top:24em;">Get a Minecraft server with our partner link:</span><br>
+            <a class="w3-center" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><video muted autoplay loop id="myVideo"><source id="vidsrc" src="../download/apex/Apex Hosting Animated Logo Only.mp4" type="video/mp4"></video></a><br>
+
+            <br><br>
+        </div>
+        <br>
+    </div>
+    </div>
+
+    <div class="black" id="footer" style="bottom:0;position:fixed;background:transparent;padding:0;">
+        <table style="color:white;">
+            <tr class="w3-row">
+                <td class="w3-quarter">&nbsp;</td>
+                <td class="w3-half" style="padding-bottom:24px;color:rgb(80,90,80);">
+                    <span class="copy" style="font-size:.7em">Copyright &copy; 2020-2021 CardboardPowered.org &bull; iCommon Copyright &copy; 2017-2021 by Isaiah</span>
+                </td>
+                <td class="w3-quarter">&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+
+<script>
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myObj = JSON.parse(this.responseText);
+    var date = new Date(myObj.timestamp);
+    var hours = date.getHours();
+    var minutes = "0" + date.getMinutes();
+    var apm = "AM"; if (hours > 13) { hours -= 12; apm = "PM";}
+	var formattedTime = date.toDateString().replace(date.getFullYear(), '') + ' at ' +  hours + ':' + minutes.substr(-2) + ' ' + apm;
+    document.getElementById("txt").innerHTML = 'Download Cardboard <i>(for 1.17)</i>';
+    document.getElementById("dl").href = "https://ci.codemc.io/job/IsaiahPatton/job/Cardboard-1.17-dev/" + myObj.number + "/artifact/" +  myObj.artifacts[0].relativePath;
+	var items = myObj.changeSet.items;
+	var log = "<a href='javascript:myFunction()' style='text-decoration:underline;'>View Changelog</a><ul id='change' style='font-size:0.67rem; display:none;'>";
+	for (i = 0; i < items.length; i++) log += "<li>" + items[i].comment + "</li>";
+	log += "</ul>"
+	document.getElementById("info").innerHTML = "Last update on " + formattedTime + "<br>" + log;
+  }
+};
+xmlhttp.open("GET", "https://jsonp.afeld.me/?url=https%3A%2F%2Fci.codemc.io%2Fjob%2FIsaiahPatton%2Fjob%2FCardboard-1.17-dev%2FlastSuccessfulBuild%2Fapi%2Fjson", true);
+xmlhttp.send();
+
+function myFunction() {
+  var x = document.getElementById("change");
+  if (x.style.display === "none") {x.style.display = "block";} else x.style.display = "none";
+}
+</script>
 </html>
