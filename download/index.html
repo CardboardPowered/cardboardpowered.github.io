@@ -9,34 +9,28 @@
     </div>
 
     <style>
-      html {font-family:sans-serif; -ms-text-size-adjust:100%; -webkit-text-size-adjust:100%;background-color:rgb(254,254,254);background: linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.3)), url('../assets/2.jpg') no-repeat center center fixed;}
-      .border{margin-left:20%;margin-right:20%;background-color:rgba(10,10,10,0.94);color:white;}
+      html {font-family:sans-serif; -ms-text-size-adjust:100%; -webkit-text-size-adjust:100%;background-color:rgb(254,254,254);background: linear-gradient(to right, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../assets/2.jpg') no-repeat center center fixed;}
+      .border{margin-left:20%;margin-right:20%;background-color:rgba(0,0,0,.96);color:white;}
       h1 {font-size:4em;padding:0;margin:0;margin-top:32px} h3{font-size: 16px;padding:0;margin:0;color:#737373}
       .p {color:#333333;padding:4px 4px 4px 4px;display:inline-block}
-      5button {width:400px;background: linear-gradient(to right, green, rgb(0,96,0));padding:14px 48px 14px 48px;border:1px solid black;cursor:pointer;font-size:14px;color:white;margin:12px;border: 3px outset rgb(0,108,0);}
-      5button:hover {background:darkgreen;} hr {background:#e6e6e6;}.ad {margin-top:100px}
+      hr {background:#e6e6e6;}.ad {margin-top:100px}
       a{text-decoration:none;cursor:pointer;}
-      .btn {position: relative;display:block;margin:30px auto;padding:0;overflow:hidden;border-width:0;outline:none;border-radius:2px;box-shadow:0 3px 6px rgba(0,200,5,.6);background-color:green;color:#ecf0f1;transition:background-color .4s;text-decoration:none;cursor:pointer;}
-.btn:hover,.btn:focus{background-color:#27ae60}
-.btn > * {position:relative;text-decoration:none}
-.btn span {display:block;padding: 12px 24px;text-decoration:none}
-.btn:before {
-  content:"";position: absolute;top:50%;left:50%;display:block;width:0;padding-top:0;border-radius:100%;
-  background-color: rgba(236, 240, 241, .3);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-.btn:active:before {width:120%;padding-top:120%;transition: width .2s ease-out, padding-top .2s ease-out;}
-video {width:268px;}
+     .btn {position: relative;display:block;margin:30px auto;padding:0;overflow:hidden;border-width:0;outline:none;border-radius:2px;box-shadow:0 3px 6px rgba(0,200,5,.6);background-color:green;color:#ecf0f1;transition:background-color .4s;text-decoration:none;cursor:pointer;}
+     .btn:hover,.btn:focus{background-color:#27ae60}
+     .btn > * {position:relative;text-decoration:none}
+     .btn span {display:block;padding: 12px 24px;text-decoration:none}
+	 .btn:before {
+	   content:"";position: absolute;top:50%;left:50%;display:block;width:0;padding-top:0;border-radius:100%;
+       background-color: rgba(236, 240, 241, .3); -webkit-transform: translate(-50%, -50%);-moz-transform: translate(-50%, -50%); transform: translate(-50%, -50%);
+	 }
+     .btn:active:before {width:120%;padding-top:120%;transition: width .2s ease-out, padding-top .2s ease-out;}
+     video {width:268px;}
     </style>
 
     <div style="">
     <div id="body">
         <br>
-        <div class="w3-center border">
+        <div class="w3-center border" style="box-shadow: 0px 14px 16px rgb(0,0,0,0.6); padding-bottom:1em; border-radius:16px;">
             <br>
             <h1 style="margin:0;padding:0;">
               <img src="cardboard.png" width="72" style="padding:0;margin:0;display:inline-block;line-height:41px;">
@@ -78,14 +72,16 @@ xmlhttp.onreadystatechange = function() {
     var hours = date.getHours();
     var minutes = "0" + date.getMinutes();
     var apm = "AM"; if (hours > 13) { hours -= 12; apm = "PM";}
-	var formattedTime = date.toDateString().replace(date.getFullYear(), '') + ' at ' +  hours + ':' + minutes.substr(-2) + ' ' + apm;
+	var month = ["Jan","Feb","March","April","Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+
+	var formattedTime = month[date.getMonth()-1] + ' at ' +  hours + ':' + minutes.substr(-2) + ' ' + apm;
     document.getElementById("txt").innerHTML = 'Download Cardboard #' + myObj.number + ' <i>(for 1.16.5)</i>';
     document.getElementById("dl").href = "https://ci.codemc.io/job/IsaiahPatton/job/Cardboard/" + myObj.number + "/artifact/" +  myObj.artifacts[0].relativePath;
 	var items = myObj.changeSet.items;
 	var log = "<a href='javascript:myFunction()' style='text-decoration:underline;'>View Changelog</a><ul id='change' style='font-size:0.67rem; display:none;'>";
 	for (i = 0; i < items.length; i++) log += "<li>" + items[i].comment + "</li>";
 	log += "</ul>"
-	document.getElementById("info").innerHTML = "Last update on " + formattedTime + "<br>" + log;
+	document.getElementById("info").innerHTML = "Last update on " + formattedTime + " " + log;
   }
 };
 xmlhttp.open("GET", "https://jsonp.afeld.me/?url=https%3A%2F%2Fci.codemc.io%2Fjob%2FIsaiahPatton%2Fjob%2FCardboard%2FlastSuccessfulBuild%2Fapi%2Fjson", true);
