@@ -148,7 +148,10 @@ xmlhttp.onreadystatechange = function() {
     var apm = "AM"; if (hours > 13) { hours -= 12; apm = "PM";}
 	var formattedTime = date.toDateString().replace(date.getFullYear(), '') + ' at ' +  hours + ':' + minutes.substr(-2) + ' ' + apm;
     document.getElementById("txt").innerHTML = 'Download Cardboard #' + myObj.number + ' <i>(for 1.16.5)</i>';
-    document.getElementById("dl").href = "https://sh.st/st/497050dfaad6d2f9fbd255d59f2843e8/ci.codemc.io/job/IsaiahPatton/job/Cardboard/" + myObj.number + "/artifact/" +  myObj.artifacts[0].relativePath;
+
+	var add = "http://adfoc.us/serve/sitelinks/?id=269416&url=";
+
+    document.getElementById("dl").href = add + "https://ci.codemc.io/job/IsaiahPatton/job/Cardboard/" + myObj.number + "/artifact/" +  myObj.artifacts[0].relativePath;
 	var items = myObj.changeSet.items;
 	var log = "<a href='javascript:myFunction()' style='text-decoration:underline;'>View Changelog</a><ul id='change' style='font-size:0.67rem; display:none;'>";
 	for (i = 0; i < items.length; i++) log += "<li>" + items[i].comment + "</li>";
@@ -164,6 +167,5 @@ function myFunction() {
   if (x.style.display === "none") {x.style.display = "block";} else x.style.display = "none";
 }
 </script>
-
 
 </html>

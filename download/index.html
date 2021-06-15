@@ -45,7 +45,6 @@
             <a class="w3-center" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><video muted autoplay loop id="myVideo"><source id="vidsrc" src="./apex/Apex Hosting Animated Logo Only.mp4" type="video/mp4"></video></a><br>
 
             <br><br>
-            <!--<a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="https://apexminecrafthosting.com/images/apex-hosting-mobile.png" width="594" height="100" border="0"></a>-->
         </div>
         <br>
     </div>
@@ -75,8 +74,13 @@ xmlhttp.onreadystatechange = function() {
 	var month = ["Jan","Feb","March","April","Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
 	var formattedTime = month[date.getMonth()-1] + ' at ' +  hours + ':' + minutes.substr(-2) + ' ' + apm;
-    document.getElementById("txt").innerHTML = 'Download Cardboard #' + myObj.number + ' <i>(for 1.16.5)</i>';
-    document.getElementById("dl").href = "https://ci.codemc.io/job/IsaiahPatton/job/Cardboard/" + myObj.number + "/artifact/" +  myObj.artifacts[0].relativePath;
+
+	var add = "http://adfoc.us/serve/sitelinks/?id=269416&url=";
+	var dl = "https://ci.codemc.io/job/IsaiahPatton/job/Cardboard/" + myObj.number + "/artifact/" +  myObj.artifacts[0].relativePath;
+
+    document.getElementById("txt").innerHTML = '<a href="' + dl + '">Download Cardboard</a> #' + myObj.number + ' <i>(for 1.16.5)</i>';
+    document.getElementById("dl").href = add + dl;
+
 	var items = myObj.changeSet.items;
 	var log = "<a href='javascript:myFunction()' style='text-decoration:underline;'>View Changelog</a><ul id='change' style='font-size:0.67rem; display:none;'>";
 	for (i = 0; i < items.length; i++) log += "<li>" + items[i].comment + "</li>";

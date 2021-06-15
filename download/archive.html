@@ -1,0 +1,86 @@
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://javazilla.com/assets/css/w3.css">
+    <link rel="stylesheet" href="https://javazilla.com/assets/css/main.css">
+    <title>Cardboard - Download</title>
+
+    <style>
+      html {font-family:sans-serif; -ms-text-size-adjust:100%; -webkit-text-size-adjust:100%;background-color:rgb(254,254,254);background: linear-gradient(to right, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../assets/bg-blue.png') no-repeat center center fixed;}
+      .border{margin-left:15%;margin-right:15%;background-color:rgba(0,0,0,.96);color:white;height:100vh;}
+      h1 {font-size:2em;padding:0;margin:0;margin-top:8px} h3{font-size: 16px;padding:0;margin:0;color:#737373}
+      .p {color:#333333;padding:4px 4px 4px 4px;display:inline-block}
+      hr {background:#e6e6e6;}.ad {margin-top:100px}
+      a{text-decoration:none;cursor:pointer;}
+     .btn {margin:4px 1px;padding:0;overflow:hidden;border-width:0;outline:none;border-radius:2px;box-shadow:0 3px 6px rgba(0,200,5,.6);background-color:green;color:#ecf0f1;transition:background-color .4s;text-decoration:none;cursor:pointer;}
+     .btn:hover,.btn:focus{background-color:#27ae60}
+     .btn {display:inline-block;padding: 8px 14%;text-decoration:none;min-width:30vw;}
+
+     video {width:240px;}
+    </style>
+
+    <div id="body">
+        <div class="w3-center border" style="box-shadow: 0px 14px 16px rgb(0,0,0,0.6); border-radius:16px;">
+			<br>
+            <h1 style="margin:0;padding:0;">
+              <img src="../assets/cardboard-box.png" width="42" style="padding:0;margin:0;display:inline-block;line-height:41px;">
+              <span style="margin:0;margin-bottom:0;padding:0;padding-bottom:0;display:inline-block;line-height:48px;color:rgb(240,240,240)">Cardboard Archive</span>
+            </h1>
+            <br>
+			<div id="info" style="font-size:0.75em;overflow:auto;max-height:60vh">loading info...</div><br><br><br><br>
+            
+            <span class="title" style="color:rgba(170,170,170);font-size:0.7rem;padding:0;margin:4px;margin-top:24em;">Get a Minecraft server with our partner link:</span><br>
+            <a class="w3-center" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><video muted autoplay loop id="myVideo"><source id="vidsrc" src="./apex/Apex Hosting Animated Logo Only.mp4" type="video/mp4"></video></a><br>
+
+            <br><br>
+        </div>
+    </div>
+
+    <div class="black" id="footer" style="bottom:0;position:fixed;background:transparent;padding:0;">
+        <table style="color:white;">
+            <tr class="w3-row">
+                <td class="w3-quarter">&nbsp;</td>
+                <td class="w3-half" style="padding-bottom:2px;color:rgb(50,50,50);">
+                    <span class="copy" style="font-size:0.7em">Copyright &copy; 2020-2021 CardboardPowered.org.</span>
+                </td>
+                <td class="w3-quarter">&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+<script src="https://javazilla.com/assets/js/emain.js"></script>
+<script>
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myObj = JSON.parse(this.responseText);
+
+	var add = "http://adfoc.us/serve/sitelinks/?id=269416&url=";
+	var dl = "https://ci.codemc.io/job/IsaiahPatton/job/Cardboard/";
+
+    //document.getElementById("txt").innerHTML = '<a href="' + dl + '">Download Cardboard</a> #' + myObj.number + ' <i>(for 1.16.5)</i>';
+    //document.getElementById("dl").href = add + dl;
+
+	var items = myObj.builds;
+	var log = "<a href='javascript:myFunction()' style='text-decoration:underline;'></a><div id='change' style='font-size:0.67rem;'>";
+	for (i = 0; i < items.length; i++) {
+		log += "<a id='dl' class='btn' href='" + add + dl + items[i].number + "'>Download Cardboard #" + items[i].number + "</a><br>";
+	}
+
+	var curse = ['130=26941679953761', '124=26941679953784', '121=26941679953787', '109=26941679953788', '100=26941679953789', '92=26941679953790'];
+	for (i = 0; i < curse.length; i++) {
+		// Very old
+		log += "<a id='dl' class='btn' href='http://adfoc.us/" + curse[i].split('=')[1] + "'>Download Bukkit4Fabric #" + curse[i].split('=')[0] + "</a><br>";
+	}
+	
+	log += "</div>"
+	document.getElementById("info").innerHTML = log;
+  }
+};
+xmlhttp.open("GET", "https://jsonp.afeld.me/?url=https%3A%2F%2Fci.codemc.io%2Fjob%2FIsaiahPatton%2Fjob%2FCardboard%2Fapi%2Fjson", true);
+xmlhttp.send();
+
+function myFunction() {
+  var x = document.getElementById("change");
+  if (x.style.display === "none") {x.style.display = "block";} else x.style.display = "none";
+}
+</script>
+</html>
