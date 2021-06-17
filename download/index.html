@@ -93,8 +93,8 @@ video {width:272px;}
 	<div class="w3ow">
 
   <div class="w3-bar">
-    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'London')">Fabric 1.17</button>
-    <button class="w3-bar-item w3-button tablink w3-blue" onclick="openCity(event,'Paris')">Fabric 1.16</button>
+    <button class="w3-bar-item w3-button tablink London" onclick="openCity(event,'London')">Fabric 1.17</button>
+    <button class="w3-bar-item w3-button tablink w3-blue Paris" onclick="openCity(event,'Paris')">Fabric 1.16</button>
     <!--<button class="w3-bar-item w3-button tablink"  onclick="openCity(event,'Tokyo')" disabled>Forge 1.17</button>-->
 	<button class="w3-bar-item w3-button tablink"  onclick="openCity(event,'otherm')">Other Mods</button>
 	<a href="https://discord.gg/Qp4a2Nj" target="_blank"><button class="w3-bar-item w3-button tablink" onclick="op1enCity(event,'dis')">Discord</button></a>
@@ -255,15 +255,19 @@ function myFunction(ver) {
 function openCity(evt, cityName) {
   var i, x, tablinks;
   x = document.getElementsByClassName("city");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
+  for (i = 0; i < x.length; i++)  x[i].style.display = "none";
+
   tablinks = document.getElementsByClassName("tablink");
   for (i = 0; i < x.length; i++)
     tablinks[i].className = tablinks[i].className.replace(" w3-blue", "");
   document.getElementById(cityName).style.display = "block";
+    if (evt == null) document.getElementsByClassName(cityName)[0].className += " w3-blue";
   evt.currentTarget.className += " w3-blue";
 }
+
+if ( window.location.href.toString().includes("#1.17") ) openCity(openCity(null,'London'));
+if ( window.location.href.toString().includes("#1.16") ) openCity(openCity(null,'Paris'));
+
 </script>
 
 </html>
