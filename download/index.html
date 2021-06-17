@@ -189,7 +189,9 @@ function req(ver, job) {
 		var add = "http://adfoc.us/serve/sitelinks/?id=269416&url=";
 		var dl = "https://ci.codemc.io/job/IsaiahPatton/job/" + job + "/" + myObj.number + "/artifact/" +  myObj.artifacts[0].relativePath;
 
-		document.getElementById("txt-" + ver).innerHTML = 'Download <a href="' + dl + '">Cardboard</a> #' + myObj.number + '';
+		document.getElementById("txt-" + ver).innerHTML = ver == '17' ? 
+		    'Download Cardboa<a href="' + dl + '">rd</a> #' + myObj.number + '' :
+	        'Download <a href="' + dl + '">Cardboard</a> #' + myObj.number + '';
 		document.getElementById("dl-" + ver).href = add + dl;
 
 		var items = myObj.changeSet.items;
