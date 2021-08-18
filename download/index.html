@@ -124,8 +124,7 @@ function req(ver, job) {
     var formattedTime = month[date.getMonth()-1] + date.getDate() + ' at ' +  hours + ':' + minutes.substr(-2) + ' ' + apm;
     var dl = "https://ci.codemc.io/job/IsaiahPatton/job/" + job + "/" + myObj.number + "/artifact/" +  myObj.artifacts[0].relativePath;
 
-    var ran = Math.floor(Math.random()*3);
-    if (ran == 0 && ver == "17") {
+    if (ver == "17") {
         dl = "https://cdn.modrinth.com/data/MLYQ9VGP/versions/1.17-" + myObj.number + "/" + myObj.artifacts[0].fileName;
         add = "";
     }
