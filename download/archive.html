@@ -25,7 +25,6 @@
 
       <span class="title" style="color:rgba(170,170,170);font-size:0.7rem;padding:0;margin:4px;margin-top:24em;">Get a Minecraft server with our partner link:</span><br>
       <a class="w3-center" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="../assets/apex.png" width="210px" height="50px"></a><br>
-
       <br><br>
     </div>
   </div>
@@ -40,9 +39,6 @@ xmlhttp.onreadystatechange = function() {
   var log = "<div id='change' style='font-size:0.67rem;'>";
   for (i =0; i < items.length; i++) log += "<a id='dl' class='btn' href='" + dl + items[i].number + "'>Download Cardboard #" + items[i].number + "</a><br>";
 
-  var curse = ['130=26941679953761', '124=26941679953784', '121=26941679953787', '109=26941679953788', '100=26941679953789', '92=26941679953790'];
-  for (i = 0; i < curse.length; i++)
-    log += "<a id='dl' class='btn' href='http://adfoc.us/" + curse[i].split('=')[1] + "'>Download Cardboard #" + curse[i].split('=')[0] + "</a><br>"; // Very old
   log += "</div>"
   document.getElementById("info").innerHTML = log;
   }
