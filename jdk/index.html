@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>OpenJDK Downloads</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-download {font-size:1.9rem;padding:0;}
+.w3-bar {box-shadow: 2px 2px 4px black; padding: .1rem;}
+.w3-darkgray {background-color: rgb(30,30,30); color:white;}
+
+html,body {height:100vh;}
+.w3-footer {color:gray;font-size:.6em;width:100%;background-color:black;padding-top:4rem;padding-bottom:2rem}
+.d {min-width:140px;margin:1px}
+
+.thebody {max-width:100%;text-align:center}
+table td, table td * {vertical-align:top}
+
+a{text-decoration:none;cursor:pointer}
+.a {min-width:27rem; max-width:27rem}
+.btn {text-align:left;margin:4px;min-width: 26rem;background-color:rgb(215, 30, 25)!important;border-radius:4px;}
+.ver {font-size:1.1rem}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card w3-left-align w3-large">
+    <img src="https://i.imgur.com/jb8JhUG.png" style="float:left;margin-left:9%;padding-left:4px;padding-top:5px;" width="72px">
+    <a href="#" class="w3-bar-item w3-button w3-hover-black" style="padding-left:2px !important;">AdoptiumMirror</a>
+
+    <a href="#" class="w3-bar-item w3-button w3-hover-black" style="float:right;marg1in-right:15%;">&nbsp;</a>
+    <a href="#" class="w3-bar-item w3-button" style="float:right;">Mirror of Adoptium OpenJDK</a>
+
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-darkgray w3-center" style="padding:86px 16px 30px 16px">
+  <h1 class="w3-margin w3-xxlarge" style="display:inline-block;vertical-align:middle;">Downloads for Java OpenJDK</h1>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-32 w3-container">
+  <div class="w3-content">
+    <div class="w3-half">
+        <div class="ver" id="1.16.5">
+            <h3 id="dln-8">Loading Downloads...</h3>
+            <div id="txt-8"></div>
+            <div id="info-8" style="font-size:0.7em;margin-top:16px;color:rgb(130,130,130)">.</div>
+            <div id="oldbuild-8"></div>
+          </div>
+    </div>
+    
+    <div class="w3-half">
+        <div class="ver" id="1.16.5">
+            <h3 id="dln-16">Loading Downloads...</h3>
+            <div id="txt-16"></div>
+            <div id="info-16" style="font-size:0.7em;margin-top:16px;color:rgb(130,130,130)">.</div>
+            <div id="oldbuild-16"></div>
+          </div>
+    </div>
+  </div>
+  
+</div>
+
+<div class="w3-row-padding w3-container w3-darkgray" style="padding:5px;position:fixed;bottom:0;width:100%;font-size:.9rem;">
+  <div class="w3-content">
+      <p>Mirror of <a href="https://adoptopenjdk.net/">Adoptium OpenJDK</a> releases. <i>This site not affiliated with Adoptium nor The Eclipse Foundation.</i></p>
+  </div>
+</div>
+</body>
+
+<script>
+function req(ver, job, dis) {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+        var date = new Date(myObj.timestamp);
+        var hours = date.getHours();
+        var minutes = "0" + date.getMinutes();
+        var apm = "AM"; if (hours > 13) { hours -= 12; apm = "PM";}
+        var month = ["Jan","Feb","March","April","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+
+        var formattedTime = month[date.getMonth()-1] + date.getDate();
+        
+        var aas = [myObj[0].binaries[0].installer, myObj[0].binaries[0].package];
+        for (var i = 0; i < aas.length; i++) {
+           var aa = aas[i];
+           if (aa == undefined) continue;
+        
+           var aaa = aa.link.toString().split('-')[0];
+                       var os = aa.name.split('_')[1];
+            var e = aa.link.split("hotspot_")[1];
+            var f = e.replace('.zip','').replace('.msi','').replace('.tar.gz','');
+           document.getElementById("dln-" + ver).innerHTML = "Adoptium " + dis + " <span class='ver'>(" + f + ")</span>";
+           
+           var size = aa.size;
+           while (size > 1024) size = Math.round(size / 1024);
+            var xx = size + ['Bytes','Kb','Mb','Gb','Tb'][Math.floor(Math.log2(aa.size)/10)]
+
+            var dl = aa.link;
+            var nameu = aa.name;
+            var namea = name(aa.name,dl);
+            document.getElementById("txt-" + ver).innerHTML += '<a href="' + dl + '" class="a"><button class="w3-button w3-ripple w3-green btn">' + 
+                    '<i class="fa fa-download" style="float:right;vertical-align:middle;"></i>&nbsp; <span style="vertical-align:middle;"> ' +  namea + "<small> - " + xx + '</i></small></span></button></a><br>';
+        }
+    }
+  };
+  //var uurl = "https://api.adoptium.net/v3/assets/version/%5B16.0%2C%29?architecture=x64&heap_size=normal&image_type=jdk&jvm_impl=hotspot&lts=false&os=windows&page=0&page_size=10&project=jdk&release_type=ga&sort_method=DEFAULT&sort_order=DESC&vendor=adoptium";
+  var uurl = job;
+  console.log(uurl);
+  xmlhttp.open("GET", uurl, false);
+  xmlhttp.send();
+}
+
+function apiUrl(ver, arch, type, os) {
+  var version = encodeURI("[" + ver + ",)");
+  var url = "https://api.adoptium.net/v3/assets/feature_releases/"+ ver + "/ga?architecture=" + arch + "&heap_size=normal&image_type=" + type + "&jvm_impl=hotspot&os=" + os + "&page=0&page_size=10&project=jdk&sort_method=DEFAULT&sort_order=DESC&vendor=adoptium";
+  return url;
+}
+
+function name(s,d) {
+  var a = s;
+  var e = d.split("hotspot_")[1];
+  var os = a.split('_')[2];
+  var ar = a.split('_')[1];
+  var f = " - " + os.replace("win","Win").replace("lin","Lin") + (e.includes(".msi") ? " Installer " : " Portable ") + "<small><i>" + ar;
+  var t = a.split("-")[1].split("_")[0].toUpperCase();
+  return t + " " + f;
+}
+
+req("16", apiUrl("16", "x64", "jdk", "windows"), "16 (Latest)");
+req("8", apiUrl("8", "x64", "jdk", "windows"),  "8 (LTS)");
+
+req("16", apiUrl("16", "x64", "jdk", "linux"), "16 (Latest)");
+req("8", apiUrl("8", "x64", "jdk", "linux"), "8 (LTS)");
+
+req("16", apiUrl("16", "aarch64", "jdk", "linux"), "16 (Latest)");
+
+req("16", apiUrl("16", "x64", "jre", "windows"), "16 (Latest)");
+req("8", apiUrl("8", "x64", "jre", "windows"),  "8 (LTS)");
+
+</script>
+
+</html>

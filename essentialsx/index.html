@@ -10,80 +10,65 @@
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-.fa-download {font-size:1.9rem;padding:0;}
+.fa-download {font-size:1.8rem;padding:0;}
 .w3-bar {box-shadow: 2px 2px 4px black; padding: .4rem;}
 .w3-darkgray {background-color: rgb(30,30,30); color:white;}
-small {display:none}
-
 html,body {height:100vh;}
 .side{height:280px;width:280px;margin-top: 2em;margin:2vw;display:inline-block;color:white;border-radius:8px}
 .sbartop {margin-top:0}.blue {background:rgb(0,65,122)}.dblu {background:rgb(0,48,96);border-radius:4px}.adr {marg1in-right:5%;width:280px}
-.w3-footer {color:gray;font-size:.6em;width:100%;background-color:black;padding-top:4rem;padding-bottom:2rem}
 .head {padding:1em;box-shadow: 0px 3px 4px rgb(0,57,108)}.d {min-width:140px;margin:1px}
 
-.thebody {max-width:100%;text-align:center}
-table td, table td * {vertical-align:top}
 .ap {padding:0;margin:0}.head{background:rgb(0,3,8)}
 
 a{text-decoration:none;cursor:pointer}
 .a {min-width:27rem; max-width:27rem}
-.btn {text-align:left;margin:4px;min-width: 25rem;background-color:rgb(215, 30, 25)!important;border-radius:4px;}
-.ver {font-size:1.1rem}
+.btn {text-align:left;margin:4px;min-width: 25rem;background-color:rgb(215, 30, 25)!important;border-radius:4px;color:white;}
+.ver {font-size:1rem}
 </style>
 <body>
 
-<!-- Navbar -->
+<!--Navbar-->
 <div class="w3-top">
-  <div class="w3-bar w3-black w3-card w3-left-align w3-large">
-    <img src="https://cardboardpowered.org/assets/cardboard-box.png" style="float:left;margin-left:9%;padding-left:4px;padding-top:4px;" width="45px">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-black" style="padding-left:2px !important;">Cardboard</a>
-
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-black" style="float:right;marg1in-right:15%;">&nbsp;</a>
-    <a href="../download" class="w3-bar-item w3-button w3-padding-large" style="float:right;">Download</a>
-    <a href="../" class="w3-bar-item w3-button w3-padding-large" style="float:right;">Home</a>
+  <div class="w3-bar w3-black w3-card w3-left-align">
+    <img src="https://cardboardpowered.org/assets/cardboard-box.png" style="float:left;margin-left:9%;padding-left:4px;padding-top:4px;" width="32px">
+    <a href="#" class="w3-bar-item w3-button w3-hover-black" style="padding-left:2px !important;">Cardboard</a>
+    <a href="#" class="w3-bar-item w3-button w3-hover-black" style="float:right;marg1in-right:15%;">&nbsp;</a>
+    <a href="../download" class="w3-bar-item w3-button" style="float:right;">Download</a>
+    <a href="../" class="w3-bar-item w3-button" style="float:right;">Home</a>
   </div>
 </div>
 
-<!-- Header -->
-<header class="w3-container w3-darkgray w3-center" style="padding:120px 16px 40px 16px">
-  <img src="https://avatars0.githubusercontent.com/u/34553309?s=84&v=4" style="display:inline-block;">
-  <h1 class="w3-margin w3-xxlarge" style="display:inline-block;vertical-align:middle;">EssentialsX with Modded Support</h1>
+<!--Header-->
+<header class="w3-container w3-darkgray w3-center" style="padding:90px 16px 32px 16px">
+  <img src="https://avatars0.githubusercontent.com/u/34553309?s=84&v=4" style="display:inline-block;" width="48px">
+  <h1 class="w3-xlarge" style="display:inline-block;vertical-align:middle;margin-left:0;">EssentialsX with Modded Support</h1>
 </header>
 
-<!-- First Grid -->
-<div class="w3-row-padding w3-container w3-light-gray" style="padding:16px;">
+<div class="w3-row-padding w3-container w3-light-gray" style="padding:8px;">
   <div class="w3-content">
-    <div class="w3-twothird">
-      <p class="w3-large">EssentialsX will crash when using mods that add new blocks or items.<br>This page provides builds of EssentialsX with the fix that will solve this bug</p>
-    </div>
+    <p>EssentialsX will crash when using mods that add new blocks or items.<br>This page provides builds of EssentialsX with the fix that will solve this bug</p>
   </div>
 </div>
 
-<!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
+<div class="w3-row-padding w3-padding-32 w3-container">
   <div class="w3-content">
     <div class="w3-twothird">
-        <div class="ver" id="1.16.5">
-            <h3 id="dln">Loading Downloads...</h3>
-            <div id="txt-16"></div>
-            <div id="info-16" style="font-size:0.7em;margin-top:16px;color:rgb(130,130,130)">.</div>
-            <div id="oldbuild-16"></div><p>&nbsp;</p>
-          </div>
+      <div class="ver" id="1.16.5">
+        <h3 id="dln">Loading Downloads...</h3>
+        <div id="txt-16"></div>
+        <div id="info-16" style="font-size:0.7em;margin-top:16px;color:rgb(130,130,130)">.</div>
+        <div id="oldbuild-16"></div><p>&nbsp;</p>
+      </div>
     </div>
 
     <div class="w3-third w3-center">
       <div class="w3-bar-block side blue w3-card adr" style="height:280px;box-shadow: -1px 4px 16px black;display:inline-block;">
         <h3 class="w3-bar-item sbartop dblu" style="font-size:.8rem;">Advertisement</h3>
-        <center><a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548" target="_blank" id="api"><img id="ap" src="../download/apex/apex2.png"></a></center>
+        <a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548" target="_blank" id="api"><img id="ap" src="../download/apex/apex2.png"></a>
       </div>
     </div>
   </div>
 </div>
-
-<!-- Footer -->
-<footer class="w3-container w3-center w3-opacity w3-light-grey" style="position:fixed;bottom:0;width:100%">  
- <p style="font-size:.8rem">&copy; 2021 CardboardPowered&trade;</a></p>
-</footer>
 
 </body>
 
@@ -92,38 +77,27 @@ function req(ver, job) {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        var myObj = JSON.parse(this.responseText);
-        var date = new Date(myObj.timestamp);
-        var hours = date.getHours();
-        var minutes = "0" + date.getMinutes();
-        var apm = "AM"; if (hours > 13) { hours -= 12; apm = "PM";}
-        var month = ["Jan","Feb","March","April","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+      var myObj = JSON.parse(this.responseText);
+      var date = new Date(myObj.timestamp);
+      var month = ["Jan","Feb","March","April","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
 
-        var formattedTime = month[date.getMonth()-1] + date.getDate();
-        
-        var aa = myObj.artifacts;
-        
-        var aaa = aa[0].displayPath.toString().replace('.jar', '').replace('EssentialsX-', '');
-        document.getElementById("dln").innerHTML = "EssentialsX <span class='ver'>" + aaa + " (" + formattedTime + ")</span>";
-        
-        for (var i = 0; i < (aa.length - 1); i++) {
-            var dl = "https://ci.codemc.io/job/IsaiahPatton/job/" + job + "/" + myObj.number + "/artifact/" +  myObj.artifacts[i].relativePath;
-            var namea = name(aa[i].displayPath);
-            if (namea.includes("GeoIP")) continue;
-            document.getElementById("txt-" + ver).innerHTML += '<a href="' + dl + '" class="a"><button class="w3-button w3-ripple w3-green btn">' + 
-                    '<i class="fa fa-download" style="float:right;vertical-align:middle;"></i>&nbsp; <span style="vertical-align:middle;">Download ' +  namea + '</span></button></a><br>';
-        }
+      var time = month[date.getMonth()-1] + date.getDate();
+      var aa = myObj.artifacts;
+      var aaa = aa[0].displayPath.toString().replace('.jar', '').replace('EssentialsX-', '');
+      document.getElementById("dln").innerHTML = "EssentialsX <span class='ver'>" + aaa + " (" + time + ")</span>";
+
+      for (var i = 0; i < (aa.length - 1); i++) {
+        var dl = "https://ci.codemc.io/job/IsaiahPatton/job/" + job + "/" + myObj.number + "/artifact/" +  myObj.artifacts[i].relativePath;
+        var namea = aa[i].displayPath.split('-')[0].replace("alsX", "alsX ")
+        if (namea.includes("GeoIP")) continue;
+        document.getElementById("txt-" + ver).innerHTML += '<a href="' + dl + '" class="a"><button class="w3-button w3-ripple btn">' + 
+            '<i class="fa fa-download" style="float:right;vertical-align:middle;"></i>&nbsp; <span style="vertical-align:middle;">Download ' + namea + '</span></button></a><br>';
+      }
     }
   };
   var uurl = "https://jsonp.afeld.me/?url=https%3A%2F%2Fci.codemc.io%2Fjob%2FIsaiahPatton%2Fjob%2F" + job + "%2FlastSuccessfulBuild%2Fapi%2Fjson";
-  console.log(uurl);
   xmlhttp.open("GET", uurl, true);
   xmlhttp.send();
-}
-
-function name(s) {
-  var a = s.split('-')[0];
-  return "EssentialsX " + a.split("EssentialsX")[1];
 }
 
 req("16", "EssentialsX-Modded-Support");
