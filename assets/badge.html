@@ -1,29 +1,12 @@
 <script>
 var getJSON = function(url, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.responseType = 'json';
-    xhr.onload = function() {
-      var status = xhr.status;
-      if (status === 200) {
-        callback(null, xhr.response);
-      } else {
-        callback(status, xhr.response);
-      }
-    };
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  xhr.responseType = 'json';
+  xhr.onload = function() { var status = xhr.status;callback(status !== 200 ? status : null, xhr.response);};
     xhr.send();
 };
 getJSON('https://bstats.org/api/v1/plugins/580/charts/paper_version/data',
-function(err, data) {
-  if (err !== null) {
-  } else {
-    var c = 0;
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].name.includes("Cardboard")) {
-            c += data[i].y;
-        }
-    }
-     window.location.href = "https://img.shields.io/badge/Servers-" + c + "-blue";
-  }
-});
+function(err, data) {if (err == null) { var c = 0;
+    for (var i = 0; i < data.length; i++) if (data[i].name.includes("Cardboard")) c += data[i].y; window.location.href = "https://img.shields.io/badge/Running%20Servers-" + c + "-blue?style=for-the-badge";}});
 </script>

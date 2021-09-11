@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <link href="download\w3.css" rel="stylesheet">
+  <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
   <link rel="stylesheet" href="https://javazilla.com/assets/css/main.css">
   <meta name="description" content="Cardboard - Bukkit4Fabric - Bukkit/Spigot for Fabric" />
   <script defer data-domain="cardboardpowered.org" src="https://plausible.io/js/plausible.js"></script>
@@ -17,30 +17,13 @@ h1 {font-size:100%;font-weight:400}
 .hero.is-primary {color:#fff}
 .cbtn {background-color:rgba(40,40,40);color:rgb(250,250,250);text-decoration:none;border-radius:8px;margin-right:16px;margin-left:16px;padding-left:2em;padding-right:2em;}
 .cbtn:hover {bottom:1;background-color:rgba(30,30,30)}
-#watch, #dwn {padding-top:138px;padding-bottom:188px}
+#watch, #dwn {padding-top:32px;padding-bottom:188px}
 video {width:250px;}
 
-.mqe-w{text-align:center} .mqe-w .container{overflow:hidden}
-.mqe-inner span{float:left;width:50%;}
-.mqe-w .mqe-block{
-  --total-mqe-items:5;
-  height:350px;
-  width:calc(300px * (var(--total-mqe-items)));
-  overflow:hidden;
-  box-sizing:border-box;
-  position:relative;
-  margin:2px auto;
-  padding:30px 0;
-}
-.mqe-inner{display:block;width:200%;position:absolute;}
-.mqe-inner p{color:rgba(0,0,0,0)}
-.mqe-inner.to-left{animation: mqeLeft 25s linear infinite;}
 *:hover {animation-play-state:paused !important;}
-.mqe-item{ width:230px; height:auto;display:inline-block;margin: 0 10px;float:left;transition:all .2s ease-out;}
-@keyframes mqeLeft{ 0% {left: 0;} 100% {left: -100%;}}
 
 @media (max-width:1200px){ .border{padding-left:10% !important;padding-right:10% !important;} }
-@media (min-width:1600px){ .border{padding-left:15% !important;padding-right:15% !important;} }
+@media (min-width:1600px){ .border{padding-left:15% !important;padding-right:15% !important;} #watch {padding-top:82px;} }
 @media (max-width:1000px){ .border{padding-left:5% !important;padding-right:0% !important;} }
 @media (min-width:901px) { .cba::before { content: "Bukkit/"; }}
 @media (max-width:898px) { .border{padding-left:1% !important;padding-right:0% !important;} .cbt {font-size:3rem !important}  cba {font-size:.7rem !important} }
@@ -67,6 +50,8 @@ a{text-decoration:none;cursor:pointer;}
   background-color:rgba(236,240,241,.3);-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);transform:translate(-50%,-50%); 
 }
 .btn:active:before {width:120%;padding-top:120%;transition: width .2s ease-out, padding-top .2s ease-out;}
+.w3-green { background: linear-gradient(to bottom, rgba(0,162,0,1),rgba(0,120,0,1));border-radius:.2rem; }
+.w3-gray {border:2px solid black;border-radius:.4rem;}
 </style>
 </head>
 
@@ -85,30 +70,38 @@ a{text-decoration:none;cursor:pointer;}
 </div>
 
 <body>
-  <div class="w3-container black w3-center" id="watch">
+  <div class="w3-container black" id="watch" style="padding-left:1rem;padding-right:1rem">
+    <div class="w3-row">
+      <div class="w3-container w3-third" style="float:right;"><iframe src="./player.html" frameborder="0" width="100%" height="370px"></iframe><br><small class="w3-center w3-third" style="width:100%;text-align:center;color:gray;"><a href="./showcase/index.html"><i>See more..</i></a></small></div>
+      <div style="float:left;padding:4rem;">
+        Badges:<br>
+        <a href="https://patreon.com/isaiahp"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Disaiahp%26type%3Dpledges&style=for-the-badge" alt="Support me on Patreon" width="178" /></a>
+        <br><br><img id="running" src="https://img.shields.io/badge/Running%20Servers-72+-blue?style=for-the-badge" width="178">
+        <br><br>
+        <a href="./download"><img src="https://img.shields.io/badge/Download%20for-1.17.1-blue?style=for-the-badge" width="178"></a><br><br>
+        <a href="./download#1.16.5"><img src="https://img.shields.io/badge/Download%20for-1.16.5-blue?style=for-the-badge" width="178"></a><br>
+        <br>Partnered with Apex:<br><a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="./download/apex/apex2.png" width="178" style="border:1px solid black;"></a>
+      </div>
+      <div class="w3-container w3-rest" style="padding-top:4rem;padding-left:4rem;">
+        <p>Cardboard is a Fabric mod that adds support for the popular Bukkit/Spigot/Paper modding API.<br>
+        This mod lets you use plugins that are made for Bukkit and it's derivatives <i>(Spigot & Paper)</i> with Fabric.<br>
+        Cardboard is still in development and may not support every plugin.<br>
+        Test Server kindly provided by Apex Hosting: <code>cardboardmod.apexmc.co:25666</code>
+        </p>
+        <br><br>
+        <div>
+            Spigot API Implementation Progress:<br><br>
 
-  <div class="mqe-w">
-    <div class="mqe-block">
-      <div class="mqe-inner to-left">
-        <span>
-         <div class="mqe-item"><iframe width="480" height="270" src="https://youtube.com/embed/e_DgNP5Vm9Q" frameborder="0"></iframe></div>
-         <div class="mqe-item"><p>2</p></div>
-         <div class="mqe-item"><iframe width="480" height="270" src="https://youtube.com/embed/7B0jTDzSFGE" frameborder="0"></iframe></div>
-         <div class="mqe-item"><p>4</p></div>
-         <div class="mqe-item"><a href="https://youtube.com/embed/o47glUL6WyQ" target="_blank"><img src="./assets/co.png"></a></div>
-        </span>
-        <span>
-         <div class="mqe-item"><iframe width="480" height="270" src="https://youtube.com/embed/e_DgNP5Vm9Q" frameborder="0"></iframe></div>
-         <div class="mqe-item"><p>2</p></div>
-         <div class="mqe-item"><iframe width="480" height="270" src="https://youtube.com/embed/7B0jTDzSFGE" frameborder="0"></iframe></div>
-         <div class="mqe-item"><p>4</p></div>
-         <div class="mqe-item"><iframe width="480" height="270" src="https://youtube.com/embed/o47glUL6WyQ" frameborder="0"></iframe></div>
-        </span>
+            <div>
+              Patches: <div class="w3-gray" style="width:30%;display:inline-block;margin-bottom:1rem;"><div class="w3-container w3-green w3-center" id="bar0" style="width:1%;display:inline-block;">x%</div></div>
+              <a href="https://github.com/CardboardPowered/cardboard/issues/10"><small><i>(148 of 215)</i></small></a>
+              <br>Events:&nbsp;&nbsp;&nbsp;<div class="w3-gray" style="width:30%;display:inline-block !important;"><div class="w3-container w3-green w3-center" id="bar1" style="width:1%;display:inline-block;">x%</div></div>
+              <a href="https://github.com/CardboardPowered/cardboard/issues/9"><small><i>(90 of 181)</i></small></a>
+            </div>
+            <br>
+        </div>
       </div>
     </div>
-</div>
-
-    <br><small><a href="./showcase/index.html">See more..</a></small>
   </div>
   <div class="w3-container black w3-center" id="dwn" style="background:rgb(8,8,8);padding-bottom:16rem;padding-top:16rem;"><br>
     <a id="dl" href="./redirect.html" target="_blank"><button class="btn w3-button" style="background:green;" type="button"><span id="txt">&nbsp;&nbsp;Download Cardboard&nbsp;&nbsp;</span></button></a>
@@ -134,6 +127,23 @@ Cardboard - Bukkit/Spigot for Fabric<br>Copyright &copy; 2020-2021
   </div>
 </body>
 <script>
+setTimeout(moveBars, 100);
+function moveBars() {moveBar(0);moveBar(1)};
+function moveBar(bid) {
+  var elem = document.getElementById("bar" + bid);   
+  var width = 20;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= (bid == 0 ? 68 : 49)) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
@@ -157,6 +167,47 @@ xmlhttp.send();
 function myFunction() {
   var x = document.getElementById("change");
   if (x.style.display === "none") {x.style.display = "block";} else x.style.display = "none";
+}
+
+function bstats() {
+  var co = getCookie('bstats');
+  if (undefined != co && co != '') {
+    document.getElementById("running").src = "https://img.shields.io/badge/Running%20on-" + co + "%20Servers-blue?style=for-the-badge";
+    return;
+  }
+  var getJSON = function(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() { var status = xhr.status;callback(status !== 200 ? status : null, xhr.response);};
+    xhr.send();
+  };
+
+  getJSON('https://bstats.org/api/v1/plugins/580/charts/paper_version/data',
+  function(err, data) {if (err == null) { var c = 0;
+    for (var i = 0; i < data.length; i++) if (data[i].name.includes("Cardboard")) c += data[i].y; 
+    document.getElementById("running").src = "https://img.shields.io/badge/Running%20on-" + c + "%20Servers-blue?style=for-the-badge";
+    setCookie('bstats', c, 1);
+  }});
+}
+bstats();
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' '){ c = c.substring(1);}
+    if (c.indexOf(name) == 0) { return c.substring(name.length, c.length);}
+  }return "";
+}
+
+function setCookie(cname, cvalue, exhours) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exhours*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;SameSite=Lax";
 }
 </script>
 
