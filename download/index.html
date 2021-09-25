@@ -3,7 +3,7 @@
 <title>Download</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
 
 <style>
 html,body {height:100vh;}
@@ -21,7 +21,8 @@ a{text-decoration:none;cursor:pointer;}
 .btn {position: relative;display:block;margin:4px auto;padding:0;overflow:hidden;border-width:0;outline:none;border-radius:2px;box-shadow:0 3px 6px rgba(0,200,5,.6);background-color:green;color:#ecf0f1;transition:background-color .4s;text-decoration:none;cursor:pointer;}
 .btn:hover,.btn:focus{background-color:#27ae60}
 .btn > * {position:relative;text-decoration:none}
-.btn span {display:block;padding: 8px 24px;text-decoration:none}
+.btn span {display:block;padding: 9px 32px;text-decoration:none}
+.tspan {display:inline-block !important;padding:0!important;vertical-align:middle;}
 .btn:before {content:"";position: absolute;top:50%;left:50%;display:block;width:0;padding-top:0;border-radius:100%;
   background-color:rgba(236,240,241,.3);-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);transform:translate(-50%,-50%); 
 }
@@ -60,7 +61,7 @@ a{text-decoration:none;cursor:pointer;}
             <h2>Download Cardboard for 1.17.1</h2>
             <a id="dl-17" href="./redirect.html" target="_blank"><button class="btn" type="button"><span id="txt-17">&nbsp;Download Cardboard&nbsp;</span></button></a>
             <div id="info-17" style="font-size:0.7em;margin-top:16px;color:rgb(130,130,130)">loading info...</div>
-            <p>&nbsp;</p><a href="https://adoptopenjdk.net/?variant=openjdk16" target="_blank"><img src="./assets/j16.png" width="150"></a>&nbsp;<img src="./assets/fapi.png" width="150"><p>&nbsp;</p>
+            <p>&nbsp;</p><a href="https://cardboardpowered.org/jdk/" target="_blank"><img src="./assets/j16.png" width="150"></a>&nbsp;<img src="./assets/fapi.png" width="150"><p>&nbsp;</p>
             <p style="color:rgb(200,200,200);margin-bottom:0;">Previous builds:</p>
             <div id="oldbuild-17"></div><p>&nbsp;</p>
           </div>
@@ -95,7 +96,9 @@ a{text-decoration:none;cursor:pointer;}
   <p>Cardboard - Bukkit/Spigot for Fabric<br>Copyright &copy; 2020-2021 CardboardPowered&trade;</p></div>
 </body>
 <script>
+var firstClick = true;
 function open(id) {
+  if (id == '1.16.5' && firstClick) {req("16", "Cardboard"); firstClick = false;}
   var els = document.getElementsByClassName("ver");
   for (i = 0; i < els.length; i++) els[i].style.display = "none";
   document.getElementById(id).style.display = "block";
@@ -129,7 +132,7 @@ function req(ver, job) {
         add = "";
     }
 
-    document.getElementById("txt-" + ver).innerHTML = '<i class="fa fa-download"></i> Download Cardb<a href="' + dl + '">oard</a> 1.' + ver + '-#' + myObj.number + '';
+    document.getElementById("txt-" + ver).innerHTML = '<img src="download-solid.svg" width="14px" style="vertical-align:middle;">&nbsp;<span class="tspan">Download Cardb<a href="' + dl + '">oard</a> 1.' + ver + '-#' + myObj.number + '</span>';
     document.getElementById("dl-" + ver).href = add + dl;
 
     var items = myObj.changeSet.items;
@@ -143,7 +146,6 @@ function req(ver, job) {
   xmlhttp.open("GET", "https://jsonp.afeld.me/?url=https%3A%2F%2Fci.codemc.io%2Fjob%2FIsaiahPatton%2Fjob%2F" + job + "%2FlastSuccessfulBuild%2Fapi%2Fjson", true);
   xmlhttp.send();
 }
-req("16", "Cardboard");
 req("17", "Cardboard-1.17-dev");
 
 function art(e, build, ver, job) {
@@ -165,7 +167,7 @@ function next(ver, job) {
 
     var items = myObj.builds;
     var log = "<a href='javascript:myFunction("+ver+")' style='text-decoration:underline;'></a><div id='change-"+ver+"' style='font-size:0.67rem;'>(";
-    for (i = 0; i < (items.length < 10 ? items.length : 10); i++)
+    for (i = 0; i < (items.length < 7 ? items.length : 6); i++)
       log += "<a id='"+ver+"-" + items[i].number + "' style=\"display:inline-block;margin:2px;color:gray;text-decoration:underline\" href='" + (i < 2 ? "" : add) + art(i, items[i].number, ver, job) + "'>#" + items[i].number + ",</a>";
 
     log += ")</div>"
