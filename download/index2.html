@@ -1,215 +1,125 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <link href="..\assets\css\w3.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://javazilla.com/assets/css/main.css">
-  <meta name="description" content="Cardboard - Bukkit4Fabric - Bukkit/Spigot for Fabric" />
-  <title>Cardboard - Download</title>
-  <style>
-h1 {font-size:100%;font-weight:400}
-.title{font-size:2rem;font-weight:600;line-height:1.125;color:#fff;}
-.hero.is-primary {color:#fff}
-.cbtn {background-color:rgba(40,40,40);color:rgb(250,250,250);text-decoration:none;border-radius:8px;margin-right:16px;margin-left:16px;padding-left:2em;padding-right:2em;}
-.cbtn:hover {bottom:1;background-color:rgba(30,30,30)}
-#watch, #dwn {padding-top:40px;padding-bottom:188px}
-video {width:272px;}
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+body,h1,h2,h3,h4,h5,h6,.head {font-family: "Raleway", sans-serif}
+*{font-family:"Segoe UI",Arial,sans-serif}
+body {background:rgb(47,47,47);color:white}
+.side{height:280px;width:280px;margin-top: 2em;margin:2vw;display:inline-block;color:white;border-radius:8px}
+.sbartop {margin-top:0}.blue {background:rgb(0,65,122)}.dblu {background:rgb(0,48,96);border-radius:4px}.adr {marg1in-right:5%;width:280px}
+.w3-footer {color:gray;font-size:.65em;width:100%;background-color:black;padding-top:2rem;padding-bottom:2rem}
+.head {paddaing:1em;box-shadow: 0px 3px 4px rgb(0,57,108)}.d {min-width:140px;margin:1px}
+
+.thebody {max-width:100%;text-align:center}
+table td, table td * {vertical-align:top}
+video {width:160px}.ap {padding:0;margin:0}.head{background:rgb(0,3,8)}
 
 a{text-decoration:none;cursor:pointer;}
-.btn {position: relative;display:block;margin:4px auto;padding:0;overflow:hidden;border-width:0;outline:none;border-radius:2px;box-shadow:0 3px 6px rgba(0,200,5,.6);background-color:green;color:#ecf0f1;transition:background-color .4s;text-decoration:none;cursor:pointer;}
-.btn:hover,.btn:focus{background-color:#27ae60}
-.btn > * {position:relative;text-decoration:none}
-.btn span {display:block;padding: 4px 24px;text-decoration:none}
-.btn:before {content:"";position: absolute;top:50%;left:50%;display:block;width:0;padding-top:0;border-radius:100%;
-  background-color:rgba(236,240,241,.3);-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);transform:translate(-50%,-50%); 
+.green {background-color:rgb(0,150,0);transition: all .3s ease-out;padding:9px 32px;box-shadow:0 3px 2px rgba(0,200,5,.6);border-radius:4px}
+.old {background-color:rgb(0,49,0)!important; box-shadow:0 3px 2px rgba(0,200,5,.0)}
+.green:hover {background-color:rgb(39,174,96)!important;color:white!important}
+.green:active {position:relative;left:2px;top:2px}
+.color {
+    background-color:rgb(40,40,40);
+    color:white;
+    border:2px solid rgba(0,0,0,.5);
+    border-radius:8px;
 }
-.btn:active:before {width:120%;padding-top:120%;transition: width .2s ease-out, padding-top .2s ease-out;}
-
-@media (max-width:1200px){.border{padding-left:10% !important;padding-right:10% !important;} }
-@media (min-width:1600px){.border{padding-left:15% !important;padding-right:15% !important;} }
-@media (max-width:1000px){.border{padding-left:5% !important;padding-right:0% !important;} }
-@media (min-width:901px) {.cba::before { content: "The implementation of the Bukkit/"; }}
-@media (max-width:898px) {.border{padding-left:1% !important;padding-right:0% !important;} .cbt {font-size:3rem !important;}  cba {font-size:.7rem !important; } }
-@media (max-width:630px) {.cbt {display:block !important;} .cba {display:block !important;}}
-
-.tablink { padding: 7px 40px !important; min-width: 11vw; margin:4px 4px; background-color:rgb(35,35,35) !important;border-bottom:4px solid rgb(0,0,0)!important;}
-.w3-blue,.w3-hover-blue:hover{border-bottom:4px solid rgb(0,100,150)!important;background-color:rgb(64,64,64)!important}
-.city, .w3-bar {margin-left:20%;margin-right:20%;}
-.w3-border { border: 1px solid black !important; border-radius:4px}
-  </style>
-</head>
+.nbtn {border:1px solid rgb(30,30,30)}
+.six {color:red;font-size:.8rem;margin:0}
+.arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin:5px;
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.w3-theme {background:black;color:white}
+</style>
 <body>
-  <div style="background: linear-gradient(to right, rgba(0,0,0,.2),rgba(0,0,0,.3)),rgb(0,57,108) no-repeat fixed;">
-    <div class="hero is-primary is-bold is-medium">
-      <div class="w3-center" style="display:inline-block; box-shadow: 0px 4px 16px rgb(0,57,108);">
-        <div class="border" style="background:rgba(0,0,0,.9);text-align:center;display:inline-block;padding:28px;padding-top:32px;padding-left:148px;padding-right:148px;width:100vw;">
-          <div style="float:left;padding-top:2rem;">
-            <span style="font-size:0.8em;padding:0;margin:0;">Fabric + Paper =</span>
-            <h1 class="title cbt" style="font-size:4.8rem;padding-top:0;margin-top:0;margin-bottom:0;margin-top:-12px;"><img src="../assets/cardboard-box.png" width="60px" style="line-height:75px"><span style="line-height:75px">Cardboard</span></h1> 
-            <p class="cba" style="font-size:.89em;padding-top:0;margin-top:-5px;">Spigot/Paper API for Fabric</p><br><br>
-          </div>
-          <div class="border2" style="float:right;padding-top:.5rem;">
-            <a class="cbtn iconeff" style="padding:8px;padding-left:24px;padding-right:24px;" href="../">Home</a>
-            <a class="cbtn" style="padding:8px;padding-left:24px;padding-right:24px;border-bottom:3px solid rgb(0,50,100)" href="./download" title="You are Here.">Downloads</a><br>
-            <div style="background:rgba(0,0,0,0);text-align:center;display:inline-block;padding:1px;padding-left:64px;padding-right:64px;">
-            <h1 class="title" style="color:rgba(170,170,170);font-size:0.7rem;padding:0;margin:4px;margin-top:4em;">Get a Minecraft server with our partner link:</h1> 
-            <a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548" style="padding:0;margin:0;"><video muted autoplay loop id="myVideo"><source id="vidsrc" src="./apex/Apex Hosting Animated Logo Only.mp4" type="video/mp4"></video></a>
-            </div>
-          </div>
+
+<div class="w3-container head" id="head" style="color:white;text-align:center;padding:1rem">
+    <div class="w3-content">
+      <div style="float:left;margin:.3rem;">
+        <h1 class="title cbt" style="font-size:2.4rem;padding-top:0;margin-top:0;margin-bottom:0;maargin-top:-25px;">
+            <img src="../assets/cardboard-box.png" width="54px">
+            <span style="margin-left:5px;margin-top:-4px">Cardboard</span>
+        </h1> 
+        <p class="cba" style="font-size:.8em;padding-top:0;margin-left:64px;margin-top:-20px;">Spigot/Paper API for Fabric</p>
+      </div>
+      <div style="float:right;margin-right:6rem;margin-top:1rem" id="nav" class="w3-navbar">
+        <a href="../" style="padding:8px;padding-left:1px;padding-right:1px;"><button class="w3-button nbtn">Home</button></a>
+        <a href="" style="padding:8px;padding-left:1px;padding-right:1px;"><button class="w3-button nbtn">Download</button></a>
+        <a class="w3-button w3-black ap nbtn" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><video muted autoplay id="myVideo"><source id="vidsrc" src="./apex/Apex Hosting Animated Logo Only.mp4" type="video/mp4"></video></a>
+
+      </div>
+  </div>
+</div>
+
+<div class="w3-content w3-main" style="margin-top:7vh">
+  <div class="w3-container" style="margin-left:1vw;">
+    <img src="https://img.shields.io/badge/Requires-Fabric%20API-black" width="150">&nbsp;
+    <img src="https://img.shields.io/badge/Requires-iCommonLib-black" width="150">
+  </div>
+
+  <div class="w3-row">
+    <div class="w3-twothird">
+    
+       <div class="w3-container w3-margin-bottom" style="min-width:100%;margin-top:3vh">
+      <div class="w3-container color">
+        <p class="w3-center"><b>Cardboard</b></p><div class="w3-dropdown-hover" style="display:inline-block;float:right;margin-top:-7vh;transform:scale(0.9)">
+    <button class="w3-button w3-black">Select Version <i class="arrow down"></i></button>
+    <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
+      <a href="javascript:open('1.17.1')" class="w3-bar-item w3-theme w3-button">1.18</a>
+      <a href="javascript:open('1.17.1')" class="w3-bar-item w3-theme w3-button">1.17.1</a>
+      <a href="javascript:open('1.16.5')" class="w3-bar-item w3-theme w3-button">1.16.5</a>
+    </div>
+	  </div>
+
+        <div class="w3-row">
+          <div class="ver" id="1.17.1" style="display:none !important;text-align:center">
+			<a id="dl-17" href="#"><button class="w3-button green" type="button"><span id="txt-17">&nbsp;Download Cardboard&nbsp;</span></button></a>
+			<div id="info-17" style="font-size:0.7em;margin-top:16px;color:rgb(130,130,130)">loading info...</div><br>
+			<div style="color:rgb(150,150,150);margin-bottom:0;font-size:0.6rem;">Previous builds: <div style="display:inline-block" id="oldbuild-17"></div></div>
+		  </div>
+          <div class="ver" id="1.16.5" style="text-align:center">
+			<a id="dl-16" href="./redirect.html" target="_blank">
+                <span id="txt-16" style="color: #4da6ff;font-size:.9rem;text-decoration:underline">Download Cardboard&nbsp;</span></a>
+			<br><span class="six"><i>Note: 1.16.5 is no longer supported.</i></span>
+			<div id="info-16" style="font-size:0.7em;margin-top:16px;color:rgb(130,130,130)">loading info...</div>
+		  </div>
         </div>
+        <br>
       </div>
     </div>
-  </div>
-  <div class="w3-container black w3-center" id="watch">
-
-  <div class="w3-bar">
-    <button class="w3-bar-item w3-button tablink w3-blue London" onclick="openCity(event,'London')">Cardboard 1.17</button>
-    <button class="w3-bar-item w3-button tablink Paris" onclick="openCity(event,'Paris')">Cardboard 1.16</button>
-    <!--<button class="w3-bar-item w3-button tablink"  onclick="openCity(event,'Tokyo')" disabled>Forge 1.17</button>-->
-    <button class="w3-bar-item w3-button tablink"  onclick="openCity(event,'otherm')">Other Mods</button>
-    <a href="https://discord.gg/Qp4a2Nj" target="_blank"><button class="w3-bar-item w3-button tablink" onclick="op1enCity(event,'dis')">Discord</button></a>
-  </div>
-  
-  <div id="London" class="w3-container w3-border city" style="padding-bottom:4em!important;">
-    <br><h1 style="margin:0;padding:0;">
-    <img src="../assets/cardboard-box.png" height="37" style="padding:0;margin:0;display:inline-block;line-height:51px!important;">
-    <span style="font-size:1.5em;margin:0;margin-bottom:0;padding:0;padding-bottom:0;display:inline-block;line-height:51px!important;;color:rgb(240,240,240)">Cardboard for 1.17.1</span>
-    </h1><p>&nbsp;</p><br>
-
-    <a id="dl-17" href="./redirect.html" target="_blank"><button class="btn" type="button"><span id="txt-17">&nbsp;&nbsp;Download Cardboard&nbsp;&nbsp;</span></button></a>
-    <div id="info-17" style="font-size:0.7em;margin-top:16px;color:rgb(130,130,130)">loading info...</div>
-    <p>&nbsp;</p><a href="https://adoptopenjdk.net/?variant=openjdk16" target="_blank"><img src="./assets/j16.png" width="150"></a>&nbsp;<img src="./assets/fapi.png" width="150"><p>&nbsp;</p>
-    <p style="color:rgb(200,200,200);margin-bottom:0;">Previous builds:</p>
-    <div id="oldbuild-17"></div><p>&nbsp;</p>
-
-    <p>&nbsp;</p>
-    <p>&nbsp;</p><p>&nbsp;</p>
-  </div>
-
-  <div id="Paris" class="w3-container w3-border city" style="display:none;padding-bottom:8em!important;">
-    <br><h1 style="margin:0;padding:0;">
-      <img src="../assets/cardboard-box.png" height="37" style="padding:0;margin:0;display:inline-block;line-height:51px!important;">
-      <span style="font-size:1.5em;margin:0;margin-bottom:0;padding:0;padding-bottom:0;display:inline-block;line-height:51px!important;;color:rgb(240,240,240)">Cardboard for 1.16.5</span>
-      </h1><p>&nbsp;</p><br>
-    <a id="dl-16" href="./redirect.html" target="_blank"><button class="btn" type="button"><span id="txt-16">&nbsp;&nbsp;Download Cardboard&nbsp;&nbsp;</span></button></a>
-    <div id="info-16" style="font-size:0.7em;margin-top:16px;color:rgb(130,130,130)">loading info...</div>
-    <p>&nbsp;</p><a href="https://adoptopenjdk.net/?variant=openjdk16" target="_blank"><img src="./assets/j16.png" width="150"></a>&nbsp;<img src="./assets/fapi.png" width="150"><p>&nbsp;</p>
-    <p style="color:rgb(200,200,200);margin-bottom:0;">Previous builds:</p>
-    <div id="oldbuild-16"></div><p>&nbsp;<br></p><br>
-  </div>
-  
-  <div id="otherm" class="w3-container w3-border city" style="display:none">
-    <h2>Other Mods</h2>
-    <div style="overflow:auto">
-      <iframe src="./other.html" width="610px" height="650px" style="border:none;"></iframe><br>
+    <div class="w3-container" style="min-width:100%;margin:0;display:inline-block">
+      <div class="w3-container color w3-center">
+        <p><b>iCommonLib</b></p>
+        <p>Library for multi-version development.</p>
+        <div class="w3-container">
+            <a href="https://modrinth.com/mod/icommon"><button class="w3-button green"><span>Download iCommonLib</span></button></a>
+        </div>
+        <br>
+      </div>
     </div>
-  </div>
+    </div>
 
+     <div class="w3-sidebar w3-bar-block side blue w3-card adr" style="margin-top:-2vh;height:280px;box-shadow: -1px 4px 16px black;display:inline-block;">
+		<h3 class="w3-bar-item sbartop dblu" style="font-size:.8rem;">Advertisement</h3>
+		<center><a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548" target="_blank" id="api"><img id="ap" src="./apex/apex2.png"></a></center>
+	  </div>
   </div>
-  <div class="black" id="footer" style="background-color:black;margin-top:0rem !important;">
-    <table>
-      <tr class="w3-mobile">
-        <td class="w3-mobile" style="color:rgb(150,150,150)">
-        <a href="https://discord.gg/Qp4a2Nj">Discord</a>&nbsp;&middot;&nbsp;<a href="https://curseforge.com/minecraft/mc-mods/bukkit/">Curseforge</a>&nbsp;&middot;&nbsp;<a href="https://github.com/cardboardpowered">Github</a>
-        </td>
-      </tr>
-    </table>
-    <table style="padding-top:16px;padding-bottom:5px;color:rgb(200,200,200);">
-      <tr class="w3-row">
-        <td class="w3-quarter">&nbsp;</td>
-        <td class="w3-half" style="padding-top:132px;padding-bottom:6px;">
-        <p style="font-size:12px">Cardboard - Bukkit/Spigot for Fabric<br>Copyright &copy; 2020-2021 CardboardPowered&trade;</p>
-        </td>
-        <td class="w3-quarter">&nbsp;</td>
-      </tr>
-    </table>
-  </div>
+</div>
+
+<div class="w3-black w3-center w3-padding-16" style="position:fixed;bottom:0;width:100vw;font-size:11px">Copyright &copy; 2020-2022 Cardboard contributors</div>
+<script src="index-js.js"></script>
 </body>
-<script>
-var add = "http://adfoc.us/serve/sitelinks/?id=269416&url=";
-
-function req(ver, job) {
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-    var myObj = JSON.parse(this.responseText);
-    var date = new Date(myObj.timestamp);
-    var hours = date.getHours();
-    var minutes = "0" + date.getMinutes();
-    var apm = "AM"; if (hours > 13) { hours -= 12; apm = "PM";}
-    var month = ["Jan","Feb","March","April","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
-
-    var formattedTime = month[date.getMonth()-1] + date.getDate() + ' at ' +  hours + ':' + minutes.substr(-2) + ' ' + apm;
-    var dl = "https://ci.codemc.io/job/IsaiahPatton/job/" + job + "/" + myObj.number + "/artifact/" +  myObj.artifacts[0].relativePath;
-
-    document.getElementById("txt-" + ver).innerHTML = 'Download Cardb<a href="' + dl + '">oard</a> 1.' + ver + '-#' + myObj.number + '';
-    document.getElementById("dl-" + ver).href = add + dl;
-
-    var items = myObj.changeSet.items;
-    var log = "<a href='javascript:myFunction(" + ver + ")' style='text-decoration:underline;'>View Changelog</a><ul id='change-"+ver+"' style='font-size:0.67rem; display:none;'>";
-    for (i = 0; i < items.length; i++) log += "<li>" + items[i].comment + "</li>";
-    log += "</ul>"
-    document.getElementById("info-" + ver).innerHTML = "Last update on " + formattedTime + " " + log;
-    next(ver,job);
-    }
-  };
-  xmlhttp.open("GET", "https://jsonp.afeld.me/?url=https%3A%2F%2Fci.codemc.io%2Fjob%2FIsaiahPatton%2Fjob%2F" + job + "%2FlastSuccessfulBuild%2Fapi%2Fjson", true);
-  xmlhttp.send();
-}
-req("16", "Cardboard");
-req("17", "Cardboard-1.17-dev");
-
-function art(e, build, ver, job) {
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200)
-    document.getElementById(ver + "-" + build).href = (e < 3 ? "" : add) + "https://ci.codemc.io/job/IsaiahPatton/job/Cardboard/" + build + "/artifact/" +  (JSON.parse(this.responseText)).artifacts[0].relativePath;
-};
-xmlhttp.open("GET", "https://jsonp.afeld.me/?url=https%3A%2F%2Fci.codemc.io%2Fjob%2FIsaiahPatton%2Fjob%2F"+job+"%2F" + build + "%2Fapi%2Fjson", true);
-xmlhttp.send();
-}
-
-function next(ver, job) {
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    var myObj = JSON.parse(this.responseText);
-    var dl = "https://ci.codemc.io/job/IsaiahPatton/job/"+job+"/";
-
-    var items = myObj.builds;
-    var log = "<a href='javascript:myFunction("+ver+")' style='text-decoration:underline;'></a><div id='change-"+ver+"' style='font-size:0.67rem;'>(";
-    for (i = 0; i < (items.length < 10 ? items.length : 10); i++)
-      log += "<a id='"+ver+"-" + items[i].number + "' style=\"display:inline-block;margin:2px;color:gray;text-decoration:underline\" href='" + (i < 2 ? "" : add) + art(i, items[i].number, ver, job) + "'>#" + items[i].number + ",</a>";
-
-    log += ")</div>"
-    document.getElementById("oldbuild-" + ver).innerHTML = log;
-  }
-  };
-  xmlhttp.open("GET", "https://jsonp.afeld.me/?url=https%3A%2F%2Fci.codemc.io%2Fjob%2FIsaiahPatton%2Fjob%2F"+job+"%2Fapi%2Fjson", true);
-  xmlhttp.send();
-}
-
-function myFunction(ver) {
-  var x = document.getElementById("change-" + ver);
-  if (x.style.display === "none") {x.style.display = "block";} else x.style.display = "none";
-}
-
-function openCity(evt, cityName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("city");
-  for (i = 0; i < x.length; i++)  x[i].style.display = "none";
-
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++)
-  tablinks[i].className = tablinks[i].className.replace(" w3-blue", "");
-  document.getElementById(cityName).style.display = "block";
-  if (evt == null) document.getElementsByClassName(cityName)[0].className += " w3-blue";
-  evt.currentTarget.className += " w3-blue";
-}
-
-if ( window.location.href.toString().includes("#1.17") ) openCity(openCity(null,'London'));
-if ( window.location.href.toString().includes("#1.16") ) openCity(openCity(null,'Paris'));
-</script>
-
 </html>
