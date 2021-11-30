@@ -3,18 +3,15 @@
 <title>OpenJDK Downloads</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-.fa-download {font-size:1.9rem;padding:0;}
-.w3-bar {box-shadow: 2px 2px 4px black; padding: .1rem;}
-.w3-darkgray {background-color: rgb(30,30,30); color:white;}
+* {font-family:"Segoe UI",Aral,sans-serif}
+.fa-download {font-size:1.9rem;padding:0}
+.w3-bar {box-shadow:2px 2px 4px black;padding:.1rem}
+.w3-darkgray {background-color:rgb(30,30,30);color:white}
 
-html,body {height:100vh;}
+html,body {height:100vh}
 .w3-footer {color:gray;font-size:.6em;width:100%;background-color:black;padding-top:4rem;padding-bottom:2rem}
 .d {min-width:140px;margin:1px}
 
@@ -23,56 +20,44 @@ table td, table td * {vertical-align:top}
 
 a{text-decoration:none;cursor:pointer}
 .a {min-width:27rem; max-width:27rem}
-.btn {text-align:left;margin:4px;min-width: 26rem;background-color:rgb(215, 30, 25)!important;border-radius:4px;}
+.btn {text-align:left;margin:4px;min-width: 26rem;background-color:rgb(215,30,25)!important;border-radius:4px}
 .ver {font-size:1.1rem}
 </style>
 <body>
 
-<!-- Navbar -->
+<!--Nav-->
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card w3-left-align w3-large">
-    <img src="https://i.imgur.com/jb8JhUG.png" style="float:left;margin-left:9%;padding-left:4px;padding-top:5px;" width="72px">
-    <a href="#" class="w3-bar-item w3-button w3-hover-black" style="padding-left:2px !important;">AdoptiumMirror</a>
-
-    <a href="#" class="w3-bar-item w3-button w3-hover-black" style="float:right;marg1in-right:15%;">&nbsp;</a>
-    <a href="#" class="w3-bar-item w3-button" style="float:right;">Mirror of Adoptium OpenJDK</a>
-
+	<img src="https://i.imgur.com/jb8JhUG.png" style="float:left;margin-left:9%;padding-left:4px;padding-top:5px;" width="72px">
+	<a href="#" class="w3-bar-item w3-button w3-hover-black" style="padding-left:2px !important;">AdoptiumMirror</a>
+	<a href="#" class="w3-bar-item w3-button w3-hover-black" style="float:right;marg1in-right:15%;">&nbsp;</a>
+	<a href="#" class="w3-bar-item w3-button" style="float:right;">Mirror of Adoptium OpenJDK</a>
   </div>
 </div>
 
-<!-- Header -->
-<header class="w3-container w3-darkgray w3-center" style="padding:82px 16px 26px 16px">
-  <h1 class="w3-margin w3-xlarge" style="display:inline-block;vertical-align:middle;">Downloads for Adoptium Java OpenJDK</h1>
+<header class="w3-container w3-darkgray w3-center" style="padding:76px 17px 23px 17px">
+  <h1 class="w3-margin w3-large" style="display:inline-block;vertical-align:middle;">Downloads for Adoptium Java <span id="ver"></span></h1>
 </header>
 
-<!-- First Grid -->
-<div class="w3-row-padding w3-padding-32 w3-container">
-  <div class="w3-content">
-    <div class="w3-half">
-        <div class="ver" id="1.16.5">
-            <h3 id="dln-8">Loading Downloads...</h3>
-            <div id="txt-8"></div>
-            <div id="info-8" style="font-size:0.7em;margin-top:16px;color:rgb(130,130,130)">.</div>
-            <div id="oldbuild-8"></div>
-          </div>
-    </div>
-    
-    <div class="w3-half">
-        <div class="ver" id="1.16.5">
-            <h3 id="dln-16">Loading Downloads...</h3>
-            <div id="txt-16"></div>
-            <div id="info-16" style="font-size:0.7em;margin-top:16px;color:rgb(130,130,130)">.</div>
-            <div id="oldbuild-16"></div>
-          </div>
-    </div>
-  </div>
-  
+<div class="w3-sidebar w3-bar-block w3-light-grey w3-card w3-hide-small" style="width:150px">
+  <h5 class="w3-bar-item">Release</h5>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'8')">8 (LTS)</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'11')">11</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'16')">16</button>
+  <button class="w3-bar-item w3-button tablink w3-gray" onclick="openCity(event,'17')">17 (Latest)</button>
 </div>
 
-<div class="w3-row-padding w3-container w3-darkgray" style="padding:5px;position:fixed;bottom:0;width:100%;font-size:.9rem;">
-  <div class="w3-content">
-      <p>Mirror of <a href="https://adoptopenjdk.net/">Adoptium OpenJDK</a> releases. <i>This site not affiliated with Adoptium nor The Eclipse Foundation.</i></p>
+<div class="w3-row-padding w3-padding-32 w3-container w3-mobile">
+  <div class="w3-content w3-center">
+	<div class="ver city" id="8" style="display:none"> <h3 id="dln-8" style="display:none">Loading..</h3><div id="txt-8"></div> </div>
+    <div class="ver city" id="11"> <h3 id="dln-11" style="display:none">Loading..</h3><div id="txt-11"></div> </div>
+    <div class="ver city" id="16"> <h3 id="dln-16" style="display:none">Loading..</h3><div id="txt-16"></div> </div>
+	<div class="ver city" id="17"> <h3 id="dln-17" style="display:none">Loading..</h3><div id="txt-17"></div> </div>
   </div>
+</div>
+
+<div class="w3-row-padding w3-container w3-darkgray" style="padding:5px;position:fixed;bottom:0;width:100%;font-size:.9rem;z-index:1;text-align:center">
+  <p>Mirror of <a href="https://adoptopenjdk.net/">Adoptium OpenJDK</a> releases. <i>This site not affiliated with Adoptium nor The Eclipse Foundation.</i></p>
 </div>
 </body>
 
@@ -80,40 +65,31 @@ a{text-decoration:none;cursor:pointer}
 function req(ver, job, dis) {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        var myObj = JSON.parse(this.responseText);
-        var date = new Date(myObj.timestamp);
-        var hours = date.getHours();
-        var minutes = "0" + date.getMinutes();
-        var apm = "AM"; if (hours > 13) { hours -= 12; apm = "PM";}
-        var month = ["Jan","Feb","March","April","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+	if (this.readyState==4 && this.status==200) {
+	  var myObj = JSON.parse(this.responseText);
+	  var aas = [myObj[0].binaries[0].installer, myObj[0].binaries[0].package];
 
-        var formattedTime = month[date.getMonth()-1] + date.getDate();
-        
-        var aas = [myObj[0].binaries[0].installer, myObj[0].binaries[0].package];
-        for (var i = 0; i < aas.length; i++) {
-           var aa = aas[i];
-           if (aa == undefined) continue;
-        
-           var aaa = aa.link.toString().split('-')[0];
-                       var os = aa.name.split('_')[1];
-            var e = aa.link.split("hotspot_")[1];
-            var f = e.replace('.zip','').replace('.msi','').replace('.tar.gz','');
-           document.getElementById("dln-" + ver).innerHTML = "Adoptium " + dis + " <span class='ver'>(" + f + ")</span>";
-           
-           var size = aa.size;
-           while (size > 1024) size = Math.round(size / 1024);
-            var xx = size + ['Bytes','Kb','Mb','Gb','Tb'][Math.floor(Math.log2(aa.size)/10)]
+	  for (var i=0; i < aas.length; i++) {
+		var aa = aas[i];
+		if (aa==undefined) continue;
 
-            var dl = aa.link;
-            var nameu = aa.name;
-            var namea = name(aa.name,dl);
-            document.getElementById("txt-" + ver).innerHTML += '<a href="' + dl + '" class="a"><button class="w3-button w3-ripple w3-green btn">' + 
-                    '<i class="fa fa-download" style="float:right;vertical-align:middle;"></i>&nbsp; <span style="vertical-align:middle;"> ' +  namea + "<small> - " + xx + '</i></small></span></button></a><br>';
-        }
-    }
+		var aaa = aa.link.toString().split('-')[0];
+		var e = aa.link.split("hotspot_")[1];
+		var f = e.substring(0,e.lastIndexOf('.')).replace('.tar','');
+		$("dln-" + ver).innerHTML = dis+" <span class='ver'>("+f+")</span>";
+
+		var size=aa.size;var z=0;
+		while (size>1024){size=Math.round(size/1024);z++}
+		var xx = size + ['Mb','Gb'][z-2]
+
+		var dl = aa.link;
+		var nameu = aa.name;
+		var namea = name(aa.name,dl);
+		$("txt-" + ver).innerHTML += '<a href="' + dl + '" class="a"><button class="w3-button w3-ripple w3-green btn">' + 
+			'<i class="fa fa-download" style="float:right;vertical-align:middle"></i>&nbsp; <span style="vertical-align:middle"> '+namea+"<small> - "+xx+'</i></small></span></button></a><br>';
+	  }
+	}
   };
-  //var uurl = "https://api.adoptium.net/v3/assets/version/%5B16.0%2C%29?architecture=x64&heap_size=normal&image_type=jdk&jvm_impl=hotspot&lts=false&os=windows&page=0&page_size=10&project=jdk&release_type=ga&sort_method=DEFAULT&sort_order=DESC&vendor=adoptium";
   var uurl = job;
   console.log(uurl);
   xmlhttp.open("GET", uurl, false);
@@ -136,17 +112,31 @@ function name(s,d) {
   return t + " " + f;
 }
 
-req("16", apiUrl("16", "x64", "jdk", "windows"), "16 (Latest)");
 req("8", apiUrl("8", "x64", "jdk", "windows"),  "8 (LTS)");
+req("8", apiUrl("8","x64","jdk","linux"),"8 (LTS)");
+req("8", apiUrl("8","x64","jre","windows"), "8 (LTS)");
 
-req("16", apiUrl("16", "x64", "jdk", "linux"), "16 (Latest)");
-req("8", apiUrl("8", "x64", "jdk", "linux"), "8 (LTS)");
+var vers = ["17", "16", "11"];
+for (var i = 0; i < vers.length; i++) {
+    var t = vers[i];
+    req(t, apiUrl(t, "x64", "jdk", "windows"), t);
+    req(t, apiUrl(t,"x64","jdk","linux"),t);
+    req(t, apiUrl(t,"aarch64","jdk","linux"), t);
+    req(t, apiUrl(t,"x64","jre","windows"), t);
+}
 
-req("16", apiUrl("16", "aarch64", "jdk", "linux"), "16 (Latest)");
-
-req("16", apiUrl("16", "x64", "jre", "windows"), "16 (Latest)");
-req("8", apiUrl("8", "x64", "jre", "windows"),  "8 (LTS)");
-
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) x[i].style.display = "none";
+  tablinks = document.getElementsByClassName("tablink");
+  for (i=0;i<x.length;i++) if (evt!=undefined) tablinks[i].className=tablinks[i].className.replace(" w3-gray",""); 
+  $(cityName).style.display = "block";
+  $("ver").innerHTML = $("dln-" + cityName).innerHTML;
+  if (evt!=undefined)evt.currentTarget.className += " w3-gray";
+}
+function $(id){return document.getElementById(id)}
+openCity(null, '17')
 </script>
 
 </html>

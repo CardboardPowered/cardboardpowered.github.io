@@ -27,7 +27,7 @@ function req(ver, job) {
 			var formattedTime = date.toString().split(" ")[1] + date.getDate() + ". ";
 			var dl = (ver == "16") ?
 				"https://ci.codemc.io/job/IsaiahPatton/job/"+ job +"/" + myObj.number + "/artifact/" + myObj.artifacts[0].relativePath :
-				"https://cdn.modrinth.com/data/MLYQ9VGP/versions/1.17-"+ myObj.number +"/"+ myObj.artifacts[0].fileName;
+				"https://cdn.modrinth.com/data/MLYQ9VGP/versions/1.17-"+ myObj.number +"/"+ myObj.artifacts[0].fileName.replace('-dev', '');
 
 			document.getElementById("txt-" + ver).innerHTML = '<span class="tspan">Download </a> ' + ver + '-#' + myObj.number + (ver == "17" ? "&nbsp; <i>(for 1.17.1 &amp; 1.18)</i>" : "") + '</span>';
 			document.getElementById("dl-" + ver).href = dl;

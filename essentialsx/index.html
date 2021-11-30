@@ -4,13 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+*{font-family:"Segoe UI",Arial,sans-serif}
 .fa-download {font-size:1.8rem;padding:0;}
+.fa-download {background-image:url("../download/download-solid.svg")!important}
 .w3-bar {box-shadow: 2px 2px 4px black; padding: .4rem;}
 .w3-darkgray {background-color: rgb(30,30,30); color:white;}
 html,body {height:100vh;}
@@ -22,31 +19,19 @@ html,body {height:100vh;}
 
 a{text-decoration:none;cursor:pointer}
 .a {min-width:27rem; max-width:27rem}
-.btn {text-align:left;margin:4px;min-width: 25rem;background-color:rgb(215, 30, 25)!important;border-radius:4px;color:white;}
+.btn {text-align:left;margin:4px;min-width: 25rem;background-color:rgb(215,30,25)!important;border-radius:4px;color:white}
 .ver {font-size:1rem}
 </style>
 <body>
 
-<!--Navbar-->
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card w3-left-align">
-    <img src="https://cardboardpowered.org/assets/cardboard-box.png" style="float:left;margin-left:9%;padding-left:4px;padding-top:4px;" width="32px">
-    <a href="#" class="w3-bar-item w3-button w3-hover-black" style="padding-left:2px !important;">Cardboard</a>
-    <a href="#" class="w3-bar-item w3-button w3-hover-black" style="float:right;marg1in-right:15%;">&nbsp;</a>
-    <a href="../download" class="w3-bar-item w3-button" style="float:right;">Download</a>
-    <a href="../" class="w3-bar-item w3-button" style="float:right;">Home</a>
-  </div>
-</div>
-
-<!--Header-->
-<header class="w3-container w3-darkgray w3-center" style="padding:90px 16px 32px 16px">
+<header class="w3-container w3-darkgray w3-center" style="padding:28px 14px 28px 14px">
   <img src="https://avatars0.githubusercontent.com/u/34553309?s=84&v=4" style="display:inline-block;" width="48px">
   <h1 class="w3-xlarge" style="display:inline-block;vertical-align:middle;margin-left:0;">EssentialsX with Modded Support</h1>
 </header>
 
-<div class="w3-row-padding w3-container w3-light-gray" style="padding:8px;">
+<div class="w3-row-padding w3-container w3-light-gray" style="padding:5px;">
   <div class="w3-content">
-    <p>EssentialsX will crash when using mods that add new blocks or items.<br>This page provides builds of EssentialsX with the fix that will solve this bug</p>
+    <p>EssentialsX will crash when using mods that add new blocks or items.<br>This has been fixed in the downloads below.</p>
   </div>
 </div>
 
@@ -57,7 +42,7 @@ a{text-decoration:none;cursor:pointer}
         <h3 id="dln">Loading Downloads...</h3>
         <div id="txt-16"></div>
         <div id="info-16" style="font-size:0.7em;margin-top:16px;color:rgb(130,130,130)">.</div>
-        <div id="oldbuild-16"></div><p>&nbsp;</p>
+        <div id="oldbuild-16"></div>
       </div>
     </div>
 
@@ -79,9 +64,8 @@ function req(ver, job) {
     if (this.readyState == 4 && this.status == 200) {
       var myObj = JSON.parse(this.responseText);
       var date = new Date(myObj.timestamp);
-      var month = ["Jan","Feb","March","April","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+      var time = new Intl.DateTimeFormat('en-US',{month:'short',day: 'numeric'}).format(date);
 
-      var time = month[date.getMonth()-1] + date.getDate();
       var aa = myObj.artifacts;
       var aaa = aa[0].displayPath.toString().replace('.jar', '').replace('EssentialsX-', '');
       document.getElementById("dln").innerHTML = "EssentialsX <span class='ver'>" + aaa + " (" + time + ")</span>";
@@ -91,7 +75,7 @@ function req(ver, job) {
         var namea = aa[i].displayPath.split('-')[0].replace("alsX", "alsX ")
         if (namea.includes("GeoIP")) continue;
         document.getElementById("txt-" + ver).innerHTML += '<a href="' + dl + '" class="a"><button class="w3-button w3-ripple btn">' + 
-            '<i class="fa fa-download" style="float:right;vertical-align:middle;"></i>&nbsp; <span style="vertical-align:middle;">Download ' + namea + '</span></button></a><br>';
+            '<img src="../download/download-solid.svg" width="24" style="float:right">&nbsp; <span style="vertical-align:middle;">Download ' + namea + '</span></button></a><br>';
       }
     }
   };

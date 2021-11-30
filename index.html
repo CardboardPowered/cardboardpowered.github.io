@@ -4,12 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://javazilla.com/assets/css/main.css">
   <meta name="description" content="Cardboard - Bukkit4Fabric - Bukkit/Spigot for Fabric" />
-  <script defer data-domain="cardboardpowered.org" src="https://plausible.io/js/plausible.js"></script>
 
   <title>Cardboard - Bukkit4Fabric</title>
   <style>
+  *{font-family:"Segoe UI",Arial,sans-serif}
 h1 {font-size:100%;font-weight:400}
 .title{font-size:2rem;font-weight:600;line-height:1.125;color:#fff;}
 .hero {-webkit-box-align:stretch;align-items:stretch;display:-webkit-box;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;
@@ -22,11 +21,11 @@ video {width:250px;}
 
 *:hover {animation-play-state:paused !important;}
 
-@media (max-width:1200px){ .border{padding-left:10% !important;padding-right:10% !important;} }
-@media (min-width:1600px){ .border{padding-left:15% !important;padding-right:15% !important;} #watch {padding-top:82px;} }
+@media (max-width:1200px){ .border{padding-left:10% !important;padding-right:10% !important}}
+@media (min-width:1600px){ .border{padding-left:15% !important;padding-right:15% !important} #watch {padding-top:82px}}
 @media (max-width:1000px){ .border{padding-left:5% !important;padding-right:0% !important;} }
-@media (min-width:901px) { .cba::before { content: "Bukkit/"; }}
-@media (max-width:898px) { .border{padding-left:1% !important;padding-right:0% !important;} .cbt {font-size:3rem !important}  cba {font-size:.7rem !important} }
+@media (min-width:901px) { .cba::before {content:"Bukkit/"}}
+@media (max-width:898px) { .border{padding-left:1% !important;padding-right:0% !important;} .cbt {font-size:3rem !important} .cba {font-size:.7rem !important}}
 @media (max-width:630px) { .cbt {display:block !important;} .cba {display:block !important;} }
   </style>
   <style>
@@ -46,12 +45,12 @@ a{text-decoration:none;cursor:pointer;}
 .btn:hover,.btn:focus{background-color:#27ae60}
 .btn > * {position:relative;text-decoration:none}
 .btn span {display:block;padding: 8px 24px;text-decoration:none}
-.btn:before {content:"";position: absolute;top:50%;left:50%;display:block;width:0;padding-top:0;border-radius:100%;
-  background-color:rgba(236,240,241,.3);-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);transform:translate(-50%,-50%); 
+.btn:before {content:"";position: absolute;top:50%;left:50%;display:block;width:0;padding-top:0;border-radius:100%
+  background-color:rgba(236,240,241,.3);-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);transform:translate(-50%,-50%);
 }
-.btn:active:before {width:120%;padding-top:120%;transition: width .2s ease-out, padding-top .2s ease-out;}
-.w3-green { background: linear-gradient(to bottom, rgba(0,162,0,1),rgba(0,120,0,1));border-radius:.2rem; }
-.w3-gray {border:2px solid black;border-radius:.4rem;}
+.btn:active:before {width:120%;padding-top:120%;transition: width .2s ease-out, padding-top .2s ease-out}
+.w3-green { background: linear-gradient(to bottom, rgba(0,162,0,1),rgba(0,120,0,1));border-radius:.2rem}
+.w3-gray {border:2px solid black;border-radius:.4rem}
 </style>
 </head>
 
@@ -72,31 +71,28 @@ a{text-decoration:none;cursor:pointer;}
 <body>
   <div class="w3-container black" id="watch" style="padding-left:1rem;padding-right:1rem">
     <div class="w3-row">
-      <div class="w3-container w3-third" style="float:right;"><iframe src="./player.html" frameborder="0" width="100%" height="370px"></iframe><br><small class="w3-center w3-third" style="width:100%;text-align:center;color:gray;"><a href="./showcase/index.html"><i>See more..</i></a></small></div>
-      <div style="float:left;padding:4rem;" class="w3-mobile">
-        Badges:<br>
-        <a href="https://patreon.com/isaiahp"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Disaiahp%26type%3Dpledges&style=for-the-badge" alt="Support me on Patreon" width="178" /></a>
-        <br><br><img id="running" src="https://img.shields.io/badge/Running%20Servers-72+-blue?style=for-the-badge" width="178">
+      <div class="w3-container w3-third" style="float:right"><iframe src="./player.html" frameborder="0" width="100%" height="370px"></iframe><br><small class="w3-center w3-third" style="width:100%;text-align:center;color:gray;"><a href="./showcase/index.html"><i>See more..</i></a></small></div>
+      <div style="float:left;padding:3rem;" class="w3-mobile w3-hide-small">
+        Badges:<br><br>
+        <img id="running" src="https://img.shields.io/badge/Running%20Servers-72+-blue?style=for-the-badge" width="178">
         <br><br>
-        <a href="./download"><img src="https://img.shields.io/badge/Download%20for-1.17.1-blue?style=for-the-badge" width="178"></a><br><br>
-        <a href="./download#1.16.5"><img src="https://img.shields.io/badge/Download%20for-1.16.5-blue?style=for-the-badge" width="178"></a><br>
-        <br>Partnered with Apex:<br><a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="./download/apex/apex2.png" width="178" style="border:1px solid black;"></a>
+        <a href="./download"><button class="btn" style="width:178px;padding:4px;box-shadow:none;">View Downloads</button></a><br>
+        <br>Partnered with Apex:<br><a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="./download/apex/apex2-178.png" width="178" style="border:1px solid black;"></a>
       </div>
-      <div class="w3-container w3-rest w3-mobile" style="padding-top:4rem;padding-left:4rem;">
-        <p>Cardboard is a Fabric mod that adds support for the popular Bukkit/Spigot/Paper modding API.<br>
-        This mod lets you use plugins that are made for Bukkit and it's derivatives <i>(Spigot & Paper)</i> with Fabric.<br>
+      <div class="w3-container w3-rest w3-mobile" style="padding-top:3rem;padding-left:4rem;">
+        <p>Cardboard is a Fabric mod that adds support for the popular Bukkit/Spigot/Paper modding API.&nbsp;
+        This mod lets you use plugins that are made for Bukkit and it's derivatives <i>(Spigot & Paper)</i> with Fabric.<br><br>
         Cardboard is still in development and may not support every plugin.<br>
         Test Server kindly provided by Apex Hosting: <code>cardboardmod.apexmc.co:25666</code>
         </p>
         <br><br>
         <div>
             Spigot API Implementation Progress:<br><br>
-
             <div>
-              Patches: <div class="w3-gray" style="width:30%;display:inline-block;margin-bottom:1rem;"><div class="w3-container w3-green w3-center" id="bar0" style="width:1%;display:inline-block;">x%</div></div>
+              Patches: <div class="w3-gray" style="width:30%;display:inline-block;margin-bottom:1rem"><div class="w3-container w3-green w3-center" id="bar0" style="width:1%;display:inline-block;">x%</div></div>
               <a href="https://github.com/CardboardPowered/cardboard/issues/10"><small><i>(148 of 215)</i></small></a>
-              <br>Events:&nbsp;&nbsp;&nbsp;<div class="w3-gray" style="width:30%;display:inline-block !important;"><div class="w3-container w3-green w3-center" id="bar1" style="width:1%;display:inline-block;">x%</div></div>
-              <a href="https://github.com/CardboardPowered/cardboard/issues/9"><small><i>(90 of 181)</i></small></a>
+              <br>Events:&nbsp;&nbsp;&nbsp;<div class="w3-gray" style="width:30%;display:inline-block !important"><div class="w3-container w3-green w3-center" id="bar1" style="width:1%;display:inline-block;">x%</div></div>
+              <a href="https://github.com/CardboardPowered/cardboard/issues/9"><small><i>(93 of 181)</i></small></a>
             </div>
             <br>
         </div>
@@ -104,20 +100,20 @@ a{text-decoration:none;cursor:pointer;}
     </div>
   </div>
   <div class="w3-container black w3-center" id="dwn" style="background:rgb(8,8,8);padding-bottom:16rem;padding-top:16rem;"><br>
-    <a id="dl" href="./redirect.html" target="_blank"><button class="btn w3-button" style="background:green;" type="button"><span id="txt">&nbsp;&nbsp;Download Cardboard&nbsp;&nbsp;</span></button></a>
-    <br><div id="info" style="font-size:0.7em;margin-top:4px;color:rgb(130,130,130)">loading info...</div><br><br><br>
-    <span class="title" style="color:rgba(170,170,170);font-size:0.6rem;padding:0;margin:4px;margin-top:24em;">Get a Minecraft server with our partner link:</span><br>
+    <a id="dl" href="./download/index.html" target="_blank"><button class="btn w3-button" style="background:green;" type="button"><span id="txt">&nbsp;&nbsp;Download Cardboard&nbsp;&nbsp;</span></button></a>
+    <br><br><br><br>
+    <span class="title" style="color:rgba(170,170,170);font-size:0.6rem;padding:0;margin:4px;margin-top:24em">Get a Minecraft server with our partner link:</span><br>
     <a class="w3-center" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><video muted autoplay loop id="myVideo"><source id="vidsrc" src="./download/apex/Apex Hosting Animated Logo Only.mp4" type="video/mp4"></video></a><br>
   </div>
-  <div class="black" id="footer" style="background-color:black;">
-    <table>
+  <div class="black" id="footer" style="background-color:black;text-align:center">
+    <table style="width:100%;padding-top:2rem">
       <tr class="w3-mobile">
         <td class="w3-mobile" style="color:rgb(150,150,150)">
           <a href="https://discord.gg/Qp4a2Nj">Discord</a>&nbsp;&middot;&nbsp;<a href="https://curseforge.com/minecraft/mc-mods/cardboard/">Curseforge</a>&nbsp;&middot;&nbsp;<a href="https://github.com/cardboardpowered">Github</a>
         </td>
       </tr>
     </table>
-    <table style="padding-top:16px;padding-bottom:5px;color:rgb(200,200,200);">
+    <table style="padding-top:16px;padding-bottom:5px;color:rgb(200,200,200);width:100%">
       <tr class="w3-row">
         <td class="w3-quarter">&nbsp;</td><td class="w3-half" style="padding-top:132px;padding-bottom:6px;font-size:11px">
 Cardboard - Bukkit/Spigot for Fabric<br>Copyright &copy; 2020-2021
@@ -127,51 +123,31 @@ Cardboard - Bukkit/Spigot for Fabric<br>Copyright &copy; 2020-2021
   </div>
 </body>
 <script>
-setTimeout(moveBars, 100);
-function moveBars() {moveBar(0);moveBar(1)};
+setTimeout(function(){moveBar(0)}, 50);
+setTimeout(function(){moveBar(1)}, 500);
 function moveBar(bid) {
   var elem = document.getElementById("bar" + bid);   
   var width = 20;
-  var id = setInterval(frame, 10);
+  var id = setInterval(frame, 20);
   function frame() {
-    if (width >= (bid == 0 ? 68 : 50)) {
-      clearInterval(id);
-    } else {
-      width++; 
-      elem.style.width = width + '%'; 
-      elem.innerHTML = width * 1  + '%';
-    }
+    if (width >= (bid==0 ? 68 : 51)){ clearInterval(id); } else { width++; elem.style.width = width+'%'; elem.innerHTML = width+'%'; }
   }
 }
 
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
-  var my = JSON.parse(this.responseText);
-  var date = new Date(my.timestamp);
-  var hours = date.getHours();
-  document.getElementById("txt").innerHTML = 'Download Cardboard 1.17-#' + my.number + ' <i>(for 1.17.1)</i>';
-
-  document.getElementById("dl").href = "https://cdn.modrinth.com/data/MLYQ9VGP/versions/1.17-" + my.number + "/" + my.artifacts[0].fileName;
-  
-  var items = my.changeSet.items;
-  var log = "<a href='javascript:myFunction()' style='text-decoration:underline;'>View Changelog</a><ul id='change' style='font-size:0.67rem; display:none;'>";
-  for (i = 0; i < items.length; i++) log += "<li>" + items[i].comment + "</li>";
-  log += "</ul>"
-  document.getElementById("info").innerHTML = "Last update " + date.toDateString() + " &middot; " + log;
+   var my = JSON.parse(this.responseText);
+   document.getElementById("txt").innerHTML = 'Download Cardboard 1.17-#' + my.number + ' <i>(for 1.17.1)</i>';
+   document.getElementById("dl").href = "https://cdn.modrinth.com/data/MLYQ9VGP/versions/1.17-" + my.number + "/" + my.artifacts[0].fileName;
   }
 };
 xmlhttp.open("GET", "https://jsonp.afeld.me/?url=https%3A%2F%2Fci.codemc.io%2Fjob%2FIsaiahPatton%2Fjob%2FCardboard-1.17-dev%2FlastSuccessfulBuild%2Fapi%2Fjson", true);
 xmlhttp.send();
 
-function myFunction() {
-  var x = document.getElementById("change");
-  if (x.style.display === "none") {x.style.display = "block";} else x.style.display = "none";
-}
-
 function bstats() {
   var co = getCookie('bstats');
-  if (undefined != co && co != '') {
+  if (undefined!=co && co!='') {
     document.getElementById("running").src = "https://img.shields.io/badge/Running%20on-" + co + "%20Servers-blue?style=for-the-badge";
     return;
   }
@@ -204,10 +180,10 @@ function getCookie(cname) {
 }
 
 function setCookie(cname, cvalue, exhours) {
-  const d = new Date();
-  d.setTime(d.getTime() + (exhours*60*60*1000));
-  let expires = "expires="+ d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;SameSite=Lax";
+ const d = new Date();
+ d.setTime(d.getTime() + (exhours*60*60*1000));
+ let expires = "expires="+ d.toUTCString();
+ document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;SameSite=Lax";
 }
 </script>
 
