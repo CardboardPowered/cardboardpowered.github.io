@@ -39,7 +39,7 @@ function req(ver, job) {
 			document.getElementById("info-" + ver).innerHTML = "Last update on "+formattedTime+" "+log;
 		}
 	};
-	xmlhttp.open("GET", "https://jsonp.afeld.me/?url=https%3A%2F%2Fci.codemc.io%2Fjob%2FIsaiahPatton%2Fjob%2F"+job+"%2FlastSuccessfulBuild%2Fapi%2Fjson", true);
+	xmlhttp.open("GET", "https://api.allorigins.win/raw?url=https%3A%2F%2Fci.codemc.io%2Fjob%2FIsaiahPatton%2Fjob%2F"+job+"%2FlastSuccessfulBuild%2Fapi%2Fjson", true);
 	xmlhttp.send();
 }
 req("17", "Cardboard-1.17-dev");
