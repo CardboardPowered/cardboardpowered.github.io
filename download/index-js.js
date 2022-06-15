@@ -1,6 +1,7 @@
 var firstClick = true;
 
-function open(id) {
+function open(id) {show_(id)}
+function show_(id) {
 	if (id == '1.16.5' && firstClick) {
 		req("16", "Cardboard");
 		firstClick = false;
@@ -29,7 +30,7 @@ function req(ver, job) {
 				"https://ci.codemc.io/job/IsaiahPatton/job/"+ job +"/" + myObj.number + "/artifact/" + myObj.artifacts[0].relativePath :
 				"https://cdn.modrinth.com/data/MLYQ9VGP/versions/1.17-"+ myObj.number +"/"+ myObj.artifacts[0].fileName.replace('-dev', '');
 
-			document.getElementById("txt-" + ver).innerHTML = '<span class="tspan">Download </a> ' + ver + '-#' + myObj.number + (ver == "17" ? "&nbsp; <i>(for 1.17.1 &amp; 1.18)</i>" : "") + '</span>';
+			document.getElementById("txt-" + ver).innerHTML = '<span class="tspan">Download </a> #' + myObj.number + (ver == "17" ? "&nbsp; <b>(for 1.18.2)</b>" : "") + '</span>';
 			document.getElementById("dl-" + ver).href = dl;
 
 			var items = myObj.changeSet.items;

@@ -1,0 +1,1 @@
+Cardboard-1.17-1.18-#50.jar = https://cdn.discordapp.com/attachments/707815938841509938/982378560012550234/Cardboard-1.17-1.18.jar
