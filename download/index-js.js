@@ -26,9 +26,11 @@ function req_new(ver, job) {
 		if (this.readyState == 4 && this.status == 200) {
 			var myObj = JSON.parse(this.responseText);
 
-			var name = myObj[0].name.split(" ")[0].replace('#','')
-			var dl = myObj[0].files[0].url
-			var date = new Date(myObj[0].date_published)
+			var objj = myObj[0] // 
+
+			var name = objj.name.split(" ")[0].replace('#','')
+			var dl = objj.files[0].url
+			var date = new Date(objj.date_published)
 			var formattedTime = date.toString().split(" ")[1] + " " + date.getDate() + ", " + date.getFullYear();
 
 			document.getElementById("txt-" + ver).innerHTML = '<span class="tspan">Download </a> #' + name + "&nbsp;<b>(for 1.18.2)</b></span>";
