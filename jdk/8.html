@@ -25,7 +25,7 @@ a{cursor:pointer}
 </div>
 
 <header class="w3-container w3-darkgray w3-center" style="padding:76px 17px 23px 17px">
-	<h1 class="w3-margin w3-large" style="display:inline-block;vertical-align:middle">Downloads for Adoptium Java <span id="ver"></span></h1>
+	<h1 class="w3-margin w3-large" style="display:inline-block;vertical-align:middle">Downloads for Adoptium Java 8</h1>
 </header>
 
 <div class="w3-sidebar w3-bar-block w3-darkgray w3-hide-small">
@@ -37,9 +37,7 @@ a{cursor:pointer}
 
 <div class="w3-row-padding w3-padding-32 w3-container w3-mobile">
   <div class="w3-content w3-center">
-	<div class="ver city" id="8" style="display:none"> <h3 id="dln-8" style="display:none">Loading..</h3><div id="txt-8"></div> </div>
-    <div class="ver city" id="11"> <h3 id="dln-11" style="display:none">Loading</h3><div id="txt-11"></div> </div>
-	<div class="ver city" id="17"> <h3 id="dln-17" style="display:none">Loading</h3><div id="txt-17"></div> </div>
+	<div> <h3 id="dln-8" style="display:none">Loading..</h3><div id="txt-8"></div> </div>
   </div>
 </div>
 
@@ -81,11 +79,10 @@ function on_ready(req, ver, dis) {
 function apiUrl(ver, arc, type, oss) {
 	var arch = arc == 0 ? "x64" : "aarch64"
 	var os = oss == 0 ? "windows" : "linux"
-	return "https://api.adoptium.net/v3/assets/feature_releases/"+ ver + "/ga?architecture=" + arch + "&heap_size=normal&image_type=" + type + "&jvm_impl=hotspot&os=" + os + "&page=0&page_size=10&project=jdk&sort_method=DEFAULT&sort_order=DESC&vendor=adoptium";
+	return "https://api.adoptium.net/v3/assets/feature_releases/8/ga?architecture=" + arch + "&heap_size=normal&image_type=" + type + "&jvm_impl=hotspot&os=" + os + "&page=0&page_size=10&project=jdk&sort_method=DEFAULT&sort_order=DESC&vendor=adoptium";
 }
 
-function name(s,d) {
-	var a = s;
+function name(a,d) {
 	var e = d.split("hotspot_")[1];
 	var os = a.split('_')[2];
 	var ar = a.split('_')[1];
@@ -95,30 +92,10 @@ function name(s,d) {
 }
 
 req("8", apiUrl("8", 0, "jdk", 0),  "8 (LTS)");
-req("8", apiUrl("8",0,"jdk",1),"8 (LTS)");
-req("8", apiUrl("8",0,"jre",0), "8 (LTS)");
+req("8", apiUrl("8", 0, "jdk",1),"8 (LTS)");
+req("8", apiUrl("8", 0, "jre",0), "8 (LTS)");
 
-var vers = ["17", "11"];
-for (var i = 0; i < vers.length; i++) {
-	var t = vers[i];
-	req(t, apiUrl(t, 0, "jdk", 0), t);
-	req(t, apiUrl(t, 0, "jdk", 1), t);
-	req(t, apiUrl(t, 1, "jdk", 1), t);
-	req(t, apiUrl(t, 0, "jre", 0), t);
-}
-
-function otab(evt, cityName) {
-	var i, x, tablinks;
-	x = document.getElementsByClassName("city");
-	for (i = 0; i < x.length; i++) x[i].style.display = "none";
-	tablinks = document.getElementsByClassName("tablink");
-	for (i=0;i<x.length;i++) if (evt!=undefined) tablinks[i].className=tablinks[i].className.replace(" w3-gray",""); 
-	$(cityName).style.display = "block";
-	$("ver").innerHTML = $("dln-" + cityName).innerHTML;
-	if (evt!=undefined)evt.currentTarget.className += " w3-gray";
-}
 function $(id){return document.getElementById(id)}
-otab(null, '17')
 </script>
 
 </html>

@@ -6,16 +6,11 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 *{font-family:"Segoe UI",Arial,sans-serif}
-.fa-download {font-size:1.8rem;padding:0;}
-.fa-download {background-image:url("../download/download-solid.svg")!important}
-.w3-bar {box-shadow: 2px 2px 4px black; padding: .4rem;}
-.w3-darkgray {background-color: rgb(30,30,30); color:white;}
+.w3-bar {box-shadow:2px 2px 4px black; padding:.4rem}
+.w3-darkgray {background-color:rgb(30,30,30); color:white}
 html,body {height:100vh;}
-.side{height:280px;width:280px;margin-top: 2em;margin:2vw;display:inline-block;color:white;border-radius:8px}
-.sbartop {margin-top:0}.blue {background:rgb(0,65,122)}.dblu {background:rgb(0,48,96);border-radius:4px}.adr {marg1in-right:5%;width:280px}
-.head {padding:1em;box-shadow: 0px 3px 4px rgb(0,57,108)}.d {min-width:140px;margin:1px}
-
-.ap {padding:0;margin:0}.head{background:rgb(0,3,8)}
+.side{height:280px;width:280px;margin-top: 2em;margin-top:2vw;display:inline-block;color:white;border-radius:8px}
+.sbartop {margin-top:0}.blue {background:rgb(0,65,122)}.dblu {background:rgb(0,48,96);border-radius:4px}.adr {width:280px}
 
 a{text-decoration:none;cursor:pointer}
 .a {min-width:27rem; max-width:27rem}
@@ -24,15 +19,15 @@ a{text-decoration:none;cursor:pointer}
 </style>
 <body>
 
-<header class="w3-container w3-darkgray w3-center" style="padding:28px 14px 28px 14px">
-  <img src="https://avatars0.githubusercontent.com/u/34553309?s=84&v=4" style="display:inline-block;" width="48px">
-  <h1 class="w3-xlarge" style="display:inline-block;vertical-align:middle;margin-left:0;">EssentialsX with Modded Support</h1>
+<header class="w3-container w3-darkgray w3-center" style="padding:30px 14px 30px 14px">
+	<img src="https://avatars0.githubusercontent.com/u/34553309?s=84&v=4" style="display:inline-block" width="48px">
+	<h1 class="w3-xlarge" style="display:inline-block;vertical-align:middle;margin-left:0;">EssentialsX with Modded Support</h1>
 </header>
 
 <div class="w3-row-padding w3-container w3-light-gray" style="padding:5px;">
-  <div class="w3-content">
-    <p>EssentialsX will crash when using mods that add new blocks or items.<br>This has been fixed in the downloads below.</p>
-  </div>
+	<div class="w3-content">
+		<p>EssentialsX will crash when using mods that add new blocks or items.<br>This has been fixed in the downloads below.</p>
+	</div>
 </div>
 
 <div class="w3-row-padding w3-padding-32 w3-container">
@@ -47,7 +42,7 @@ a{text-decoration:none;cursor:pointer}
     </div>
 
     <div class="w3-third w3-center">
-      <div class="w3-bar-block side blue w3-card adr" style="height:280px;box-shadow: -1px 4px 16px black;display:inline-block;">
+      <div class="w3-bar-block side blue w3-card adr" style="height:280px;box-shadow: 1px 4px 16px #ddd;display:inline-block">
         <h3 class="w3-bar-item sbartop dblu" style="font-size:.8rem;">Advertisement</h3>
         <a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548" target="_blank" id="api"><img id="ap" src="../download/apex/apex1.png"></a>
       </div>
@@ -56,7 +51,7 @@ a{text-decoration:none;cursor:pointer}
 </div>
 
 <div class="w3-content">
-	<a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="https://cdn.apexminecrafthosting.com/img/theme/apex-hosting-mobile.png" width="594" height="100" border="0"></a>
+	<a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="https://cdn.apexminecrafthosting.com/img/theme/apex-hosting-mobile.png" width="600" height="102" border="0"></a>
 </div>
 
 </body>
@@ -68,14 +63,13 @@ function req(ver, job) {
     if (this.readyState == 4 && this.status == 200) {
       var myObj = JSON.parse(this.responseText);
       var date = new Date(myObj.timestamp);
-      var time = new Intl.DateTimeFormat('en-US',{month:'short',day: 'numeric'}).format(date);
 
       var aa = myObj.artifacts;
       var aaa = aa[0].displayPath.toString().replace('.jar', '').replace('EssentialsX-', '');
-      document.getElementById("dln").innerHTML = "EssentialsX <span class='ver'>" + aaa + " (" + time + ")</span>";
+      document.getElementById("dln").innerHTML = "EssentialsX <span class='ver'>" + aaa + " (" + date.toDateString() + ")</span>";
 
       for (var i = 0; i < (aa.length - 1); i++) {
-        var dl = "https://ci.codemc.io/job/IsaiahPatton/job/" + job + "/" + myObj.number + "/artifact/" +  myObj.artifacts[i].relativePath;
+        var dl = "https://ci.codemc.io/job/IsaiahPatton/job/EssentialsX-Modded-Support/" + myObj.number + "/artifact/" +  myObj.artifacts[i].relativePath;
         var namea = aa[i].displayPath.split('-')[0].replace("alsX", "alsX ")
         if (namea.includes("GeoIP")) continue;
         document.getElementById("txt-" + ver).innerHTML += '<a href="' + dl + '" class="a"><button class="w3-button w3-ripple btn">' + 
@@ -83,12 +77,13 @@ function req(ver, job) {
       }
     }
   };
-  var uurl = "https://api.allorigins.win/raw?url=https%3A%2F%2Fci.codemc.io%2Fjob%2FIsaiahPatton%2Fjob%2F" + job + "%2FlastSuccessfulBuild%2Fapi%2Fjson";
+  //var uurl = "https://api.allorigins.win/raw?url=https%3A%2F%2Fci.codemc.io%2Fjob%2FIsaiahPatton%2Fjob%2FEssentialsX-Modded-Support%2FlastSuccessfulBuild%2Fapi%2Fjson";
+  var uurl = "https://api.allorigins.win/raw?url=https://bit.ly/essx-mod-support-download-api";
   xmlhttp.open("GET", uurl, true);
   xmlhttp.send();
 }
 
-req("16", "EssentialsX-Modded-Support");
+req("16");
 </script>
 
 </html>
