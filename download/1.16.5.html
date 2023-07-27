@@ -6,22 +6,18 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <style>
-body,h1,h2,h3,h4,h5,h6,.head {font-family: "Raleway", sans-serif}
-*{font-family:"Segoe UI",Arial,sans-serif}
 body {background:rgb(30,30,30);color:white}
 .side{height:280px;width:280px;margin-top: 2em;margin:2vw;display:inline-block;color:white;border-radius:8px}
 .sbartop {margin-top:0}.blue {background:rgb(0,65,122)}.dblu {background:rgb(0,48,96);border-radius:4px}.adr {marg1in-right:5%;width:280px}
 .w3-footer {color:gray;font-size:.65em;width:100%;background-color:black;padding-top:2rem;padding-bottom:2rem}
-.head {paddaing:1em;box-shadow: 0px 3px 4px rgb(0,57,108)}.d {min-width:140px;margin:1px}
 
-.thebody {max-width:100%;text-align:center}
-table td, table td * {vertical-align:top}
 video {width:160px}.ap {padding:0;margin:0}.head{background:rgb(0,3,8)}
+.head {padding:.5em;box-shadow: 0px 3px 4px rgb(0,57,108)}.d {min-width:140px;margin:1px}
+video {width:180px}.ap {padding:0;margin:0}.head{background:rgb(0,3,8)}
 
 a{text-decoration:none;cursor:pointer;}
-.green {background-color:rgb(0,150,0);transition: all .3s ease-out;padding:9px 32px;box-shadow:0 3px 2px rgba(0,200,5,.6);border-radius:4px}
-.old {background-color:rgb(0,49,0)!important; box-shadow:0 3px 2px rgba(0,200,5,.0)}
-.green:hover {background-color:rgb(39,174,96)!important;color:white!important}
+.green {border:none;color:white;cursor:pointer;background:rgb(0,150,0);padding:9px 32px;box-shadow:0 3px 2px black;border-radius:4px;font-size: 1.25rem}
+.green:hover {background-color:rgb(39,174,96)}
 .green:active {position:relative;left:2px;top:2px}
 .color {
 	background-color:rgb(20,20,20);
@@ -33,24 +29,23 @@ a{text-decoration:none;cursor:pointer;}
 .six {color:red;font-size:.9rem;}
 
 .w3-theme {background:black;color:white}
+.navbar a {padding:8px;margin:4px;border:1px solid rgb(50,50,50)}
+.title {font-size:2rem;padding-top:0;margin-top:-10px;margin-bottom:0}
+.navbar {float:right;margin-right:6rem;margin-top:1.13rem}
+.cba {font-size:.7em;margin-left:80px;margin-top:-20px}
 </style>
 <body>
 
-<div class="w3-container head" id="head" style="color:white;text-align:center;padding:1rem">
-	<div class="w3-content">
-	  <div style="float:left;margin:.3rem;">
-		<h1 class="title cbt" style="font-size:2.4rem;padding-top:0;margin-top:0;margin-bottom:0;maargin-top:-25px;">
-			<img src="../assets/cardboard-box.png" width="54px">
-			<span style="margin-left:5px;margin-top:-4px">Cardboard</span>
-		</h1> 
-		<p class="cba" style="font-size:.8em;padding-top:0;margin-left:64px;margin-top:-20px;">Spigot/Paper API for Fabric</p>
-	  </div>
-	  <div style="float:right;margin-right:6rem;margin-top:1rem" id="nav" class="w3-navbar">
-		<a href="../" style="padding:8px;padding-left:1px;padding-right:1px;"><button class="w3-button nbtn">Home</button></a>
-		<a href="" style="padding:8px;padding-left:1px;padding-right:1px;"><button class="w3-button nbtn">Download</button></a>
-		<a class="w3-button w3-black ap nbtn" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548">Apex Hosting</a>
-	  </div>
-  </div>
+<!--Head-->
+<div class="w3-container head" id="head" style="color:white;text-align:center">
+	<div style="float:left;padding-left:2rem;margin:1rem">
+		<h1 class="title"><img src="../assets/cardboard-box.png" width="58px"><span>Cardboard</span></h1> 
+		<p class="cba">Spigot/Paper API for Fabric</p>
+	</div>
+	<div class="navbar">
+		<a href="../" class="w3-button">Home</a><a href="" class="w3-button">Download</a>
+		<a class="w3-button w3-black ap" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548">Apex Hosting - Minecraft Servers</a>
+	</div>
 </div>
 
 
@@ -65,10 +60,10 @@ a{text-decoration:none;cursor:pointer;}
 	   <div class="w3-container w3-margin-bottom" style="margin-top:3vh">
 		
 	  <div class="w3-container color">
-		<img onclick="history.back()" style="cursor:pointer;display:inline;float:left;margin-left:-16px;" src="https://img.icons8.com/fluency/48/undefined/circled-left-2.png"/>
+		<img onclick="history.back()" style="cursor:pointer;display:inline;float:left;margin-left:-16px;" src="https://img.icons8.com/color/48/undefined/circled-left-2.png"/>
 		<p class="w3-center"><b style="margin-left:-30px;">Cardboard for 1.16.5</b></p>
 
-		<div class="w3-row" style="font-size:1.2rem;">
+		<div class="w3-row" style="font-size:1.2rem">
 		  <div class="vver" id="1.16.5" style="text-align:center">
 			<a id="dl-16" href="#"><button class="w3-button green" type="button"><span id="txt-16">&nbsp;Download Cardboard&nbsp;</span></button></a>
 			<div id="info-16" style="font-size:0.7em;margin-top:16px;color:rgb(130,130,130)">loading info...</div>

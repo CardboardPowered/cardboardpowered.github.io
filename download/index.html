@@ -8,7 +8,7 @@ body {background:rgb(30,30,30); color:white}
 
 .w3-third, .w3-col { margin-top:2em}
 #version-select, #apb {max-width:250px}
-#apb {max-width: 280px}
+#apb {max-width:280px}
 
 #version-select .con, #apb .con {
 	border-bottom-left-radius:16px;
@@ -17,23 +17,12 @@ body {background:rgb(30,30,30); color:white}
 	width: 100%;
 }
 
-#version-select button {
-	display:block;width:100%;
-	padding: 10px 2px;margin:0;margin-bottom:4px;
-	color:white;
-}
-
-#verc {
-	font-weight: 600;
-	background: black;
-	padding: 1px 8px;
-	border-radius: 8px;
-}
+#version-select button {display:block;width:100%;padding: 10px 2px;margin:0;margin-bottom:4px;color:white}
+#verc {font-weight:600;background:black;padding:1px 8px;border-radius:8px}
 
 .w3-third h2 { font-size: 2rem; text-shadow: 4px 4px 4px black;}
 
 .active { background: rgb(40,90,180); border-radius: 4px; outline: 1px solid rgb(20, 140, 80); box-shadow: 4px 4px 4px black; }
-
 .green {border:none;color:white;cursor:pointer;background:rgb(0,150,0);padding:9px 32px;box-shadow:0 3px 2px black;border-radius:4px;font-size: 1.25rem}
 .green:hover {background-color:rgb(39,174,96)}
 .green:active {position:relative;left:2px;top:2px}
@@ -56,6 +45,11 @@ a{text-decoration:none;cursor:pointer;}
 .title {font-size:2rem;padding-top:0;margin-top:-10px;margin-bottom:0}
 .navbar {float:right;margin-right:6rem;margin-top:1.13rem}
 .cba {font-size:.7em;margin-left:80px;margin-top:-20px}
+
+.omod {position:relative;left:10%;padding:8px;}
+.omod:hover {background:black;}
+.omod img {padding-right:12px;height:48px}
+.omod p { margin:0;display:inline-block;vertical-align:middle}
 </style>
 
 <body>
@@ -78,6 +72,7 @@ a{text-decoration:none;cursor:pointer;}
 		<div id="version-select" class="w3-card-4">
 			<div class="w3-container w3-padding" style="background:rgb(0, 46, 96)">Select version</div>
 			<div class="w3-container w3-padding con">
+				<button id="20" onclick="ver_click(20)" class="w3-button">1.19.4</button>
 				<button id="19" onclick="ver_click(19)" class="w3-button">1.19.2</button>
 				<button id="18" onclick="ver_click(18)" class="w3-button active">1.18.2</button>
 				<button id="17" onclick="ver_click(17)" class="w3-button">1.17.1 / 1.18.1</button>
@@ -113,21 +108,35 @@ a{text-decoration:none;cursor:pointer;}
 	<div class="w3-third w3-center">
 		<div>
 		<a href="https://bit.ly/fabric-api" target="_blank"><img src="./assets/fapi.png" width="170"></a>
-		<a href="https://bit.ly/icommon" target="_blank"><img src="https://cardboardpowered.org/icommon/assets/badge1.png" width="170"></a>
+		<a href="https://bit.ly/icommon" target="_blank"><img src="./assets/badge.png" width="170"></a>
 	</div>
 	</div>
 	<div class="w3-third" id="other">
 		<h3>Other mods:</h3>
-		<table>
-			<tr>
-				<td><a href="https://bit.ly/multi-world"><img width="48" src="./globe.png"></a></td>
-				<td><a href="https://bit.ly/multi-world"><b>Multiworld (Fabric)</b><br>World management mod</a></td>
-			</tr>
-			<tr>
-				<td><a href="https://bit.ly/luckyblocks-fabric"><img width="48" src="./assets/lb.png"></a></td>
-				<td><a href="https://bit.ly/luckyblocks-fabric"><b>Lucky Blocks (Fabric)</b><br>Modern Lucky Blocks for Fabric.</a></td>
-			</tr>
-		</table>
+		<div class="omod">
+			<a href="https://bit.ly/multi-world">
+				<img src="./globe.png">
+				<p><b>Multiworld (Fabric)</b><br>World management mod</p>
+			</a>
+		</div>
+		<div class="omod">
+			<a href="https://bit.ly/luckyblocks-fabric">
+				<img src="./assets/lb.png">
+				<p><b>Lucky Blocks (Fabric)</b><br>Modern Lucky Blocks for Fabric</p>
+			</a>
+		</div>
+		<div class="omod">
+			<a href="https://bit.ly/chestshop-fabric">
+				<img src="./assets/cshop.jpg">
+				<p><b>Chest Shop (Fabric)</b><br>A simple mod that adds chest powered shops</p>
+			</a>
+		</div>
+		<div class="omod">
+			<a href="https://bit.ly/faithful-128">
+				<img src="./assets/hd.svg">
+				<p><b>Faithful x128</b><br>128x128 textures that stay faithful to the default.</p>
+			</a>
+		</div>
 	</div>
 </div>
 
@@ -136,7 +145,7 @@ a{text-decoration:none;cursor:pointer;}
 function $(id) {return document.getElementById(id)}
 
 function ver_click(e) {
-	for (var i = 16; i <= 19; i++) {
+	for (var i = 16; i <= 20; i++) {
 		$(i).className = $(i).className.replace(' active', '');
 	}
 
@@ -178,6 +187,12 @@ function doo(ver, e, c) {
 		dl = 'https://bit.ly/cardboard-1-16-5-170';
 		vars = ver;
 		name = "1.16-170";
+	}
+	
+	if (ver == '1.19.4') {
+		dl = 'https://bit.ly/1-19-4-726-modrinth';
+		vars = ver;
+		name = "1.19.4-726-Preview"
 	}
 
 	if (!vars.toString().includes(ver.split(' ')[0])) {
