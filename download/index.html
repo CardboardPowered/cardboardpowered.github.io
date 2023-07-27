@@ -17,13 +17,12 @@ body {background:rgb(30,30,30); color:white}
 	width: 100%;
 }
 
-#version-select button {display:block;width:100%;padding: 10px 2px;margin:0;margin-bottom:4px;color:white}
+#version-select button {display:block;width:100%;padding:10px 2px;margin:0;margin-bottom:4px;color:white}
 #verc {font-weight:600;background:black;padding:1px 8px;border-radius:8px}
+.w3-third h2 {font-size:2rem; text-shadow:4px 4px 4px black;}
 
-.w3-third h2 { font-size: 2rem; text-shadow: 4px 4px 4px black;}
-
-.active { background: rgb(40,90,180); border-radius: 4px; outline: 1px solid rgb(20, 140, 80); box-shadow: 4px 4px 4px black; }
-.green {border:none;color:white;cursor:pointer;background:rgb(0,150,0);padding:9px 32px;box-shadow:0 3px 2px black;border-radius:4px;font-size: 1.25rem}
+.active { background: rgb(40,90,180); border-radius: 4px; outline: 1px solid rgb(20,140,80); box-shadow: 4px 4px 4px black;}
+.green {border:none;color:white;cursor:pointer;background:rgb(0,150,0);padding:9px 32px;box-shadow:0 3px 2px black;border-radius:4px;font-size:1.25rem}
 .green:hover {background-color:rgb(39,174,96)}
 .green:active {position:relative;left:2px;top:2px}
 
@@ -36,16 +35,13 @@ a{text-decoration:none;cursor:pointer;}
 .w3-autoo{max-width:1400px}
 @media (max-width:1435px){.w3-autoo{ max-width:100%}}
 
-#other {color:#ddd}
-#other table, #other h3 {margin-left:10%;}
-#other td {padding:8px}
-#other tr:hover {background:black}
-
 .navbar a {padding:8px;margin:4px;border:1px solid rgb(50,50,50)}
 .title {font-size:2rem;padding-top:0;margin-top:-10px;margin-bottom:0}
 .navbar {float:right;margin-right:6rem;margin-top:1.13rem}
 .cba {font-size:.7em;margin-left:80px;margin-top:-20px}
 
+#other {color:#ddd}
+#other h3 {margin-left:10%;}
 .omod {position:relative;left:10%;padding:8px;}
 .omod:hover {background:black;}
 .omod img {padding-right:12px;height:48px}
@@ -163,24 +159,21 @@ function req_new(ver, e) {
 		return;
 	}
 
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function() {
+	var req = new XMLHttpRequest();
+	req.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			myObj = JSON.parse(this.responseText);
 			doo(ver, e, 0);
 		}
 	};
-	xmlhttp.open("GET", "https://api.modrinth.com/v2/project/cardboard/version", true);
-	xmlhttp.send();
+	req.open("GET", "https://api.modrinth.com/v2/project/cardboard/version", true);
+	req.send();
 }
 
 function doo(ver, e, c) {
 	var objj = myObj[c]
-
 	var name = objj.name.split(" ")[0].replace('#','')
 	var dl = objj.files[0].url
-	var date = new Date(objj.date_published)
-	var formattedTime = date.toString().split(" ")[1] + " " + date.getDate() + ", " + date.getFullYear();
 	var vars = objj.game_versions;
 
 	if (ver == '1.16.5') {
@@ -188,7 +181,7 @@ function doo(ver, e, c) {
 		vars = ver;
 		name = "1.16-170";
 	}
-	
+
 	if (ver == '1.19.4') {
 		dl = 'https://bit.ly/1-19-4-726-modrinth';
 		vars = ver;
@@ -202,8 +195,6 @@ function doo(ver, e, c) {
 
 	$('dlb').innerHTML = '<span class="tspan">Download </a> #' + name + "&nbsp;<b>(for " + vars + ")</b></span>";
 	$('verc').innerHTML = $(e).innerText;
-
-	var log = "";
 	$('dll').href = dl;
 }
 </script>
