@@ -68,9 +68,10 @@ a{text-decoration:none;cursor:pointer;}
 		<div id="version-select" class="w3-card-4">
 			<div class="w3-container w3-padding" style="background:rgb(0, 46, 96)">Select version</div>
 			<div class="w3-container w3-padding con">
+				<!--<button id="21" onclick="ver_click(21)" class="w3-button">1.20.1</button>-->
 				<button id="20" onclick="ver_click(20)" class="w3-button">1.19.4</button>
-				<button id="19" onclick="ver_click(19)" class="w3-button">1.19.2</button>
-				<button id="18" onclick="ver_click(18)" class="w3-button active">1.18.2</button>
+				<button id="19" onclick="ver_click(19)" class="w3-button active">1.19.2</button>
+				<button id="18" onclick="ver_click(18)" class="w3-button">1.18.2</button>
 				<button id="17" onclick="ver_click(17)" class="w3-button">1.17.1 / 1.18.1</button>
 				<button id="16" onclick="ver_click(16)" class="w3-button">1.16.5</button>
 			</div>
@@ -111,26 +112,22 @@ a{text-decoration:none;cursor:pointer;}
 		<h3>Other mods:</h3>
 		<div class="omod">
 			<a href="https://bit.ly/multi-world">
-				<img src="./globe.png">
-				<p><b>Multiworld (Fabric)</b><br>World management mod</p>
+				<img src="./globe.png"><p><b>Multiworld (Fabric)</b><br>World management mod</p>
 			</a>
 		</div>
 		<div class="omod">
 			<a href="https://bit.ly/luckyblocks-fabric">
-				<img src="./assets/lb.png">
-				<p><b>Lucky Blocks (Fabric)</b><br>Modern Lucky Blocks for Fabric</p>
+				<img src="./assets/lb.png"><p><b>Lucky Blocks (Fabric)</b><br>Modern Lucky Blocks for Fabric</p>
 			</a>
 		</div>
 		<div class="omod">
 			<a href="https://bit.ly/chestshop-fabric">
-				<img src="./assets/cshop.jpg">
-				<p><b>Chest Shop (Fabric)</b><br>A simple mod that adds chest powered shops</p>
+				<img src="./assets/cshop.jpg"><p><b>Chest Shop (Fabric)</b><br>A simple mod that adds chest powered shops</p>
 			</a>
 		</div>
 		<div class="omod">
 			<a href="https://bit.ly/faithful-128">
-				<img src="./assets/hd.svg">
-				<p><b>Faithful x128</b><br>128x128 textures that stay faithful to the default.</p>
+				<img src="./assets/hd.svg"><p><b>Faithful x128</b><br>128x128 textures that stay faithful to the default.</p>
 			</a>
 		</div>
 	</div>
@@ -150,7 +147,7 @@ function ver_click(e) {
 	req_new(txt, e)
 }
 
-addEventListener("load", function(e){ req_new('1.18.2', '18') });
+addEventListener("load", function(e){ req_new('1.19.2', '19') });
 
 var myObj;
 function req_new(ver, e) {
@@ -183,9 +180,16 @@ function doo(ver, e, c) {
 	}
 
 	if (ver == '1.19.4') {
-		dl = 'https://bit.ly/1-19-4-726-modrinth';
+		// dl = 'https://bit.ly/1-19-4-726-modrinth';
+		// dl = 'https://bit.ly/1-19-4-1206-modrinth';
 		vars = ver;
-		name = "1.19.4-726-Preview"
+		name = "1.19.4-126"
+	}
+	
+	if (ver == '1.20.1') {
+		dl = 'http://adfoc.us/26941682657898';
+		vars = ver;
+		name = "1.20-preview"
 	}
 
 	if (!vars.toString().includes(ver.split(' ')[0])) {
