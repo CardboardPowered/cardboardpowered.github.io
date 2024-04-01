@@ -6,7 +6,7 @@
 <style>
 body {background:rgb(30,30,30); color:white}
 
-.w3-third, .w3-col { margin-top:2em}
+.w3-third, .w3-col { margin-top:1em}
 #version-select, #apb {max-width:250px}
 #apb {max-width:280px}
 
@@ -18,7 +18,7 @@ body {background:rgb(30,30,30); color:white}
 	padding: 4px;
 }
 
-#version-select button {display:block;width:100%;padding:10px 2px;margin:0;margin-bottom:4px;color:white}
+#version-select button {display:block;width:100%;padding:9px 2px;margin:0;margin-bottom:4px;color:white}
 #verc {font-weight:600;background:black;padding:1px 8px;border-radius:8px}
 .w3-third h2 {font-size:2rem; text-shadow:4px 4px 4px black;}
 
@@ -69,10 +69,10 @@ a{text-decoration:none;cursor:pointer;}
 		<div id="version-select" class="w3-card-4">
 			<div class="w3-container w3-padding" style="background:rgb(0, 46, 96)">Select version</div>
 			<div class="w3-container w3-padding con">
+				<button id="22" onclick="ver_click(22)" class="w3-button active">1.20.4</button>
 				<button id="21" onclick="ver_click(21)" class="w3-button">1.20.1</button>
 				<button id="20" onclick="ver_click(20)" class="w3-button">1.19.4</button>
-				<button id="19" onclick="ver_click(19)" class="w3-button active">1.19.2</button>
-				<button id="18" onclick="ver_click(18)" class="w3-button">1.18.2</button>
+				<button id="19" onclick="ver_click(19)" class="w3-button">1.19.2</button>
 				<a href="./legacy.html"><button id="17" style="text-decoration:underline" class="w3-button">View Older</button></a>
 			</div>
 		</div>
@@ -100,7 +100,7 @@ a{text-decoration:none;cursor:pointer;}
 </div>
 <div class="w3-row w3-autoo">
 	<div class="w3-third w3-center">
-		<p><a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="./apex/apex3.png"></a></p>
+		<p><a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="./apex/apex4.png"></a></p>
 	</div>
 	<div class="w3-third w3-center">
 		<div>
@@ -138,7 +138,7 @@ a{text-decoration:none;cursor:pointer;}
 function $(id) {return document.getElementById(id)}
 
 function ver_click(e) {
-	for (var i = 17; i <= 21; i++) {
+	for (var i = 19; i <= 22; i++) {
 		$(i).className = $(i).className.replace(' active', '');
 	}
 
@@ -147,7 +147,8 @@ function ver_click(e) {
 	req_new(txt, e)
 }
 
-addEventListener("load", function(e){ req_new('1.19.2', '19') });
+// addEventListener("load", function(e){ req_new('1.19.2', '19') });
+addEventListener("load", function(e){ req_new('1.20.4', '22') });
 
 var myObj;
 function req_new(ver, e) {
@@ -173,11 +174,11 @@ function doo(ver, e, c) {
 	var dl = objj.files[0].url
 	var vars = objj.game_versions;
 
-	if (ver == '1.19.4') {
-		// dl = 'https://bit.ly/1-19-4-726-modrinth';
-		// dl = 'https://bit.ly/1-19-4-1206-modrinth';
-		//vars = ver;
-		//name = "1.19.4-126"
+	if (ver == '1.20.5') {
+		$('dlb').innerHTML = "Coming Soon"
+		$('verc').innerHTML = $(e).innerText;
+		$('dll').href = "#";
+		return;
 	}
 	
 	if (ver == '1.20.1') {
