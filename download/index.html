@@ -69,6 +69,8 @@ a{text-decoration:none;cursor:pointer;}
 		<div id="version-select" class="w3-card-4">
 			<div class="w3-container w3-padding" style="background:rgb(0, 46, 96)">Select version</div>
 			<div class="w3-container w3-padding con">
+				<button id="24" onclick="ver_click(24)" class="w3-button">1.21*</button>
+				<button id="23" onclick="ver_click(23)" class="w3-button">1.20.6*</button>
 				<button id="22" onclick="ver_click(22)" class="w3-button active">1.20.4</button>
 				<button id="21" onclick="ver_click(21)" class="w3-button">1.20.1</button>
 				<button id="20" onclick="ver_click(20)" class="w3-button">1.19.4</button>
@@ -138,7 +140,7 @@ a{text-decoration:none;cursor:pointer;}
 function $(id) {return document.getElementById(id)}
 
 function ver_click(e) {
-	for (var i = 19; i <= 22; i++) {
+	for (var i = 19; i <= 24; i++) {
 		$(i).className = $(i).className.replace(' active', '');
 	}
 
@@ -152,6 +154,7 @@ addEventListener("load", function(e){ req_new('1.20.4', '22') });
 
 var myObj;
 function req_new(ver, e) {
+	ver = ver.replace('*','');
 	if (undefined != myObj) {
 		doo(ver, e, 0);
 		return;
@@ -179,12 +182,6 @@ function doo(ver, e, c) {
 		$('verc').innerHTML = $(e).innerText;
 		$('dll').href = "#";
 		return;
-	}
-	
-	if (ver == '1.20.1') {
-		// dl = 'http://adfoc.us/26941682657898';
-		// vars = ver;
-		// name = "1.20-preview"
 	}
 
 	if (!vars.toString().includes(ver.split(' ')[0])) {
