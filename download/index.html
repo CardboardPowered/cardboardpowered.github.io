@@ -28,7 +28,7 @@ body {background:rgb(30,30,30); color:white}
 .green:active {position:relative;left:2px;top:2px}
 
 .head {padding:.5em;box-shadow: 0px 3px 4px rgb(0,57,108)}.d {min-width:140px;margin:1px}
-video {width:180px}.ap {padding:0;margin:0}.head{background:rgb(0,3,8)}
+video {width:270px}.ap {padding:0;margin:0}.head{background:rgb(0,3,8)}
 
 a{text-decoration:none;cursor:pointer;}
 
@@ -69,12 +69,9 @@ a{text-decoration:none;cursor:pointer;}
 		<div id="version-select" class="w3-card-4">
 			<div class="w3-container w3-padding" style="background:rgb(0, 46, 96)">Select version</div>
 			<div class="w3-container w3-padding con">
-				<button id="24" onclick="ver_click(24)" class="w3-button">1.21*</button>
-				<button id="23" onclick="ver_click(23)" class="w3-button">1.20.6*</button>
-				<button id="22" onclick="ver_click(22)" class="w3-button active">1.20.4</button>
-				<button id="21" onclick="ver_click(21)" class="w3-button">1.20.1</button>
-				<button id="20" onclick="ver_click(20)" class="w3-button">1.19.4</button>
-				<button id="19" onclick="ver_click(19)" class="w3-button">1.19.2</button>
+				<button id="23" onclick="ver_click(23)" class="w3-button active">1.21.1</button>
+				<button id="22" onclick="ver_click(22)" class="w3-button">1.20.6</button>
+				<button id="20" onclick="ver_click(20)" class="w3-button">1.20.1</button>
 				<a href="./legacy.html"><button id="17" style="text-decoration:underline" class="w3-button">View Older</button></a>
 			</div>
 		</div>
@@ -103,6 +100,7 @@ a{text-decoration:none;cursor:pointer;}
 <div class="w3-row w3-autoo">
 	<div class="w3-third w3-center">
 		<p><a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="./apex/apex4.png"></a></p>
+				<a class="w3-center" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><video muted autoplay loop id="myVideo"><source id="vidsrc" src="./apex/Apex Hosting Animated Logo Only.mp4" type="video/mp4"></video></a><br>
 	</div>
 	<div class="w3-third w3-center">
 		<div>
@@ -141,7 +139,9 @@ function $(id) {return document.getElementById(id)}
 
 function ver_click(e) {
 	for (var i = 19; i <= 24; i++) {
-		$(i).className = $(i).className.replace(' active', '');
+		if (undefined != $(i)) {
+			$(i).className = $(i).className.replace(' active', '');
+		}
 	}
 
 	$(e).className += ' active';
@@ -150,7 +150,7 @@ function ver_click(e) {
 }
 
 // addEventListener("load", function(e){ req_new('1.19.2', '19') });
-addEventListener("load", function(e){ req_new('1.20.4', '22') });
+addEventListener("load", function(e){ req_new('1.21.1', '23') });
 
 var myObj;
 function req_new(ver, e) {

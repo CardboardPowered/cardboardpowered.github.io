@@ -66,8 +66,10 @@ a{text-decoration:none;cursor:pointer;}
 		<div id="version-select" class="w3-card-4">
 			<div class="w3-container w3-padding" style="background:rgb(0, 46, 96)">Legacy Versions</div>
 			<div class="w3-container w3-padding con">
-				<a href="./index.html"><button id="21" style="text-decoration:underline" class="w3-button">&#x25c0; Back to Current</button></a>
-				
+				<a href="./index.html"><button id="15" style="text-decoration:underline" class="w3-button">&#x25c0; Back to Current</button></a>
+				<button id="21" onclick="ver_click(21)" class="w3-button">1.20.4</button>
+				<button id="20" onclick="ver_click(20)" class="w3-button">1.19.4</button>
+				<button id="19" onclick="ver_click(19)" class="w3-button">1.19.2</button>
 				<button id="18" onclick="ver_click(18)" class="w3-button active">1.18.2</button>
 				<button id="17" onclick="ver_click(17)" class="w3-button">1.17.1 / 1.18.1</button>
 				<button id="16" onclick="ver_click(16)" class="w3-button">1.16.5</button>
@@ -118,8 +120,10 @@ a{text-decoration:none;cursor:pointer;}
 function $(id) {return document.getElementById(id)}
 
 function ver_click(e) {
-	for (var i = 16; i <= 17; i++) {
-		$(i).className = $(i).className.replace(' active', '');
+	for (var i = 16; i <= 24; i++) {
+		if (undefined != $(i)) {
+			$(i).className = $(i).className.replace(' active', '');
+		}
 	}
 
 	$(e).className += ' active';
