@@ -44,7 +44,7 @@ a{text-decoration:none;cursor:pointer;}
 .omod {position:relative;left:10%;padding:8px;}
 .omod:hover {background:black;}
 .omod img {padding-right:12px;height:48px}
-.omod p { margin:0;display:inline-block;vertical-align:middle}
+.omod p {margin:0;display:inline-block;vertical-align:middle}
 </style>
 
 <body>
@@ -69,8 +69,8 @@ a{text-decoration:none;cursor:pointer;}
 				<a href="./index.html"><button id="15" style="text-decoration:underline" class="w3-button">&#x25c0; Back to Current</button></a>
 				<button id="21" onclick="ver_click(21)" class="w3-button">1.20.4</button>
 				<button id="20" onclick="ver_click(20)" class="w3-button">1.19.4</button>
-				<button id="19" onclick="ver_click(19)" class="w3-button">1.19.2</button>
-				<button id="18" onclick="ver_click(18)" class="w3-button active">1.18.2</button>
+				<button id="19" onclick="ver_click(19)" class="w3-button active">1.19.2</button>
+				<button id="18" onclick="ver_click(18)" class="w3-button">1.18.2</button>
 				<button id="17" onclick="ver_click(17)" class="w3-button">1.17.1 / 1.18.1</button>
 				<button id="16" onclick="ver_click(16)" class="w3-button">1.16.5</button>
 			</div>
@@ -84,7 +84,7 @@ a{text-decoration:none;cursor:pointer;}
 	<a href="https://modrinth.com/mod/cardboard" id="dll">
 		<button class="green" id="dlb">Download</button>
 	</a>
-	<p>&nbsp;<br><i style="color:rgb(150,0,0)">Note: This is a old version that is no longer supported.</i></p>
+	<p>&nbsp;<br><i style="color:rgb(250,0,0)">Note: This is a old version that is no longer supported.</i></p>
 </div>
 <div class="w3-third w3-container">
 <center>
@@ -131,7 +131,7 @@ function ver_click(e) {
 	req_new(txt, e)
 }
 
-addEventListener("load", function(e){ req_new('1.18.2', '18') });
+addEventListener("load", function(e){ req_new('1.19.2', '19') });
 
 var myObj;
 function req_new(ver, e) {

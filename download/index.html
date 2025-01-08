@@ -69,6 +69,7 @@ a{text-decoration:none;cursor:pointer;}
 		<div id="version-select" class="w3-card-4">
 			<div class="w3-container w3-padding" style="background:rgb(0, 46, 96)">Select version</div>
 			<div class="w3-container w3-padding con">
+				<button id="24" onclick="ver_click(24)" class="w3-button">1.21.4*</button>
 				<button id="23" onclick="ver_click(23)" class="w3-button active">1.21.1</button>
 				<button id="22" onclick="ver_click(22)" class="w3-button">1.20.6</button>
 				<button id="20" onclick="ver_click(20)" class="w3-button">1.20.1</button>
@@ -177,8 +178,8 @@ function doo(ver, e, c) {
 	var dl = objj.files[0].url
 	var vars = objj.game_versions;
 
-	if (ver == '1.20.5') {
-		$('dlb').innerHTML = "Coming Soon"
+	if (ver == '1.21.4') {
+		$('dlb').innerHTML = "Coming January 2025"
 		$('verc').innerHTML = $(e).innerText;
 		$('dll').href = "#";
 		return;
