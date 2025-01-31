@@ -30,7 +30,7 @@ body {background:rgb(30,30,30); color:white}
 .head {padding:.5em;box-shadow: 0px 3px 4px rgb(0,57,108)}.d {min-width:140px;margin:1px}
 video {width:270px}.ap {padding:0;margin:0}.head{background:rgb(0,3,8)}
 
-a{text-decoration:none;cursor:pointer;}
+a{text-decorataion:none;cursor:pointer;}
 
 .w3-autoo{margin-left:auto;margin-right:auto}
 .w3-autoo{max-width:1400px}
@@ -47,6 +47,10 @@ a{text-decoration:none;cursor:pointer;}
 .omod:hover {background:black;}
 .omod img {padding-right:12px;height:48px}
 .omod p { margin:0;display:inline-block;vertical-align:middle}
+
+.aa { color: rgb(0, 160, 255); cursor: pointer; }
+
+
 </style>
 
 <body>
@@ -85,6 +89,18 @@ a{text-decoration:none;cursor:pointer;}
 	<a href="https://modrinth.com/mod/cardboard" id="dll">
 		<button class="green" id="dlb">Download</button>
 	</a>
+	<br><br>
+	<div id="124-alpha" style="display:none;background:rgba(0, 0, 0, .4); border-radius: 8px;padding:1rem">
+		<span>
+		Download 1.21.4 Test Build:
+		</span><br><br>
+
+		<span class="aa">&middot; <a target="_blank" href="https://ci.codemc.io/job/IsaiahPatton/job/Cardboard-1.21.4/">View Cardboard 1.21.4 builds</a></span><br>
+		<span class="aa">&middot; <a target="_blank" href="https://ci.codemc.io/job/IsaiahPatton/job/iCommon/">View iCommonLib 1.21.4 builds</a></span>
+		
+	
+	</div>
+	
 	<p>&nbsp;</p>
 </div>
 <div class="w3-third w3-container">
@@ -179,9 +195,10 @@ function doo(ver, e, c) {
 	var vars = objj.game_versions;
 
 	if (ver == '1.21.4') {
-		$('dlb').innerHTML = "Coming January 2025"
+		$('dlb').innerHTML = "Coming 2025"
 		$('verc').innerHTML = $(e).innerText;
 		$('dll').href = "#";
+		$('124-alpha').style.display = "block";
 		return;
 	}
 
@@ -193,6 +210,7 @@ function doo(ver, e, c) {
 	$('dlb').innerHTML = '<span class="tspan">Download </a> #' + name + "&nbsp;<b>(for " + vars + ")</b></span>";
 	$('verc').innerHTML = $(e).innerText;
 	$('dll').href = dl;
+	$('124-alpha').style.display = "none";
 }
 </script>
 </html>   
