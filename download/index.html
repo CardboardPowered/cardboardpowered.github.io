@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 body {background:rgb(30,30,30); color:white}
-
 .w3-third, .w3-col { margin-top:1em}
 #version-select, #apb {max-width:250px}
 #apb {max-width:280px}
@@ -49,8 +48,6 @@ a{text-decorataion:none;cursor:pointer;}
 .omod p { margin:0;display:inline-block;vertical-align:middle}
 
 .aa { color: rgb(0, 160, 255); cursor: pointer; }
-
-
 </style>
 
 <body>
@@ -73,8 +70,8 @@ a{text-decorataion:none;cursor:pointer;}
 		<div id="version-select" class="w3-card-4">
 			<div class="w3-container w3-padding" style="background:rgb(0, 46, 96)">Select version</div>
 			<div class="w3-container w3-padding con">
-				<button id="24" onclick="ver_click(24)" class="w3-button">1.21.4*</button>
-				<button id="23" onclick="ver_click(23)" class="w3-button active">1.21.1</button>
+				<button id="24" onclick="ver_click(24)" class="w3-button active">1.21.4</button>
+				<button id="23" onclick="ver_click(23)" class="w3-button">1.21.1</button>
 				<button id="22" onclick="ver_click(22)" class="w3-button">1.20.6</button>
 				<button id="20" onclick="ver_click(20)" class="w3-button">1.20.1</button>
 				<a href="./legacy.html"><button id="17" style="text-decoration:underline" class="w3-button">View Older</button></a>
@@ -90,17 +87,9 @@ a{text-decorataion:none;cursor:pointer;}
 		<button class="green" id="dlb">Download</button>
 	</a>
 	<br><br>
-	<div id="124-alpha" style="display:none;background:rgba(0, 0, 0, .4); border-radius: 8px;padding:1rem">
-		<span>
-		Download 1.21.4 Test Build:
-		</span><br><br>
-
-		<span class="aa">&middot; <a target="_blank" href="https://ci.codemc.io/job/IsaiahPatton/job/Cardboard-1.21.4/">View Cardboard 1.21.4 builds</a></span><br>
-		<span class="aa">&middot; <a target="_blank" href="https://ci.codemc.io/job/IsaiahPatton/job/iCommon/">View iCommonLib 1.21.4 builds</a></span>
-		
-	
-	</div>
-	
+	<!--<div id="124-alpha" style="display:none;background:rgba(0, 0, 0, .4); border-radius: 8px;padding:1rem">
+		Note: 1.21.4 may not be 
+	</div>-->
 	<p>&nbsp;</p>
 </div>
 <div class="w3-third w3-container">
@@ -160,14 +149,12 @@ function ver_click(e) {
 			$(i).className = $(i).className.replace(' active', '');
 		}
 	}
-
 	$(e).className += ' active';
 	var txt = $(e).innerText;
 	req_new(txt, e)
 }
 
-// addEventListener("load", function(e){ req_new('1.19.2', '19') });
-addEventListener("load", function(e){ req_new('1.21.1', '23') });
+addEventListener("load", function(e){ req_new('1.21.4', '24') });
 
 var myObj;
 function req_new(ver, e) {
@@ -194,13 +181,7 @@ function doo(ver, e, c) {
 	var dl = objj.files[0].url
 	var vars = objj.game_versions;
 
-	if (ver == '1.21.4') {
-		$('dlb').innerHTML = "Coming 2025"
-		$('verc').innerHTML = $(e).innerText;
-		$('dll').href = "#";
-		$('124-alpha').style.display = "block";
-		return;
-	}
+	if (ver == '1.21.5') {}
 
 	if (!vars.toString().includes(ver.split(' ')[0])) {
 		doo(ver, e, c + 1)
@@ -210,7 +191,8 @@ function doo(ver, e, c) {
 	$('dlb').innerHTML = '<span class="tspan">Download </a> #' + name + "&nbsp;<b>(for " + vars + ")</b></span>";
 	$('verc').innerHTML = $(e).innerText;
 	$('dll').href = dl;
-	$('124-alpha').style.display = "none";
+	// $('124-alpha').style.display = "none";
+	// if (ver == '1.21.4') { $('124-alpha').style.display = "block"; }
 }
 </script>
 </html>   
