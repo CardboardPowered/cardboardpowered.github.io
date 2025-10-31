@@ -3,49 +3,7 @@
 <title>Downloads - Cardboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-body {background:rgb(30,30,30); color:white}
-
-.w3-third { margin-top:2em}
-#version-select, #apb {max-width:250px}
-#apb {max-width:280px}
-
-#version-select .con, #apb .con {
-	border-bottom-left-radius:16px;
-	border-bottom-right-radius:16px;
-	background:rgb(0,65,122);
-	width: 100%;
-    padding: 4px;
-}
-
-#version-select button {display:block;width:100%;padding:10px 2px;margin:0;margin-bottom:4px;color:white}
-#verc {font-weight:600;background:black;padding:1px 8px;border-radius:8px}
-.w3-third h2 {font-size:2rem; text-shadow:4px 4px 4px black;}
-
-.active { background: rgb(40,90,180); border-radius:4px; outline: 1px solid rgb(20,140,80); box-shadow: 4px 4px 4px black;}
-.green {border:none;color:white;cursor:pointer;background:rgb(0,150,0);padding:9px 32px;box-shadow:0 3px 2px black;border-radius:4px;font-size:1.25rem}
-.green:hover {background-color:rgb(39,174,96)}
-.green:active {position:relative;left:2px;top:2px}
-
-.head {padding:.5em;box-shadow: 0px 3px 4px rgb(0,57,108)}.ap {padding:0;margin:0}.head{background:rgb(0,3,8)}
-
-a{text-decoration:none;cursor:pointer;}
-
-.w3-autoo{margin-left:auto;margin-right:auto}
-.w3-autoo{max-width:1400px}
-@media (max-width:1435px){.w3-autoo{ max-width:100%}}
-
-.navbar a {padding:8px;margin:4px;border:1px solid rgb(50,50,50)}
-.title {font-size:2rem;padding-top:0;margin-topd:-10px;margin-bottom:0}
-.navbar {float:right;margin-right:6rem;margin-top:1.13rem}
-
-#other {color:#ddd}
-#other h3 {margin-left:10%;}
-.omod {position:relative;left:10%;padding:8px;}
-.omod:hover {background:black;}
-.omod img {padding-right:12px;height:48px}
-.omod p {margin:0;display:inline-block;vertical-align:middle}
-</style>
+<link rel="stylesheet" href="./index.css">
 
 <body>
 
@@ -67,6 +25,7 @@ a{text-decoration:none;cursor:pointer;}
 			<div class="w3-container w3-padding" style="background:rgb(0, 46, 96)">Legacy Versions</div>
 			<div class="w3-container w3-padding con">
 				<a href="./index.html"><button id="15" style="text-decoration:underline" class="w3-button">&#x25c0; Back to Current</button></a>
+				<button id="22" onclick="ver_click(22)" class="w3-button">1.20.6</button>
 				<button id="21" onclick="ver_click(21)" class="w3-button">1.20.4</button>
 				<button id="20" onclick="ver_click(20)" class="w3-button">1.19.4</button>
 				<button id="19" onclick="ver_click(19)" class="w3-button active">1.19.2</button>

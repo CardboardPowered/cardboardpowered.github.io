@@ -32,7 +32,8 @@ a{cursor:pointer}
 	<h5 class="w3-bar-item">Release</h5>
 	<button class="w3-bar-item w3-button tablink" onclick="otab(event,'8')">8</button>
 	<button class="w3-bar-item w3-button tablink" onclick="otab(event,'11')">11</button>
-	<button class="w3-bar-item w3-button tablink w3-gray" onclick="otab(event,'17')">17</button>
+	<button class="w3-bar-item w3-button tablink" onclick="otab(event,'17')">17</button>
+	<button class="w3-bar-item w3-button tablink w3-gray" onclick="otab(event,'21')">21</button>
 </div>
 
 <div class="w3-row-padding w3-padding-32 w3-container w3-mobile">
@@ -40,6 +41,7 @@ a{cursor:pointer}
 	<div class="ver city" id="8" style="display:none"> <h3 id="dln-8" style="display:none">Loading..</h3><div id="txt-8"></div> </div>
     <div class="ver city" id="11"> <h3 id="dln-11" style="display:none">Loading</h3><div id="txt-11"></div> </div>
 	<div class="ver city" id="17"> <h3 id="dln-17" style="display:none">Loading</h3><div id="txt-17"></div> </div>
+	<div class="ver city" id="21"> <h3 id="dln-21" style="display:none">Loading</h3><div id="txt-21"></div> </div>
   </div>
 </div>
 
@@ -98,7 +100,7 @@ req("8", apiUrl("8", 0, "jdk", 0),  "8 (LTS)");
 req("8", apiUrl("8",0,"jdk",1),"8 (LTS)");
 req("8", apiUrl("8",0,"jre",0), "8 (LTS)");
 
-var vers = ["17", "11"];
+var vers = ["17", "11", "21"];
 for (var i = 0; i < vers.length; i++) {
 	var t = vers[i];
 	req(t, apiUrl(t, 0, "jdk", 0), t);
@@ -118,7 +120,7 @@ function otab(evt, cityName) {
 	if (evt!=undefined)evt.currentTarget.className += " w3-gray";
 }
 function $(id){return document.getElementById(id)}
-otab(null, '17')
+otab(null, '21')
 </script>
 
 </html>
