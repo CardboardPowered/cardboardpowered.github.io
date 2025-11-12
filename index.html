@@ -3,109 +3,122 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-	<link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
-	<meta name="description" content="Cardboard - Bukkit4Fabric - Bukkit/Spigot for Fabric" />
+	<link href="https://www.w3schools.com/w3css/5/w3.css" rel="stylesheet">
+	<meta name="description" content="Cardboard - Bukkit4Fabric - Bukkit/Spigot/Paper for Fabric" />
 
-	<title>Cardboard - Bukkit4Fabric</title>
+	<title>Cardboard - Bukkit/Paper for Fabric</title>
 	<style>
-	*{font-family:"Segoe UI",Arial,sans-serif;transition:background-color .3s;} h1 {font-size:100%;font-weight:400} .title{font-size:3rem;font-weight:600;line-height:1.125;color:#fff;}
-	#dwn {padding-top:32px;padding-bottom:188px} *:hover {animation-play-state:paused} body {background:rgb(29,29,29);color:white} .d {min-width:140px;margin:1px} .ap {padding:0;margin:0}
-	.head {padding:1em;box-shadow: 0px 3px 4px rgb(0,57,108);background:rgb(0,3,8)} .inline {display:inline-block;width:60%}.w3-dark-gray {box-shadow:2px 4px 8px black} code {background:black;padding:4px}
-	.w3-button:hover{background-color:rgb(0,200,0)!important} .statrow>* {padding:1rem;height:16vh;margin-bottom:2vh} .toprow>*{padding:1rem}.toprow{height:51vh} .per{font-size:3rem}
-	.pt {font-size:1.2rem;margin-left:.3rem}.bb {background:rgb(0,60,110);width:99%}
+	*{font-family:"Segoe UI",Arial,sans-serif;transition:background-color .5s;} .title{font-size:2rem;font-weight:600;color:#fff;vertical-align:middle;display:inline-block}
+	#dwn {padding-top:32px;padding-bottom:188px} *:hover {animation-play-state:paused} body {background:rgb(29,29,29);color:white}
+	.head {padding:1em;box-shadow: 0px 3px 4px rgb(0,57,108);background:rgb(0,3,8)} code {background:black;padding:4px}
+	.w3-button:hover{background-color:rgb(0,200,0)!important} .statrow>* {padding:1rem;height:16vh;margin-bottom:2vh}
+	.bb {background:rgb(20,80,160);}
+	.black1 {background:rgb(8,8,8);padding-top:8rem;padding-bottom:8rem;}
+	.headline {font-size:5rem; line-height:6rem;margin-bottom:2rem;}
+	td {min-width: 5rem;} .si i {color:rgb(200,200,200);}
+
+	/* W3 Flex */
+	.w3-flex-center {display:flex;justify-content:center;flex-wrap:wrap}
+	.w3-gap { gap: 4rem; }
+	.w3-gap > div { margin-right: 1rem; }
+	@supports (gap: 1rem) {.w3-gap > div{margin-right: 0;}}
 	</style>
 </head>
 
 <!--Head-->
 <div class="w3-container head" id="head" style="color:white;text-align:center">
-	<div style="float:left;padding-left:2rem;margin:1rem;">
-		<span style="margin-left:50px;">Fabric + Paper =</span>
-		<h1 class="title" style="margin:0;margin-top:-11px;"><img src="./assets/cardboard-box.png" width="60px">Cardboard</h1> 
-		<p class="cba" style="font-size:.7em;padding-top:0;margin-left:60px;margin-top:-15px;">Spigot/Paper API for Fabric</p>
+	<div style="float:left;padding-left:2rem;">
+		<img src="./assets/cardboard-box.png" width="60px"><h1 class="title">Cardboard</h1> 
 	</div>
 	<div style="float:right;margin-right:6rem;" id="nav" class="w3-navbar">
-		<a href="" style="padding:8px;padding-left:24px;padding-right:24px"><button style="border-bottom:3px solid rgb(0,50,100)" class="w3-button w3-black">Home</button></a>
-		<a href="./download" style="padding:8px;padding-left:24px;padding-right:24px"><button class="w3-button w3-black">Download</button></a><br><br>
+		<a href="" style="padding:16px"><button style="border-bottom:3px solid rgb(0,50,100)" class="w3-button w3-black">Home</button></a>
+		<a href="./download" style="padding:16px;"><button class="w3-button w3-black">Download</button></a>
 		<a class="w3-button w3-black ap" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="./assets/apex.png" width="200"></a>
 	</div>
 </div>
 
 <body>
-	<div class="w3-container" style="padding:1rem;max-width:1550px;margin:auto">
-		<div class="w3-row toprow">
-			<div class="w3-col w3-hide-small w3-hide-medium" style="width:17%;padding-top:5vh">
-				<a href="./download"><button class="w3-button bb">View Downloads</button></a><br>
-				<br>Partnered with Apex:<br><a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="./download/apex/apex2-178.png" width="99%"></a>
+	<!-- Main Section -->
+	<div class="w3-auto w3-gap w3-padding-64 w3-container">
+		<div class="w3-mobile">
+			<div class=" w3-hide-small" style="width:33%;float:right">
+				<iframe src="https://bit.ly/cardboardplay" frameborder="0" width="100%" height="370px"></iframe>
 			</div>
-			<div class="w3-rest w3-mobile">
-				<div class="w3-col w3-hide-small" style="width:33%;float:right">
-					<iframe src="https://bit.ly/cardboardplay" frameborder="0" width="100%" height="370px"></iframe>
-				</div>
-				<div class="w3-rest" style="padding:2.5%;padding-left:1.5%!important">
-					<h2><b>Cardboard</b> = Fabric + Paper</h2>
-					<a target="_blank" href="https://discord.com/invite/tddTWXZtaP"><img src="./assets/discord.png"></a>&nbsp;
-					<img src="https://cf.way2muchnoise.eu/full_381583_downloads.svg">&nbsp;
-					<img id="running" src="https://img.shields.io/badge/Running%20Servers-50+-blue">&nbsp;
-					<p style="font-size:17px;">Cardboard is a Fabric mod that adds support for the popular Bukkit/Spigot/Paper plugin API.&nbsp;
-						This mod lets you use plugins that are made for Bukkit and it's derivatives <i>(Spigot & Paper)</i> with Fabric.<br><br>
-						Cardboard is still in development and <b>will not</b> support every plugin.<br>
-						Test Server kindly provided by Apex Hosting: <code>cardboardmod.apexmc.co</code>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="w3-container" style="max-width:1800px;margin:auto">
-		<div class="w3-row statrow">
-			<div class="w3-third">
-				<center>Partnered with <a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548">Apex Minecraft Hosting<br>
-				<img src="./assets/apex.png" width="60%" style="border-radius:1rem;"></a></center>
-			</div>
-			
-			<!-- Note: TODO: This is from 1.16: -->
-			<!--
-			<div class="w3-third">
-				<span class="per">68%</span><span class="pt"> of Patches Ported</span><br>
-				<div class="w3-dark-gray inline"><div class="bb w3-center" style="width:68%">68%</div></div>
-				<a href="https://github.com/CardboardPowered/cardboard/issues/10"><small><i>(148 of 215)</i></small></a>
-			</div>
-			<div class="w3-third">
-				<span class="per">51%</span><span class="pt"> of Events Implemented</span><br>
-				<div class="w3-dark-gray inline"><div class="bb w3-center" style="width:51%">51%</div></div>
-				<a href="https://github.com/CardboardPowered/cardboard/issues/9"><small><i>(93 of 181)</i></small></a>
-			</div>
-			-->
+			<h2 class="headline"><b>Cardboard =<br>Fabric + Paper</b></h2>
+			<img src="https://cf.way2muchnoise.eu/full_381583_downloads.svg">
+			<a href="./download"><img src="https://img.shields.io/modrinth/dt/cardboard?logo=modrinth" width="150px"></a>
+
+			<p style="font-size:16px;">Cardboard is a Fabric mod that adds support for the popular Bukkit/Spigot/Paper plugin API.&nbsp;<br>
+				This mod lets you use plugins that are made for Bukkit and it's derivatives <i>(Spigot & Paper)</i> with Fabric.<br><br>
+				Cardboard is still in development and <b>will not</b> support every plugin.<br>
+				Test Server kindly provided by Apex Hosting: <code>cardboardmod.apexmc.co</code>
+			</p>
+			<br>Partnered with Apex:<br><a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="./assets/apex-hosting-mobile.webp" width="500"></a>
 		</div>
 	</div>
 
-	<div class="w3-container black w3-center" id="dwn" style="background:rgb(8,8,8);padding-bottom:9rem;padding-top:9rem;"><br>
-		<a id="dl" href="./download/index.html" target="_blank"><button class="w3-button w3-green" type="button"><span id="txt">Download Cardboard</span></button></a>
-		<br><br><br><br>
-		<span class="title" style="color:rgba(170,170,170);font-size:0.6rem;margin:4px;margin-top:24em">Get a Minecraft server with our partner link:</span><br>
-		<a class="w3-center" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><video muted autoplay loop id="myVideo"><source id="vidsrc" src="./download/apex/Apex Hosting Animated Logo Only.mp4" type="video/mp4"></video></a><br>
+	<!--Section-->
+	<div class="w3-flex-center w3-gap w3-debug w3-center w3-padding-64 si">
+		<div>
+			<i>Partnered with <a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"></i><br>
+			<img src="./assets/apex.png" width="200" style="border-radius:1rem;" alt="Apex Minecraft Hosting"></a>
+		</div>
+		<div>
+			<i>Get Cardboard</i><br>
+			<a href="./download"><button class="w3-button bb" style="width:200px">View Downloads &rsaquo;</button></a><br>
+		</div>
+		<div>
+			<i>Stats</i><br>
+			<a href="#stats"><img id="running" src="https://img.shields.io/badge/Running%20Servers-50+-blue" height="30"></a>
+		</div>
+		<div>
+			<i>Community</i><br>
+			<a target="_blank" href="https://discord.com/invite/tddTWXZtaP"><img src="./assets/Discord Join.svg" height="30"></a>
+		</div>
 	</div>
-	<div class="black" id="footer" style="background:black;text-align:center">
-		<table style="width:100%;padding-top:2rem">
-			<tr class="w3-mobile">
-				<td class="w3-mobile" style="color:rgb(150,150,150)">
-					<a href="https://discord.com/invite/tddTWXZtaP">Discord</a>&nbsp;&middot;&nbsp;<a href="https://curseforge.com/minecraft/mc-mods/cardboard/">Curseforge</a>&nbsp;&middot;&nbsp;<a href="https://github.com/cardboardpowered">Github</a>
-				</td>
-				
-				
-			</tr>
-		</table>
- 
+
+	<!--Section-->
+	<div class="w3-flex-center w3-gap black1" id="stats" style="gap: 10vw">
+		<div>
+			<p><i>bStats &rsaquo; Paper Version &rsaquo; Cardboard</i></p>
+			<canvas id="pieCanvas" width="300" height="300"></canvas><br>
+			<a href="./chart.html"><button class="w3-button w3-black">Bigger</button></a>
+		</div>
+		<div>
+			<p>Running Cardboard</p>
+			<table id="verTA"></table>
+		</div>
+		<div>
+			<!--Section-->
+			<div class="w3-container black w3-center" id="dwn"><br>
+				<a id="dl" href="./download/index.html" target="_blank"><button class="w3-button w3-green" type="button"><span id="txt">Download Cardboard</span></button></a>
+				<br><br><br><br>
+				<span class="w3-text-gray" style="font-size:0.6rem;margin:4px;">Get a Minecraft server with our partner link:</span><br>
+				<a class="w3-center" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><video muted autoplay loop id="myVideo"><source id="vidsrc" src="./download/apex/Apex Hosting Animated Logo Only.mp4" type="video/mp4"></video></a><br>
+			</div>
+			
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<div class="black" id="footer" style="background:black;text-align:center;padding-top:2rem;">
 		
-		<table style="padding:74px;color:rgb(200,200,200);width:100%">
-			<tr class="w3-row">
-				<td class="w3-quarter">&nbsp;</td>
-				<td class="w3-half" style="font-size:14px">
-					Cardboard - Bukkit/Spigot for Fabric<br>Copyright &copy; 2020-2023
-				</td>
-				<td class="w3-quarter">&nbsp;</td>
-			</tr>
-		</table>
+		<div class="w3-flex-center w3-padding">
+			<div><a href="https://modrinth.com/mod/multiworld/">Multiworld</a> / <a href="https://modrinth.com/mod/icommon/">iCommonLib</a> / <a href="https://modrinth.com/resourcepack/128">i128 Resourcepack</a></div>
+		</div>
+		
+		<div class="w3-flex-center w3-gap w3-padding">
+			<div><a href="https://discord.com/invite/tddTWXZtaP">Discord</a></div>
+			<div><a href="https://curseforge.com/minecraft/mc-mods/cardboard/">Curseforge</a></div>
+			<div><a href="https://modrinth.com/mod/cardboard/">Modrinth</a></div>
+			<div><a href="https://github.com/cardboardpowered">Github</a></div>
+		</div>
+
+		<div class="w3-flex-center w3-gap w3-padding-32 w3-text-grey">
+			<div>Cardboard - Bukkit/Spigot for Fabric<br>Copyright &copy; 2020-2025</div>
+		</div>
 	</div>
 </body>
+<script src="./chart.js"></script>
 <script src="./index.js"></script>
 </html>

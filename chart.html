@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<link href="https://www.w3schools.com/w3css/5/w3.css" rel="stylesheet">
+	<meta name="description" content="Cardboard - Bukkit4Fabric - Bukkit/Spigot/Paper for Fabric" />
+
+	<title>Cardboard - Bukkit/Paper for Fabric</title>
+	<style>
+	*{font-family:"Segoe UI",Arial,sans-serif;} .title{font-size:2rem;font-weight:600;color:#fff;vertical-align:middle;display:inline-block}
+	#dwn {padding-top:32px;padding-bottom:188px} body {background:rgb(20,20,20);color:white}
+	.head {padding:1em;box-shadow: 0px 3px 4px rgb(0,57,108);background:rgb(0,3,8)}
+	td {min-width: 5rem;}
+
+	/* W3 Flex */
+	.w3-flex-center {display:flex;justify-content:center;flex-wrap:wrap}
+	.w3-gap { gap: 4rem; }
+	</style>
+</head>
+
+<!--Head-->
+<div class="w3-container head" id="head" style="color:white;text-align:center">
+	<div style="float:left;padding-left:2rem;">
+		<img src="./assets/cardboard-box.png" width="60px"><h1 class="title">Cardboard</h1> 
+	</div>
+	<div style="float:right;margin-right:6rem;" id="nav" class="w3-navbar">
+		<a href="./index.html"><button class="w3-button">Home</button></a>
+		<a href="./download"><button class="w3-button">Download</button></a>
+		<a class="w3-button" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="./assets/apex.png" width="200"></a>
+	</div>
+</div>
+
+<body>
+
+	<!--Section-->
+	<div class="w3-flex-center w3-gap w3-padding" id="stats" style="gap: 10vw;min-height:90vh;">
+		<div>
+			<p><i>bStats &rsaquo; Paper Version &rsaquo; Cardboard</i></p>
+			<canvas id="pieCanvas" width="600" height="600"></canvas><br>
+			<button id="ubtn" onclick="updateBtnClick()">Refresh from bStats API</button><br>
+			<h3><div id="lastUpdate">.</div></h3>
+		</div>
+		<div>
+			<p>Running Cardboard</p>
+			<table id="verTA"></table>
+			<a href="#stats"><img id="running" src="https://img.shields.io/badge/Running%20Servers-50+-blue" width="200"></a>
+			<hr>
+			<span>Cardboard:</span>
+			<img src="https://cf.way2muchnoise.eu/full_381583_downloads.svg">
+			<a href="./download"><img src="https://img.shields.io/modrinth/dt/cardboard?logo=modrinth"></a><br>
+			<span>iCommonLib: </span><img src="https://img.shields.io/modrinth/dt/icommon?logo=modrinth"><br>
+			<span>Multiworld: </span><img src="https://img.shields.io/modrinth/dt/Multiworld?logo=modrinth"><br><br>
+			<span>My Resourcepack: </span><br><a href="https://www.curseforge.com/minecraft/texture-packs/isaiahs-faithful-x128"><img src="https://cf.way2muchnoise.eu/full_545009_downloads.svg"><i>(x128)</i></a>,<br><img src="https://cf.way2muchnoise.eu/full_358302_downloads.svg"><i>(x512)</i>, 
+		</div>
+		<div>
+			<!--Section-->
+			<div class="w3-container black w3-center" id="dwn"><br>
+			</div>
+			
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<div class="black" id="footer" style="background:black;text-align:center;padding-top:2rem;">
+		<div class="w3-flex-center w3-gap w3-padding">
+			<div><a href="https://discord.com/invite/tddTWXZtaP">Discord</a></div>
+			<div><a href="https://curseforge.com/minecraft/mc-mods/cardboard/">Curseforge</a></div>
+			<div><a href="https://modrinth.com/mod/cardboard/">Modrinth</a></div>
+			<div><a href="https://github.com/cardboardpowered">Github</a></div>
+		</div>
+
+		<div class="w3-flex-center w3-gap w3-padding-32 w3-text-grey">
+			<div>Cardboard - Bukkit/Spigot for Fabric<br>Copyright &copy; 2020-2025</div>
+		</div>
+	</div>
+</body>
+<script src="./chart.js"></script>
+<script src="./index.js"></script>
+<script>
+
+colors = ["#66B2FF", "#003366", "rgb(0, 100, 200)", "rgb(25, 100, 255)", "#CCE5FF", "#99CCFF", "#3399FF", "#A67C52", "yellow"]
+var colors2 = [
+  "#001F3F", // very dark navy
+  "#003366", // dark blue
+  "#004C99", // medium-dark blue
+  "#0066CC", // strong blue
+  "#3399FF", // bright blue
+  "#66B2FF", // lighter blue
+  "#99CCFF", // pale blue
+  "#CCE5FF"  // very light blue
+];
+
+
+var waitC = 0;
+
+function updateBtnClick() {
+	if (!avoidSpam()) return;
+	bstatsRaw();
+	setText();
+	$("ubtn").disabled = true;
+	$("ubtn").innerText = "Wait before next press";
+	
+	waitC = 10;
+	
+	const intervalId = setInterval(() => {
+	  console.log("Current value of i:", waitC);
+	  waitC--; // Decrement i in each interval
+
+		$("ubtn").innerText = `Cooldown ${waitC}s`;
+
+	  if (waitC <= 0) {
+		$("ubtn").innerText = "Refresh from bStats API";
+		$("ubtn").disabled = false;
+		clearInterval(intervalId); // Cancel the interval
+		console.log("Interval cleared because i is less than 0.");
+	  }
+	}, 1000);
+		
+	setTimeout(function() {
+		$("ubtn").innerText = "Refresh from bStats API";
+		$("ubtn").disabled = false;
+	}, 10000);
+}
+
+
+
+function avoidSpam() {
+	var last = Number(getLast())
+	var noww = Date.now();
+	return (noww - last > 5000);
+}
+
+function setText() {
+	$("lastUpdate").innerText = 'Last Update: ' + new Date(Number(getLast())).toLocaleString();
+}
+
+setTimeout(function() {
+	setText();
+}, 500);
+</script>
+</html>
