@@ -42,6 +42,7 @@ function bstatsRaw() {
 		runn().src = srcc(c);
 		setCookie('bstats=' + c, 60);
 		setCookie('bstatsA=' + myData1, 60);
+		setCookie('bstatsB=' + myData2, 60);
 		setCookie('bstatsLast=' + Date.now(), 60);
 	}});
 }
