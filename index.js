@@ -22,6 +22,7 @@ function bstats() {
 		return;
 	}
 	bstatsRaw();
+	makePieChart();
 }
 
 function bstatsRaw() {

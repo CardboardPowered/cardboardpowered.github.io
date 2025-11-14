@@ -1,50 +1,49 @@
 <html>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
 <style>
-.slide {display:none;background-color:rgb(15,15,15);border-radius:.5rem;} .slide * {margin:0;border-radius:.5rem;}
-.slide .w3-lblack {background-color:rgb(16,16,16);color:white;text-align:center;}
+.slide {display:none;background-color:rgb(15,15,15);border-radius:.5rem;position:relative;} .slide * {margin:0;border-radius:.5rem}
+.slide .w3-lblack {background:rgb(16,16,16);color:white;text-align:center;}
 .slide img {vertical-align:middle;margin-right:.3rem;width:18px}
-.slide .w3-display-topleft {background-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,.0));position:absolute;text-shadow:2px 2px 3px black;width:100%}
-.slide .w3-button {background:rgba(0,0,0,0);color:white;}
+.slide .w3-display-topleft {background-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,.0));position:absolute;text-shadow:2px 2px 3px black;width:100%;color:white;}
+.slide .w3-button {background:transparent;color:white;}
+.bl{position:absolute;left:0;bottom:0}
+.br{position:absolute;right:0;bottom:0}
 </style>
 
- <div class="w3-content w3-section" onmouseenter="ent(false)" onmouseleave="ent(true)" style="max-width:500px">
-  <div class="w3-display-container slide">
-   <iframe width="100%" height="270" src="https://lite-youtube-embed-iframe.vercel.app/embed/e_DgNP5Vm9Q" loading="lazy" frameborder="0"></iframe>
-   <div class="w3-large w3-container w3-padding-16 w3-lblack">Multiverse on Cardboard</div>
-   <div class="w3-display-topleft w3-container w3-padding-16 re" style="color:white;"><img src="./assets/cardboard-box.png" width="32px">Multiverse</div>
-   <button class="w3-button w3-display-bottomleft w3-padding-16" onclick="carousel(-1)">&#10094;</button>
-   <button class="w3-button w3-display-bottomright w3-padding-16 " onclick="carousel(1)">&#10095;</button>
-  </div>
-  <div class="w3-display-container slide">
-   <iframe width="100%" height="270" src="https://lite-youtube-embed-iframe.vercel.app/embed/7B0jTDzSFGE" loading="lazy" frameborder="0"></iframe>
-   <div class="w3-large w3-container w3-padding-16 w3-lblack">WorldGuard on Cardboard</div>
-   <div class="w3-display-topleft w3-container w3-padding-16" style="color:white;"><img src="./assets/cardboard-box.png" width="32px">WorldGuard</div>
-   <button class="w3-button w3-display-bottomleft w3-padding-16" onclick="carousel(-1)">&#10094;</button>
-   <button class="w3-button w3-display-bottomright w3-padding-16 " onclick="carousel(1)">&#10095;</button>
-    </div>
-  <div class="w3-display-container slide">
-   <iframe width="100%" height="270" src="https://lite-youtube-embed-iframe.vercel.app/embed/o47glUL6WyQ" loading="lazy" frameborder="0"></iframe>
-   <div class="w3-large w3-container w3-padding-16 w3-lblack">CoreProtect on Cardboard</div>
-   <div class="w3-display-topleft w3-container w3-padding-16" style="color:white;"><img src="./assets/cardboard-box.png" width="32px">CoreProtect</div>
-  
-   <button class="w3-button w3-display-bottomleft w3-padding-16" onclick="carousel(-1)">&#10094;</button>
-   <button class="w3-button w3-display-bottomright w3-padding-16 " onclick="carousel(1)">&#10095;</button>
-  </div>
- </div>
- <script>
-  var myIndex = 0;
-  var doC = true;
-  carousel();
-  function carousel(a) {
+<div class="w3-content w3-section" onmouseenter="ent(false)" onmouseleave="ent(true)" style="max-width:500px">
+	<div class="slide">
+		<iframe width="100%" height="270" src="https://lite-youtube-embed-iframe.vercel.app/embed/e_DgNP5Vm9Q" loading="lazy" frameborder="0"></iframe>
+		<div class="w3-large w3-padding w3-lblack">Multiverse on Cardboard</div>
+		<div class="w3-display-topleft w3-padding re"><img src="./assets/cardboard-box.png" width="32px">Multiverse</div>
+		<button class="w3-button bl w3-padding" onclick="carousel(-1)">&#10094;</button>
+	<button class="w3-button br w3-padding" onclick="carousel(1)">&#10095;</button>
+	</div>
+	<div class="slide">
+		<iframe width="100%" height="270" src="https://lite-youtube-embed-iframe.vercel.app/embed/7B0jTDzSFGE" loading="lazy" frameborder="0"></iframe>
+		<div class="w3-large w3-padding w3-lblack">WorldGuard on Cardboard</div>
+		<div class="w3-display-topleft w3-padding"><img src="./assets/cardboard-box.png" width="32px">WorldGuard</div>
+		<button class="w3-button bl w3-padding" onclick="carousel(-1)">&#10094;</button>
+		<button class="w3-button br w3-padding" onclick="carousel(1)">&#10095;</button>
+	</div>
+	<div class="slide">
+		<iframe width="100%" height="270" src="https://lite-youtube-embed-iframe.vercel.app/embed/o47glUL6WyQ" loading="lazy" frameborder="0"></iframe>
+		<div class="w3-large w3-padding w3-lblack">CoreProtect on Cardboard</div>
+		<div class="w3-display-topleft w3-padding"><img src="./assets/cardboard-box.png" width="32px">CoreProtect</div>
+		<button class="w3-button bl w3-padding" onclick="carousel(-1)">&#10094;</button>
+		<button class="w3-button br w3-padding" onclick="carousel(1)">&#10095;</button>
+	</div>
+</div>
+<script>
+var idx = 0; var doC = true; carousel();
+function carousel(a) {
 	if (!doC && undefined == a) return;
 	var x = document.getElementsByClassName("slide");
-	for (var i = 0; i < x.length; i++) {x[i].style.display="none";}
-	myIndex += ((undefined == a) ? 1 : a);
-	if (myIndex > x.length) {myIndex = 1} 
-	x[myIndex-1].style.display = "block";  
+	for (var i=0; i < x.length; i++) {x[i].style.display="none";}
+	idx += ((undefined == a) ? 1 : a);
+	if (idx > x.length) {idx = 1} 
+	x[idx-1].style.display = "block";  
 	setTimeout(carousel, 4000);
-  }
-  function ent(x){doC=x}
- </script>
+}
+function ent(x){doC=x}
+</script>
 </html>

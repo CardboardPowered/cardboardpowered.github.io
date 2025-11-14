@@ -10,15 +10,16 @@
 	<style>
 	*{font-family:"Segoe UI",Arial,sans-serif;transition:background-color .5s;} .title{font-size:2rem;font-weight:600;color:#fff;vertical-align:middle;display:inline-block}
 	#dwn {padding-top:32px;padding-bottom:188px} *:hover {animation-play-state:paused} body {background:rgb(29,29,29);color:white}
-	.head {padding:1em;box-shadow: 0px 3px 4px rgb(0,57,108);background:rgb(0,3,8)} code {background:black;padding:4px}
+	.head {padding:1em;box-shadow: 0px 3px 4px rgb(0,57,108);background:rgb(0,3,8);color:white;text-align:center} code {background:black;padding:4px}
 	.w3-button:hover{background-color:rgb(0,200,0)!important} .statrow>* {padding:1rem;height:16vh;margin-bottom:2vh}
 	.bb {background:rgb(20,80,160);}
 	.black1 {background:rgb(8,8,8);padding-top:8rem;padding-bottom:8rem;}
 	.headline {font-size:5rem; line-height:6rem;margin-bottom:2rem;}
 	td {min-width: 5rem;} .si i {color:rgb(200,200,200);}
+	#footer {background:black;text-align:center;padding-top:2rem;}
 
 	/* W3 Flex */
-	.w3-flex-center {display:flex;justify-content:center;flex-wrap:wrap}
+	.flex-center {display:flex;justify-content:center;flex-wrap:wrap}
 	.w3-gap { gap: 4rem; }
 	.w3-gap > div { margin-right: 1rem; }
 	@supports (gap: 1rem) {.w3-gap > div{margin-right: 0;}}
@@ -26,13 +27,13 @@
 </head>
 
 <!--Head-->
-<div class="w3-container head" id="head" style="color:white;text-align:center">
+<div class="w3-container head" id="head">
 	<div style="float:left;padding-left:2rem;">
 		<img src="./assets/cardboard-box.png" width="60px"><h1 class="title">Cardboard</h1> 
 	</div>
 	<div style="float:right;margin-right:6rem;" id="nav" class="w3-navbar">
-		<a href="" style="padding:16px"><button style="border-bottom:3px solid rgb(0,50,100)" class="w3-button w3-black">Home</button></a>
-		<a href="./download" style="padding:16px;"><button class="w3-button w3-black">Download</button></a>
+		<a class="w3-padding" href=""><button style="border-bottom:3px solid rgb(0,50,100)" class="w3-button w3-black">Home</button></a>
+		<a class="w3-padding" href="./download"><button class="w3-button w3-black">Download</button></a>
 		<a class="w3-button w3-black ap" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="./assets/apex.png" width="200"></a>
 	</div>
 </div>
@@ -58,7 +59,7 @@
 	</div>
 
 	<!--Section-->
-	<div class="w3-flex-center w3-gap w3-debug w3-center w3-padding-64 si">
+	<div class="flex-center w3-gap w3-center w3-padding-64 si">
 		<div>
 			<i>Partnered with <a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"></i><br>
 			<img src="./assets/apex.png" width="200" style="border-radius:1rem;" alt="Apex Minecraft Hosting"></a>
@@ -78,7 +79,7 @@
 	</div>
 
 	<!--Section-->
-	<div class="w3-flex-center w3-gap black1" id="stats" style="gap: 10vw">
+	<div class="flex-center w3-gap black1" id="stats" style="gap: 10vw">
 		<div>
 			<p><i>bStats &rsaquo; Paper Version &rsaquo; Cardboard</i></p>
 			<canvas id="pieCanvas" width="300" height="300"></canvas><br>
@@ -93,28 +94,27 @@
 			<div class="w3-container black w3-center" id="dwn"><br>
 				<a id="dl" href="./download/index.html" target="_blank"><button class="w3-button w3-green" type="button"><span id="txt">Download Cardboard</span></button></a>
 				<br><br><br><br>
-				<span class="w3-text-gray" style="font-size:0.6rem;margin:4px;">Get a Minecraft server with our partner link:</span><br>
-				<a class="w3-center" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><video muted autoplay loop id="myVideo"><source id="vidsrc" src="./download/apex/Apex Hosting Animated Logo Only.mp4" type="video/mp4"></video></a><br>
+				<span class="w3-text-gray" style="font-size:.6rem;margin:4px;">Get a Minecraft server with our partner link:</span><br>
+				<a class="w3-center" href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="./assets/apex.gif"></a><br>
 			</div>
 			
 		</div>
 	</div>
 
 	<!-- Footer -->
-	<div class="black" id="footer" style="background:black;text-align:center;padding-top:2rem;">
-		
-		<div class="w3-flex-center w3-padding">
-			<div><a href="https://modrinth.com/mod/multiworld/">Multiworld</a> / <a href="https://modrinth.com/mod/icommon/">iCommonLib</a> / <a href="https://modrinth.com/resourcepack/128">i128 Resourcepack</a></div>
+	<div id="footer">
+		<div class="flex-center w3-padding">
+			<div><a href="https://modrinth.com/mod/multiworld/">Multiworld</a> / <a href="https://modrinth.com/mod/icommon/">iCommonLib</a> / <a href="https://bit.ly/faithful-128">i128 Resourcepack</a></div>
 		</div>
-		
-		<div class="w3-flex-center w3-gap w3-padding">
+
+		<div class="flex-center w3-gap w3-padding">
 			<div><a href="https://discord.com/invite/tddTWXZtaP">Discord</a></div>
-			<div><a href="https://curseforge.com/minecraft/mc-mods/cardboard/">Curseforge</a></div>
+			<div><a href="https://bit.ly/cf-cardboard">Curseforge</a></div>
 			<div><a href="https://modrinth.com/mod/cardboard/">Modrinth</a></div>
 			<div><a href="https://github.com/cardboardpowered">Github</a></div>
 		</div>
 
-		<div class="w3-flex-center w3-gap w3-padding-32 w3-text-grey">
+		<div class="flex-center w3-gap w3-padding-32 w3-text-grey">
 			<div>Cardboard - Bukkit/Spigot for Fabric<br>Copyright &copy; 2020-2025</div>
 		</div>
 	</div>

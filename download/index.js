@@ -11,8 +11,6 @@ function ver_click(e) {
 	req_new(txt, e)
 }
 
-addEventListener("load", function(e){ req_new('1.21.10', '26') });
-
 var myObj;
 function req_new(ver, e) {
 	ver = ver.replace('*','');
@@ -33,16 +31,12 @@ function req_new(ver, e) {
 }
 
 function doo(ver, e, c) {
-	var objj = myObj[c]
+	var objj = myObj[c];
 	var name = objj.name.split(" ")[0].replace('#','')
 	var dl = objj.files[0].url
 	var vars = objj.game_versions;
 
-	// TODO: 1.21.8 on modrinth
-	if (ver == '1.21.9') {
-	}
-
-	if (!vars.toString().includes(ver.split(' ')[0])) {
+	if (!(vars.toString().indexOf(ver.split(' ')[0]) != -1)) {
 		doo(ver, e, c + 1)
 		return;
 	}
@@ -51,3 +45,9 @@ function doo(ver, e, c) {
 	$('verc').innerHTML = $(e).innerText;
 	$('dll').href = dl;
 }
+
+addEventListener("load", function(e){ req_new('1.21.10', '24') });
+
+setTimeout(function() {
+	req_new('1.21.10', '24')
+}, 100);
