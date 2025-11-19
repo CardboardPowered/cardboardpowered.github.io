@@ -40,6 +40,7 @@ a{text-decorataion:none;cursor:pointer;}
 .omod:hover {background:black;}
 .omod img {padding-right:12px;height:48px}
 .omod p { margin:0;display:inline-block;vertical-align:middle}
-
+#updated,#size {color:gray;}
 .aa { color: rgb(0, 160, 255); cursor: pointer; }
 #head {color:white;text-align:center}
+#warn {color:red;font-weight:bold;}

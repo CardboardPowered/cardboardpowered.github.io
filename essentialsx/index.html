@@ -1,75 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>EssentialsX with Mod Support</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-*{font-family:"Segoe UI",Arial,sans-serif}
-.dgray {background-color:#1e1e1e;color:white;padding:30px 14px 30px 14px}
-.side{margin-top:2vh;display:inline-block;color:white;border-radius:8px;background:#004480}
-.dblu {background:#003060;border-radius:4px;margin-top:0;font-size:.8rem}
-a{text-decoration:none;cursor:pointer}
-.btn {text-align:left;margin:4px;min-width:26rem;background-color:#d71e19;border-radius:4px;color:white}
-.ver {font-size:1rem}
-</style>
-<body>
-<header class="w3-container dgray w3-center">
-	<img src="https://avatars0.githubusercontent.com/u/34553309?s=84&v=4" style="display:inline-block" width="48px">
-	<h1 class="w3-xlarge" style="display:inline-block;vertical-align:middle">EssentialsX with Modded Support</h1>
-</header>
-<div class="w3-row-padding w3-container w3-light-gray">
-	<div class="w3-content">
-		<p>EssentialsX will crash when using mods that add new blocks or items.<br>This has been fixed in the downloads below.</p>
-	</div>
-</div>
-<div class="w3-row-padding w3-padding-32 w3-container">
-  <div class="w3-content">
-    <div class="w3-twothird">
-      <div class="ver">
-        <h3 id="dln">Loading...</h3>
-        <div id="txt"></div>
-      </div>
-    </div>
-    <div class="w3-third w3-center">
-      <div class="w3-bar-block side w3-card" style="height:280px;display:inline-block">
-        <h3 class="w3-bar-item dblu">Advertisement</h3>
-        <a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548" target="_blank" id="api"><img id="ap" src="../download/apex/apex1.png"></a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="w3-content">
-	<a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="https://cdn.apexminecrafthosting.com/img/theme/apex-hosting-mobile.png"></a>
-</div>
-
-</body>
-<script>
-function req(job) {
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      var myObj = JSON.parse(this.responseText);
-      var date = new Date(myObj.timestamp);
-      var aa = myObj.artifacts;
-      var aaa = aa[0].displayPath.toString().replace('.jar', '').replace('EssentialsX-', '');
-      document.getElementById("dln").innerHTML = "EssentialsX <span class='ver'>" + aaa + " (" + date.toDateString() + ")</span>";
-
-      for (var i = 0; i < (aa.length - 1); i++) {
-        var dl = "https://ci.codemc.io/job/IsaiahPatton/job/EssentialsX-Modded-Support/" + myObj.number + "/artifact/" +  myObj.artifacts[i].relativePath;
-        var namea = aa[i].displayPath.split('-')[0].replace("alsX", "alsX ")
-        if (namea.includes("GeoIP")) continue;
-        document.getElementById("txt").innerHTML += '<a href="' + dl + '" class="a"><button class="w3-button w3-ripple btn">' + 
+	<title>EssentialsX with Mod Support</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+	<style>
+		* {font-family: "Segoe UI", Arial, sans-serif}
+		.dgray {background-color: #1e1e1e;color: white;padding: 30px 14px 30px 14px}
+		a {text-decoration: none;cursor: pointer}
+		.btn {text-align: left;margin: 4px;min-width: 26rem;background-color: #d71e19;border-radius: 4px;color: white}
+		.ver {font-size: 1rem}
+	</style>
+	<body>
+		<header class="w3-container dgray w3-center">
+			<img src="https://avatars0.githubusercontent.com/u/34553309?s=84&v=4" style="display:inline-block" width="48px">
+			<h1 class="w3-xlarge" style="display:inline-block;vertical-align:middle">EssentialsX + Better Modded Support</h1>
+		</header>
+		<div class="w3-row-padding w3-container w3-light-gray">
+			<div class="w3-content"><p>EssentialsX may crash when using mods that add new blocks or items. <br>This has been fixed in the downloads below. </p></div>
+		</div>
+		<div class="w3-row-padding w3-padding-32 w3-container">
+			<div class="w3-content">
+				<div class="w3-twothird">
+					<div class="ver">
+						<h3 id="dln">Loading...</h3>
+						<div id="txt"></div>
+					</div>
+				</div>
+				<div class="w3-third w3-center">
+					<div id="apb" class="w3-card-4" style="max-width:280px;color:white">
+						<div class="w3-container w3-padding" style="background:rgb(0, 46, 96)">Partner</div>
+						<div class="con"><a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="../download/apex/apex1.png" width="100%"></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="w3-row-padding w3-padding-32 w3-content">
+			<a href="https://ci.codemc.io/job/pisaiah/job/EssentialsX-Modded-Support/">
+				<button>See all Downloads</button>
+			</a>
+		</div>
+		<div class="w3-content">
+			<a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548">
+				<img src="https://cdn.apexminecrafthosting.com/img/theme/apex-hosting-mobile.png">
+			</a>
+		</div>
+	</body>
+	<script>
+	
+		var cached = '{"artifacts":[{"displayPath":"EssentialsX-2.21.0-dev+28-bcdc66b.jar","fileName":"EssentialsX-2.21.0-dev+28-bcdc66b.jar","relativePath":"jars/EssentialsX-2.21.0-dev+28-bcdc66b.jar"},{"displayPath":"EssentialsXAntiBuild-2.21.0-dev+28-bcdc66b.jar","fileName":"EssentialsXAntiBuild-2.21.0-dev+28-bcdc66b.jar","relativePath":"jars/EssentialsXAntiBuild-2.21.0-dev+28-bcdc66b.jar"},{"displayPath":"EssentialsXChat-2.21.0-dev+28-bcdc66b.jar","fileName":"EssentialsXChat-2.21.0-dev+28-bcdc66b.jar","relativePath":"jars/EssentialsXChat-2.21.0-dev+28-bcdc66b.jar"},{"displayPath":"EssentialsXDiscord-2.21.0-dev+28-bcdc66b.jar","fileName":"EssentialsXDiscord-2.21.0-dev+28-bcdc66b.jar","relativePath":"jars/EssentialsXDiscord-2.21.0-dev+28-bcdc66b.jar"},{"displayPath":"EssentialsXDiscordLink-2.21.0-dev+28-bcdc66b.jar","fileName":"EssentialsXDiscordLink-2.21.0-dev+28-bcdc66b.jar","relativePath":"jars/EssentialsXDiscordLink-2.21.0-dev+28-bcdc66b.jar"},{"displayPath":"EssentialsXGeoIP-2.21.0-dev+28-bcdc66b.jar","fileName":"EssentialsXGeoIP-2.21.0-dev+28-bcdc66b.jar","relativePath":"jars/EssentialsXGeoIP-2.21.0-dev+28-bcdc66b.jar"},{"displayPath":"EssentialsXProtect-2.21.0-dev+28-bcdc66b.jar","fileName":"EssentialsXProtect-2.21.0-dev+28-bcdc66b.jar","relativePath":"jars/EssentialsXProtect-2.21.0-dev+28-bcdc66b.jar"},{"displayPath":"EssentialsXSpawn-2.21.0-dev+28-bcdc66b.jar","fileName":"EssentialsXSpawn-2.21.0-dev+28-bcdc66b.jar","relativePath":"jars/EssentialsXSpawn-2.21.0-dev+28-bcdc66b.jar"},{"displayPath":"EssentialsXXMPP-2.21.0-dev+28-bcdc66b.jar","fileName":"EssentialsXXMPP-2.21.0-dev+28-bcdc66b.jar","relativePath":"jars/EssentialsXXMPP-2.21.0-dev+28-bcdc66b.jar"}],"timestamp":1711177215157,"number":13}';
+	
+		function req(job) {
+			//var xmlhttp = new XMLHttpRequest();
+			//xmlhttp.onreadystatechange = function() {
+			//	if (this.readyState == 4 && this.status == 200) {
+					// var myObj = JSON.parse(this.responseText);
+					var myObj = JSON.parse(cached);
+					var date = new Date(myObj.timestamp);
+					var aa = myObj.artifacts;
+					var aaa = aa[0].displayPath.toString().replace('.jar', '').replace('EssentialsX-', '');
+					document.getElementById("dln").innerHTML = "EssentialsX <span class='ver'>" + aaa + " (" + date.toDateString() + ")</span>";
+					for (var i = 0; i < (aa.length - 1); i++) {
+						var dl = "https://ci.codemc.io/job/pisaiah/job/EssentialsX-Modded-Support/" + myObj.number + "/artifact/" + myObj.artifacts[i].relativePath;
+						var namea = aa[i].displayPath.split('-')[0].replace("alsX", "alsX ")
+						if (namea.includes("GeoIP")) continue;
+						document.getElementById("txt").innerHTML += '<a href="' + dl + '" class="a"><button class="w3-button w3-ripple btn">' + 
             '<img src="../download/download-solid.svg" width="24" style="float:right">&nbsp; <span style="vertical-align:middle;">Download ' + namea + '</span></button></a><br>';
-      }
-    }
-  };
-  var uurl = "https://api.allorigins.win/raw?url=https://bit.ly/essx-mod-support-download-api";
-  xmlhttp.open("GET", uurl, true);
-  xmlhttp.send();
-}
-
-req();
-</script>
+					}
+			//	}
+			//};
+			//var uurl = "https://api.allorigins.win/raw?url=https://ci.codemc.io/job/pisaiah/job/EssentialsX-Modded-Support/lastSuccessfulBuild/api/json";
+			//xmlhttp.open("GET", uurl, true);
+			//xmlhttp.send();
+		}
+		req();
+	</script>
 </html>

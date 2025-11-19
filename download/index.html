@@ -16,38 +16,44 @@
 	</div>
 </div>
 <br>
+
+<!-- Row 1 -->
 <div class="w3-row w3-autoo">
 	<div class="w3-third w3-container">
 		<center>
 		<div id="version-select" class="w3-card-4">
 			<div class="w3-container w3-padding" style="background:rgb(0, 46, 96)">Select version</div>
 			<div class="w3-container w3-padding con">
-				<button id="24" onclick="ver_click(24)" class="w3-button active">1.21.10</button>
-				<button id="23" onclick="ver_click(23)" class="w3-button">1.21.8</button>
-				<button id="22" onclick="ver_click(22)" class="w3-button">1.21.4</button>
-				<button id="21" onclick="ver_click(21)" class="w3-button">1.21.1</button>
-				<button id="20" onclick="ver_click(20)" class="w3-button">1.20.1</button>
+				<button onclick="vClk(this)" class="w3-button"><i>25w45a*</i></button>
+				<button onclick="vClk(this)" class="w3-button active">1.21.10</button>
+				<button onclick="vClk(this)" class="w3-button">1.21.8</button>
+				<button onclick="vClk(this)" class="w3-button">1.21.4</button>
+				<button onclick="vClk(this)" class="w3-button">1.21.1</button>
+				<button onclick="vClk(this)" class="w3-button">1.20.1</button>
 				<a href="./legacy.html"><button id="1" style="text-decoration:underline" class="w3-button">View Older</button></a>
 			</div>
 		</div>
 		</center>
 	</div>
+	<div class="w3-third w3-container w3-center">
+		<h2>Get Cardboard <span id="verc">[Loading...]</span></h2>
+		<p>&nbsp;<span id="warn"></span></p>
+		<a href="https://modrinth.com/mod/cardboard" id="dll"><button class="green" id="dlb">Download</button></a>
+		<br><br>
+		<span id="updated"></span><br><i id="size"></i><br>
+		<br><p>&nbsp;</p>
+	</div>
+	<div class="w3-third w3-container">
+		<center>
+		<div id="apb" class="w3-card-4">
+			<div class="w3-container w3-padding" style="background:rgb(0, 46, 96)">Partner</div>
+			<div class="con"><a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="./apex/apex1.png" width="100%"></a></div>
+		</div>
+		</center>
+	</div>
+</div>
 
-<div class="w3-third w3-container w3-center">
-	<h2>Get Cardboard <span id="verc">[Loading...]</span></h2>
-	<p>&nbsp;</p>
-	<a href="https://modrinth.com/mod/cardboard" id="dll"><button class="green" id="dlb">Download</button></a>
-	<br><br><p>&nbsp;</p>
-</div>
-<div class="w3-third w3-container">
-<center>
-<div id="apb" class="w3-card-4">
-	<div class="w3-container w3-padding" style="background:rgb(0, 46, 96)">Partner</div>
-	<div class="con"><a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="./apex/apex1.png" width="100%"></a></div>
-</div>
-</center>
-</div>
-</div>
+<!-- Row 2 -->
 <div class="w3-row w3-autoo">
 	<div class="w3-third w3-center">
 		<p><a href="https://billing.apexminecrafthosting.com/aff.php?aff=3548"><img src="./apex/apex4.png"></a></p>
@@ -61,18 +67,10 @@
 	</div>
 	<div class="w3-third" id="other">
 		<h3>Other mods:</h3>
-		<div class="omod">
-			<a href="https://bit.ly/multi-world"><img src="./globe.png"><p><b>Multiworld (Fabric)</b><br>World management mod</p></a>
-		</div>
-		<div class="omod">
-			<a href="https://bit.ly/luckyblocks-fabric"><img src="./assets/lb.png"><p><b>Lucky Blocks (Fabric)</b><br>Modern Lucky Blocks for Fabric</p></a>
-		</div>
-		<div class="omod">
-			<a href="https://bit.ly/chestshop-fabric"><img src="./assets/cshop.jpg"><p><b>Chest Shop (Fabric)</b><br>A simple mod that adds chest powered shops</p></a>
-		</div>
-		<div class="omod">
-			<a href="https://bit.ly/faithful-128"><img src="./assets/hd.png"><p><b>Faithful x128</b><br>128x128 textures that stay faithful to the default.</p></a>
-		</div>
+		<div class="omod"><a href="https://bit.ly/multi-world"><img src="./globe.png"><p><b>Multiworld (Fabric)</b><br>World management mod</p></a></div>
+		<div class="omod"><a href="https://bit.ly/luckyblocks-fabric"><img src="./assets/lb.png"><p><b>Lucky Blocks (Fabric)</b><br>Modern Lucky Blocks for Fabric</p></a></div>
+		<div class="omod"><a href="https://bit.ly/chestshop-fabric"><img src="./assets/cshop.jpg"><p><b>Chest Shop (Fabric)</b><br>A simple mod that adds chest powered shops</p></a></div>
+		<div class="omod"><a href="https://bit.ly/faithful-128"><img src="./assets/hd.png"><p><b>Faithful x128</b><br>128x128 textures that stay faithful to the default.</p></a></div>
 	</div>
 </div>
 

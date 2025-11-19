@@ -1,20 +1,29 @@
 function $(id) {return document.getElementById(id)}
 
+function vClk(el) {
+	const els = document.querySelectorAll('#version-select .active');
+	for (var i = 0; i < els.length; i++) { els[i].classList.remove('active'); }
+
+	el.classList.add('active');
+	req_new(el.innerText, el)
+}
+
 function ver_click(e) {
 	for (var i = 19; i <= 25; i++) {
 		if (undefined != $(i)) {
 			$(i).className = $(i).className.replace(' active', '');
 		}
 	}
+
 	$(e).className += ' active';
 	var txt = $(e).innerText;
 	req_new(txt, e)
 }
 
-var myObj;
+var versionJson;
 function req_new(ver, e) {
 	ver = ver.replace('*','');
-	if (undefined != myObj) {
+	if (undefined != versionJson) {
 		doo(ver, e, 0);
 		return;
 	}
@@ -22,7 +31,7 @@ function req_new(ver, e) {
 	var req = new XMLHttpRequest();
 	req.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			myObj = JSON.parse(this.responseText);
+			versionJson = JSON.parse(this.responseText);
 			doo(ver, e, 0);
 		}
 	};
@@ -30,24 +39,31 @@ function req_new(ver, e) {
 	req.send();
 }
 
-function doo(ver, e, c) {
-	var objj = myObj[c];
-	var name = objj.name.split(" ")[0].replace('#','')
-	var dl = objj.files[0].url
-	var vars = objj.game_versions;
+const snapMsg = "WARNNING:\nThis version of Cardboard is an experimental snapshot release!\n\n-Not actively supported\n - Not actively kept up-to-date with main release\n-Use at your own risk!";
 
-	if (!(vars.toString().indexOf(ver.split(' ')[0]) != -1)) {
+function doo(ver, e, c) {
+	var objj = versionJson[c];
+	var name = objj.name.split(" ")[0].replace('#','')
+	var file = objj.files[0];
+	var dl = file.url;
+	var vars = objj.game_versions;
+	var version = ver.split(' ')[0]; 
+	var updated = objj.date_published;
+
+	if (vars.indexOf(version) == -1) {
 		doo(ver, e, c + 1)
 		return;
 	}
 
 	$('dlb').innerHTML = '<span class="tspan">Download </a> #' + name + "&nbsp;<b>(for " + vars + ")</b></span>";
-	$('verc').innerHTML = $(e).innerText;
-	$('dll').href = dl;
+	$('verc').innerHTML = ver; // $(e).innerText;
+	$('dll').href = file.url;
+	$('updated').innerText = "Last Updated: " + new Date(updated).toDateString();
+	$('size').innerText = file.filename + " / " + (file.size/1024/1024).toFixed(2) + "MB";
+	$('warn').innerText = (version.indexOf('w') != -1) ? snapMsg : "";
+	
 }
 
-addEventListener("load", function(e){ req_new('1.21.10', '24') });
+addEventListener("load", function(e){ req_new('1.21.10') });
 
-setTimeout(function() {
-	req_new('1.21.10', '24')
-}, 100);
+setTimeout(function() { req_new('1.21.10') }, 100);

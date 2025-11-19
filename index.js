@@ -15,7 +15,7 @@ function bstats() {
 	var co = getCookie('bstats=');
 	var co2 = getCookie('bstatsA=');
 	var co3 = getCookie('bstatsB=');
-	
+
 	if (undefined!=co && co!=''){runn().src = srcc(co);}
 	if (undefined!=co2 && co2!='') {
 		makePieChart();
@@ -45,19 +45,21 @@ function bstatsRaw() {
 		setCookie('bstatsA=' + myData1, 60);
 		setCookie('bstatsB=' + myData2, 60);
 		setCookie('bstatsLast=' + Date.now(), 60);
-	}});
+	}}, function() {
+		setTimeout(function() { makePieChart(); }, 100);
+	});
 }
 
-function getJSON(url, cb) {
+function getJSON(url, cb, cb2) {
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', url, true); xhr.responseType = 'json';
-	xhr.onload = function(){ var stat = xhr.status;cb(stat !== 200 ? stat : null, xhr.response);};
+	xhr.onload = function(){ var stat = xhr.status;cb(stat !== 200 ? stat : null, xhr.response); if (undefined != cb2) { cb2(); }};
 	xhr.send();
 };
 
 setTimeout(function() {
 	bstats();
-}, 500);
+}, 1000);
 
 //bstats();
 
@@ -74,6 +76,7 @@ function setCookie(ccon, min) {
 }
 
 var colors = ["#F7D9A4","#FFE0B2", "#FFD27F","#E0BC7F","#DAB787","#CFA97A","#B58A66","#A67C52"];
+var tries = 0;
 
 function makePieChart() {
 	const canvas = $("pieCanvas");
@@ -81,6 +84,14 @@ function makePieChart() {
 
 	var labels = getCookie('bstatsA=').split(",").map(String);
 	var data = getCookie('bstatsB=').split(",").map(Number);
+	
+	if (labels.length == 0 && tries == 0) {
+		// setTimeout(function() { bstats(); }, 1000);
+	}
+	
+	console.log(document.cookie)
+	console.log(labels)
+	console.log(data)
 
 	const chart = new PieChart(data, labels, colors);
 	chart.drawPieTo(ctx, canvas.width, canvas.height);
