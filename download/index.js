@@ -39,7 +39,7 @@ function req_new(ver, e) {
 	req.send();
 }
 
-const snapMsg = "WARNNING:\nThis version of Cardboard is an experimental snapshot release!\n\n-Not actively supported\n - Not actively kept up-to-date with main release\n-Use at your own risk!";
+const snapMsg = "WARNING:\nThis version of Cardboard is an experimental snapshot release!\n\n-Not actively supported\n-Use at your own risk!";
 
 function doo(ver, e, c) {
 	var objj = versionJson[c];
@@ -60,7 +60,7 @@ function doo(ver, e, c) {
 	$('dll').href = file.url;
 	$('updated').innerText = "Last Updated: " + new Date(updated).toDateString();
 	$('size').innerText = file.filename + " / " + (file.size/1024/1024).toFixed(2) + "MB";
-	$('warn').innerText = (version.indexOf('w') != -1) ? snapMsg : "";
+	$('warn').innerText = (version.indexOf('w') != -1 || version.indexOf('-') != -1) ? snapMsg : "";
 	
 }
 
