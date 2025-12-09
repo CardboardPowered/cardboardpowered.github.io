@@ -22,7 +22,7 @@ function ver_click(e) {
 
 var versionJson;
 function req_new(ver, e) {
-	ver = ver.replace('*','');
+	// ver = ver.replace('*','');
 	if (undefined != versionJson) {
 		doo(ver, e, 0);
 		return;
@@ -40,6 +40,7 @@ function req_new(ver, e) {
 }
 
 const snapMsg = "WARNING:\nThis version of Cardboard is an experimental snapshot release!\n\n-Not actively supported\n-Use at your own risk!";
+const expMsg = "WARNING:\nThis version of Cardboard is still experimental";
 
 function doo(ver, e, c) {
 	var objj = versionJson[c];
@@ -47,7 +48,7 @@ function doo(ver, e, c) {
 	var file = objj.files[0];
 	var dl = file.url;
 	var vars = objj.game_versions;
-	var version = ver.split(' ')[0]; 
+	var version = ver.split(' ')[0].split('*')[0]; 
 	var updated = objj.date_published;
 
 	if (vars.indexOf(version) == -1) {
@@ -60,7 +61,7 @@ function doo(ver, e, c) {
 	$('dll').href = file.url;
 	$('updated').innerText = "Last Updated: " + new Date(updated).toDateString();
 	$('size').innerText = file.filename + " / " + (file.size/1024/1024).toFixed(2) + "MB";
-	$('warn').innerText = (version.indexOf('w') != -1 || version.indexOf('-') != -1) ? snapMsg : "";
+	$('warn').innerText = (version.indexOf('w') != -1 || version.indexOf('-') != -1) ? snapMsg : (ver.indexOf('*') != -1 ? expMsg : "");
 	
 }
 
