@@ -46,7 +46,7 @@ a{text-decorataion:none;cursor:pointer;}
 #warn {color:red;font-weight:bold;}
 
 .title{font-size:2rem;font-weight:600;color:#fff;vertical-align:middle;display:inline-block}
-#hdimg{width:48px;height:48px;display:inline-block;background:#000;vertical-align:middle;margin-right:10px;text-align:center;line-height:48px}
+.hdimg{width:48px;height:48px;display:inline-block;background:#000;vertical-align:middle;margin-right:10px;text-align:center;line-height:48px}
 #badge{display:inline-block;width:170px;outline:2px solid #000;border-radius:8px;padding:4px;background:#fff;color:#000;text-align:left}
 #badge>div,#badge>img{height:46px;width:43px;float:left;color:#fff;font-size:1.5rem;border-radius:8px}
-#fimg{float:left;margin-right:10px;}
+#fimg{float:left;margin-right:10px}.lb{background:#FFC90E!important;border:4px solid #E1AE00;color:white;font-size:2.5rem;line-height:40px!important}

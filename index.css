@@ -1,0 +1,15 @@
+	*{font-family:"Segoe UI",Arial,sans-serif;transition:background-color .5s;} .title{font-size:2rem;font-weight:600;color:#fff;vertical-align:middle;display:inline-block}
+	#dwn {padding-top:32px;padding-bottom:188px} *:hover {animation-play-state:paused} body {background:rgb(29,29,29);color:white}
+	.head {padding:1em;box-shadow: 0px 3px 4px rgb(0,57,108);background:rgb(0,3,8);color:white;text-align:center} code {background:black;padding:4px}
+	.w3-button:hover{background-color:rgb(0,200,0)!important} .statrow>* {padding:1rem;height:16vh;margin-bottom:2vh}
+	.bb {background:rgb(20,80,160);}
+	.black1 {background:rgb(8,8,8);padding-top:8rem;padding-bottom:8rem;}
+	.headline {font-size:5rem; line-height:6rem;margin-bottom:2rem;}
+	td {min-width: 5rem;} .si i {color:rgb(200,200,200);}
+	#footer {background:black;text-align:center;padding-top:2rem;}
+
+	/* W3 Flex */
+	.flex-center {display:flex;justify-content:center;flex-wrap:wrap}
+	.w3-gap { gap: 4rem; }
+	.w3-gap > a { margin-right: 1rem; }
+	@supports (gap: 1rem) {.w3-gap > a{margin-right: 0;}}
