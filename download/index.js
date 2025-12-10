@@ -2,18 +2,14 @@ function $(id) {return document.getElementById(id)}
 
 function vClk(el) {
 	const els = document.querySelectorAll('#version-select .active');
-	for (var i = 0; i < els.length; i++) { els[i].classList.remove('active'); }
+	for (var i=0; i < els.length; i++) { els[i].classList.remove('active'); }
 
 	el.classList.add('active');
 	req_new(el.innerText, el)
 }
 
 function ver_click(e) {
-	for (var i = 19; i <= 25; i++) {
-		if (undefined != $(i)) {
-			$(i).className = $(i).className.replace(' active', '');
-		}
-	}
+	for (var i=19; i <= 25; i++) { if (undefined != $(i)) { $(i).className = $(i).className.replace(' active', ''); } }
 
 	$(e).className += ' active';
 	var txt = $(e).innerText;
@@ -22,7 +18,6 @@ function ver_click(e) {
 
 var versionJson;
 function req_new(ver, e) {
-	// ver = ver.replace('*','');
 	if (undefined != versionJson) {
 		doo(ver, e, 0);
 		return;

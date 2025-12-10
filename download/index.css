@@ -1,5 +1,5 @@
 body {background:rgb(30,30,30); color:white}
-.w3-third, .w3-col { margin-top:1em}
+.w3-third { margin-top:1em}
 #version-select, #apb {max-width:250px}
 #apb {max-width:280px}
 
@@ -25,9 +25,9 @@ video {width:270px}.ap {padding:0;margin:0}.head{background:rgb(0,3,8)}
 
 a{text-decorataion:none;cursor:pointer;}
 
-.w3-autoo{margin-left:auto;margin-right:auto}
-.w3-autoo{max-width:1400px}
-@media (max-width:1435px){.w3-autoo{ max-width:100%}}
+.content{margin-left:auto;margin-right:auto}
+.content{max-width:1400px}
+@media (max-width:1435px){.content{ max-width:100%}}
 
 .navbar a, .w3-navbar a {padding:8px;margin:4px;border:1px solid rgb(50,50,50)}
 .title {font-size:2rem;padding-top:0;margin-top:-10px;margin-bottom:0}
@@ -46,3 +46,7 @@ a{text-decorataion:none;cursor:pointer;}
 #warn {color:red;font-weight:bold;}
 
 .title{font-size:2rem;font-weight:600;color:#fff;vertical-align:middle;display:inline-block}
+#hdimg{width:48px;height:48px;display:inline-block;background:#000;vertical-align:middle;margin-right:10px;text-align:center;line-height:48px}
+#badge{display:inline-block;width:170px;outline:2px solid #000;border-radius:8px;padding:4px;background:#fff;color:#000;text-align:left}
+#badge>div,#badge>img{height:46px;width:43px;float:left;color:#fff;font-size:1.5rem;border-radius:8px}
+#fimg{float:left;margin-right:10px;}
