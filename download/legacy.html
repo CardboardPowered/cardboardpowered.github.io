@@ -25,6 +25,8 @@
 			<div class="w3-container w3-padding" style="background:rgb(0, 46, 96)">Legacy Versions</div>
 			<div class="w3-container w3-padding con">
 				<a href="./index.html"><button id="15" style="text-decoration:underline" class="w3-button">&#x25c0; Back to Current</button></a>
+				<button id="24" onclick="ver_click(24)" class="w3-button">1.21.8</button>
+				<button id="23" onclick="ver_click(23)" class="w3-button">1.21.4</button>
 				<button id="22" onclick="ver_click(22)" class="w3-button">1.20.6</button>
 				<button id="21" onclick="ver_click(21)" class="w3-button">1.20.4</button>
 				<button id="20" onclick="ver_click(20)" class="w3-button">1.19.4</button>
@@ -82,7 +84,7 @@
 function $(id) {return document.getElementById(id)}
 
 function ver_click(e) {
-	for (var i = 16; i <= 24; i++) {
+	for (var i = 16; i <= 26; i++) {
 		if (undefined != $(i)) {
 			$(i).className = $(i).className.replace(' active', '');
 		}

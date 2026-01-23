@@ -43,7 +43,8 @@ a{text-decorataion:none;cursor:pointer;}
 #updated,#size {color:gray;}
 .aa { color: rgb(0, 160, 255); cursor: pointer; }
 #head {color:white;text-align:center}
-#warn {color:red;font-weight:bold;}
+#warn{color:red;font-weight:bold;}
+#warn2{color:red;font-weig1ht:bold;}
 
 .title{font-size:2rem;font-weight:600;color:#fff;vertical-align:middle;display:inline-block}
 .hdimg{width:48px;height:48px;display:inline-block;background:#000;vertical-align:middle;margin-right:10px;text-align:center;line-height:48px}

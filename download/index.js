@@ -44,22 +44,36 @@ function doo(ver, e, c) {
 	var dl = file.url;
 	var vars = objj.game_versions;
 	var version = ver.split(' ')[0].split('*')[0]; 
-	var updated = objj.date_published;
 
 	if (vars.indexOf(version) == -1) {
 		doo(ver, e, c + 1)
 		return;
 	}
 
+	var updated = new Date(objj.date_published);
+	var mm = months(updated, new Date())
+
 	$('dlb').innerHTML = '<span class="tspan">Download </a> #' + name + "&nbsp;<b>(for " + vars + ")</b></span>";
 	$('verc').innerHTML = ver; // $(e).innerText;
 	$('dll').href = file.url;
-	$('updated').innerText = "Last Updated: " + new Date(updated).toDateString();
+	$('updated').innerText = "Last Updated: " + updated.toDateString();
+	
 	$('size').innerText = file.filename + " / " + (file.size/1024/1024).toFixed(2) + "MB";
 	$('warn').innerText = (version.indexOf('w') != -1 || version.indexOf('-') != -1) ? snapMsg : (ver.indexOf('*') != -1 ? expMsg : "");
-	
+	$('warn2').innerHTML = "";
+	if (mm > 11) {
+		$('warn2').innerHTML = `<i>Last Updated: ${mm} Months Ago! This version may not be actively supported</i><br>`;
+	}
 }
 
-addEventListener("load", function(e){ req_new('1.21.10') });
+addEventListener("load", function(e){ req_new('1.21.11') });
 
-setTimeout(function() { req_new('1.21.10') }, 100);
+setTimeout(function() { req_new('1.21.11') }, 100);
+
+function months(d1, d2) {
+	var months;
+	months = (d2.getFullYear() - d1.getFullYear()) * 12;
+	months += d2.getMonth() - d1.getMonth();
+	if (d2.getDate() < d1.getDate()){months--;}
+	return months;
+}
