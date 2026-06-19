@@ -49,6 +49,8 @@ function doo(ver, e, c) {
 		doo(ver, e, c + 1)
 		return;
 	}
+	
+	if (vars.length == 3) { vars = [vars[2]] }
 
 	var updated = new Date(objj.date_published);
 	var mm = months(updated, new Date())
